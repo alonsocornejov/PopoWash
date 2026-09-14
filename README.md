@@ -13,3 +13,4 @@ Abre `index.html` en un navegador o ejecuta un servidor estático desde la carpe
 - Propuestas iniciales de logotipo en `branding/`.
 - Precio, garantía, compatibilidad y contenido de la caja pendientes de confirmación.
 
+Las propuestas de identidad pueden revisarse con fondo claro en [`branding/README.md`](branding/README.md).
