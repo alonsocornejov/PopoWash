@@ -11,7 +11,7 @@ Abre `index.html` en un navegador o ejecuta un servidor estático desde la carpe
 | Versión | Dirección | Vista publicada |
 |---|---|---|
 | Opción 1 | Challenger, directa y de alto impacto | [Abrir](https://alonsocornejov.github.io/PopoWash/) |
-| Opción 2 | Editorial, sobria y provocativa | [Abrir](https://alonsocornejov.github.io/PopoWash/opcion-2/) |
+| Opción 2 | Higiene, confianza y claridad de producto | [Abrir](https://alonsocornejov.github.io/PopoWash/opcion-2/) |
 | Opción 3 | Amigable, visual y centrada en el producto | [Abrir](https://alonsocornejov.github.io/PopoWash/opcion-3/) |
 
 Estos enlaces usan GitHub Pages como entorno de revisión. Más adelante pueden reemplazarse por las URLs de Vercel o Netlify.
