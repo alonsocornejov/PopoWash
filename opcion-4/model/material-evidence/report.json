@@ -1,0 +1,88 @@
+{
+  "ok": true,
+  "verdict": "pass",
+  "confidence": 0.716,
+  "estimatedFidelity": 0.716,
+  "targetThreshold": 0.7,
+  "materialId": "white-plastic",
+  "sourceImage": "C:\\Users\\andre\\Desktop\\POPOWASH\\opcion-4\\model\\body-material-crop.png",
+  "outDir": "C:\\Users\\andre\\Desktop\\POPOWASH\\opcion-4\\model\\material-evidence",
+  "palette": [
+    "#F0F0F0",
+    "#F1F1F1",
+    "#F1F0F1",
+    "#F9F9F9",
+    "#BEBEBE"
+  ],
+  "maps": {
+    "albedo": {
+      "path": "C:\\Users\\andre\\Desktop\\POPOWASH\\opcion-4\\model\\material-evidence\\white-plastic_albedo.png",
+      "url": "white-plastic_albedo.png",
+      "channel": "albedo",
+      "source": "reference-pixel-extraction"
+    },
+    "roughness": {
+      "path": "C:\\Users\\andre\\Desktop\\POPOWASH\\opcion-4\\model\\material-evidence\\white-plastic_roughness.png",
+      "url": "white-plastic_roughness.png",
+      "channel": "roughness",
+      "source": "reference-pixel-extraction"
+    },
+    "height": {
+      "path": "C:\\Users\\andre\\Desktop\\POPOWASH\\opcion-4\\model\\material-evidence\\white-plastic_height.png",
+      "url": "white-plastic_height.png",
+      "channel": "height",
+      "source": "reference-pixel-extraction"
+    },
+    "normal": {
+      "path": "C:\\Users\\andre\\Desktop\\POPOWASH\\opcion-4\\model\\material-evidence\\white-plastic_normal.png",
+      "url": "white-plastic_normal.png",
+      "channel": "normal",
+      "source": "reference-pixel-extraction"
+    },
+    "ao": {
+      "path": "C:\\Users\\andre\\Desktop\\POPOWASH\\opcion-4\\model\\material-evidence\\white-plastic_ao.png",
+      "url": "white-plastic_ao.png",
+      "channel": "ao",
+      "source": "reference-pixel-extraction"
+    }
+  },
+  "diagnostics": {
+    "sourceWidth": 220,
+    "sourceHeight": 80,
+    "mapSize": 512,
+    "cropBBoxPixels": {
+      "x": 0,
+      "y": 0,
+      "width": 220,
+      "height": 80
+    },
+    "mask": {
+      "backgroundColor": "#F0F0F0",
+      "backgroundNoise": 2.449,
+      "transparentPixelFraction": 0.0,
+      "foregroundCoverage": 1.0
+    },
+    "mapStats": {
+      "valueRange": 0.08,
+      "heightP90Gradient": 0.02251,
+      "roughnessBase": 0.705,
+      "roughnessVariation": 0.05,
+      "normalStrength": 0.183,
+      "blurRadius": 10
+    },
+    "palette": [
+      "#F0F0F0",
+      "#F1F1F1",
+      "#F1F0F1",
+      "#F9F9F9",
+      "#BEBEBE"
+    ]
+  },
+  "warnings": [
+    "foreground mask is tiny; material extraction is likely unreliable",
+    "image is not clearly isolated from background; using most pixels as material evidence",
+    "object/background separation is weak",
+    "low value range weakens height/roughness inference"
+  ],
+  "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+}

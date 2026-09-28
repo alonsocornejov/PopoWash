@@ -1,0 +1,14 @@
+{
+  "admitted": true,
+  "reasons": [],
+  "provenance": {
+    "viewpoint": "reference",
+    "sourcePath": "opcion-4/assets/01-estudio-giro-000.png",
+    "width": 1254,
+    "height": 1254,
+    "foregroundCoverage": 0.1785,
+    "largestComponentFraction": 0.9991,
+    "pHash": 11338278658040450276,
+    "duplicateOfHash": null
+  }
+}

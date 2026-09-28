@@ -1,0 +1,170 @@
+{
+  "sourceImage": "opcion-4/assets/01-estudio-giro-000.png",
+  "detailInventory": {
+    "scanMethod": "component-zones",
+    "targetMinDetails": 6,
+    "note": "Enumerate every identity-defining small detail before authoring the spec. Each detail must map to a component.localFeatures entry or material.localOverrides entry, never prose only. Use forge/stage1_intake/build_detail_inventory.py to scan zones.",
+    "details": [
+      {
+        "id": "mount-a-slot",
+        "kind": "groove",
+        "description": "mount-a-slot",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "disc-a/slot-a"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      },
+      {
+        "id": "mount-b-slot",
+        "kind": "groove",
+        "description": "mount-b-slot",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "disc-b/slot-b"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      },
+      {
+        "id": "arm-edge",
+        "kind": "bevel",
+        "description": "arm-edge",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "curved-arm/curved-arm-edge"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      },
+      {
+        "id": "plate-edge",
+        "kind": "bevel",
+        "description": "plate-edge",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "root/root-edge"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      },
+      {
+        "id": "plastic-sheen",
+        "kind": "gloss",
+        "description": "plastic-sheen",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "base/edge-gloss"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      },
+      {
+        "id": "collar-gloss",
+        "kind": "gloss",
+        "description": "collar-gloss",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "chrome/collar-polish"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      },
+      {
+        "id": "knob-end",
+        "kind": "bevel",
+        "description": "knob-end",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "dial/dial-edge"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      },
+      {
+        "id": "dual-tips",
+        "kind": "bevel",
+        "description": "dual-tips",
+        "region": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry/material",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "nozzle-a/nozzle-a-edge"
+        },
+        "evidenceRef": "full-object",
+        "confidence": 0.85
+      }
+    ]
+  }
+}

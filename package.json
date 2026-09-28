@@ -1,0 +1,20 @@
+{
+  "name": "popowash",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "description": "Herramientas locales de diseño y revisión para PopoWash",
+  "scripts": {
+    "playwright-cli": "playwright-cli",
+    "impeccable": "impeccable"
+  },
+  "devDependencies": {
+    "@playwright/cli": "0.1.21",
+    "impeccable": "4.1.0"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  }
+}
