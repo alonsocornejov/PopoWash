@@ -1,10 +1,12 @@
 # Contexto actual de PopoWash
 
-PopoWash es un prototipo de identidad y landing page para un bidet mecánico que se instala directamente en el inodoro.
+PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet mecánico que se instala directamente en el inodoro.
 
 ## Estado vigente
 
 - Hay cuatro propuestas web enlazadas desde el [README](../README.md). La opción 4 tiene el hero fotográfico integrado, sus imágenes y fuentes locales; el material 3D sigue aplazado.
+- Se desarrollaron cinco propuestas de ecommerce de producto único; la Opción 04 queda recomendada como base transaccional y la Opción 05 conserva una variación de impacto.
+- Las decisiones y entregables están documentados en [`tareas/2026-09-20-ecommerce-producto-unico.md`](tareas/2026-09-20-ecommerce-producto-unico.md).
 - La identidad visual es provisional: azul eléctrico, lima ácido, negro y blanco cálido.
 - Hay propuestas iniciales de logotipo en [`branding/`](../branding/README.md).
 - Se incorporaron cinco recursos de diseño, revisión web y 3D como skills del proyecto. El detalle está en [`tareas/2026-09-19-integracion-skills.md`](tareas/2026-09-19-integracion-skills.md). Sus usos y requisitos están en [`SKILLS.md`](SKILLS.md). La instalación no cambia las propuestas web ni confirma la identidad visual.
@@ -13,5 +15,7 @@ PopoWash es un prototipo de identidad y landing page para un bidet mecánico que
 ## Pendientes
 
 - Confirmar precio, garantía, compatibilidad y contenido de la caja.
+- Definir pagos, despacho, cambios, devoluciones y soporte.
+- Producir fotografías, video de instalación y reseñas verificadas.
 
 Este archivo resume solo el estado vigente. Las decisiones y entregables cerrados se documentan en [`tareas/`](tareas/).
