@@ -1,6 +1,6 @@
 # Template ecommerce PopoWash
 
-Template estático y responsive para revisar cuatro arquitecturas de ecommerce de un solo producto.
+Template estático y responsive para revisar cinco propuestas de ecommerce de un solo producto.
 
 ## Punto de entrada
 
