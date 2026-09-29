@@ -2,6 +2,12 @@
 
 Prototipo de identidad y landing page para PopoWash, un bidet mecánico que se instala directamente en el inodoro.
 
+## Comparador vigente
+
+[Abrir todas las propuestas en una sola página](https://alonsocornejov.github.io/PopoWash/propuestas.html).
+
+El archivo [`propuestas.html`](propuestas.html) integra las cuatro propuestas web y únicamente el Ecommerce 1. **Web 4 · Principal** aparece primero y se abre por defecto. El Ecommerce 1 conserva **Ver esqueleto**, sin enlaces a los otros ecommerce. Las versiones individuales que se enumeran más abajo se conservan como histórico del proyecto.
+
 ## Vista local
 
 Abre `index.html` en un navegador o ejecuta un servidor estático desde la carpeta del proyecto.
