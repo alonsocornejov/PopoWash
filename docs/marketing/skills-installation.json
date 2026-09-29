@@ -1,0 +1,916 @@
+{
+  "collections": [
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "branch": "main",
+      "skills": [
+        "skills/ab-testing",
+        "skills/ad-creative",
+        "skills/ads",
+        "skills/ai-seo",
+        "skills/analytics",
+        "skills/aso",
+        "skills/attribution",
+        "skills/churn-prevention",
+        "skills/co-marketing",
+        "skills/cold-email",
+        "skills/community-marketing",
+        "skills/competitor-profiling",
+        "skills/competitors",
+        "skills/content-strategy",
+        "skills/copy-editing",
+        "skills/copywriting",
+        "skills/cro",
+        "skills/customer-research",
+        "skills/directory-submissions",
+        "skills/emails",
+        "skills/events",
+        "skills/free-tools",
+        "skills/image",
+        "skills/influencer-marketing",
+        "skills/launch",
+        "skills/lead-magnets",
+        "skills/marketing-council",
+        "skills/marketing-ideas",
+        "skills/marketing-loops",
+        "skills/marketing-plan",
+        "skills/marketing-psychology",
+        "skills/offers",
+        "skills/onboarding",
+        "skills/paywalls",
+        "skills/popups",
+        "skills/pricing",
+        "skills/product-marketing",
+        "skills/programmatic-seo",
+        "skills/prospecting",
+        "skills/public-relations",
+        "skills/referrals",
+        "skills/revops",
+        "skills/sales-enablement",
+        "skills/schema",
+        "skills/seo-audit",
+        "skills/signup",
+        "skills/site-architecture",
+        "skills/sms",
+        "skills/social",
+        "skills/video"
+      ],
+      "installed_directory": ".agents/skills/marketing",
+      "installed_paths": [
+        ".agents/skills/marketing/ab-testing",
+        ".agents/skills/marketing/ad-creative",
+        ".agents/skills/marketing/ads",
+        ".agents/skills/marketing/ai-seo",
+        ".agents/skills/marketing/analytics",
+        ".agents/skills/marketing/aso",
+        ".agents/skills/marketing/attribution",
+        ".agents/skills/marketing/churn-prevention",
+        ".agents/skills/marketing/co-marketing",
+        ".agents/skills/marketing/cold-email",
+        ".agents/skills/marketing/community-marketing",
+        ".agents/skills/marketing/competitor-profiling",
+        ".agents/skills/marketing/competitors",
+        ".agents/skills/marketing/content-strategy",
+        ".agents/skills/marketing/copy-editing",
+        ".agents/skills/marketing/copywriting",
+        ".agents/skills/marketing/cro",
+        ".agents/skills/marketing/customer-research",
+        ".agents/skills/marketing/directory-submissions",
+        ".agents/skills/marketing/emails",
+        ".agents/skills/marketing/events",
+        ".agents/skills/marketing/free-tools",
+        ".agents/skills/marketing/image",
+        ".agents/skills/marketing/influencer-marketing",
+        ".agents/skills/marketing/launch",
+        ".agents/skills/marketing/lead-magnets",
+        ".agents/skills/marketing/marketing-council",
+        ".agents/skills/marketing/marketing-ideas",
+        ".agents/skills/marketing/marketing-loops",
+        ".agents/skills/marketing/marketing-plan",
+        ".agents/skills/marketing/marketing-psychology",
+        ".agents/skills/marketing/offers",
+        ".agents/skills/marketing/onboarding",
+        ".agents/skills/marketing/paywalls",
+        ".agents/skills/marketing/popups",
+        ".agents/skills/marketing/pricing",
+        ".agents/skills/marketing/product-marketing",
+        ".agents/skills/marketing/programmatic-seo",
+        ".agents/skills/marketing/prospecting",
+        ".agents/skills/marketing/public-relations",
+        ".agents/skills/marketing/referrals",
+        ".agents/skills/marketing/revops",
+        ".agents/skills/marketing/sales-enablement",
+        ".agents/skills/marketing/schema",
+        ".agents/skills/marketing/seo-audit",
+        ".agents/skills/marketing/signup",
+        ".agents/skills/marketing/site-architecture",
+        ".agents/skills/marketing/sms",
+        ".agents/skills/marketing/social",
+        ".agents/skills/marketing/video"
+      ]
+    },
+    {
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+      "branch": "main",
+      "skills": [
+        "skills/ad-library-teardown",
+        "skills/audience-research",
+        "skills/comment-mining",
+        "skills/competitor-social-research",
+        "skills/content-repurposing",
+        "skills/creator-profile-teardown",
+        "skills/influencer-prospecting",
+        "skills/outlier-post-finder",
+        "skills/product-demand-research",
+        "skills/scrapecreators-api",
+        "skills/social-listening-brief",
+        "skills/transcript-intelligence",
+        "skills/trend-discovery"
+      ],
+      "installed_directory": ".agents/skills/benchmark",
+      "installed_paths": [
+        ".agents/skills/benchmark/ad-library-teardown",
+        ".agents/skills/benchmark/audience-research",
+        ".agents/skills/benchmark/comment-mining",
+        ".agents/skills/benchmark/competitor-social-research",
+        ".agents/skills/benchmark/content-repurposing",
+        ".agents/skills/benchmark/creator-profile-teardown",
+        ".agents/skills/benchmark/influencer-prospecting",
+        ".agents/skills/benchmark/outlier-post-finder",
+        ".agents/skills/benchmark/product-demand-research",
+        ".agents/skills/benchmark/scrapecreators-api",
+        ".agents/skills/benchmark/social-listening-brief",
+        ".agents/skills/benchmark/transcript-intelligence",
+        ".agents/skills/benchmark/trend-discovery"
+      ]
+    },
+    {
+      "repo": "charlie947/social-media-skills",
+      "commit": "8cefb5b6d03757885faa6918bd8bfaef202a83db",
+      "branch": "main",
+      "skills": [
+        "skills/analytics-dashboard",
+        "skills/content-matrix",
+        "skills/gemini-carousel",
+        "skills/gemini-infographic",
+        "skills/graphic-designer",
+        "skills/hook-generator",
+        "skills/newsletter-voice",
+        "skills/niche-research",
+        "skills/pinned-comment",
+        "skills/post-formatter",
+        "skills/post-scorer",
+        "skills/post-writer",
+        "skills/profile-optimizer",
+        "skills/quote-post",
+        "skills/reels-scripting",
+        "skills/voice-builder",
+        "skills/youtube-thumbnail"
+      ],
+      "installed_directory": ".agents/skills/contenido",
+      "installed_paths": [
+        ".agents/skills/contenido/analytics-dashboard",
+        ".agents/skills/contenido/content-matrix",
+        ".agents/skills/contenido/gemini-carousel",
+        ".agents/skills/contenido/gemini-infographic",
+        ".agents/skills/contenido/graphic-designer",
+        ".agents/skills/contenido/hook-generator",
+        ".agents/skills/contenido/newsletter-voice",
+        ".agents/skills/contenido/niche-research",
+        ".agents/skills/contenido/pinned-comment",
+        ".agents/skills/contenido/post-formatter",
+        ".agents/skills/contenido/post-scorer",
+        ".agents/skills/contenido/post-writer",
+        ".agents/skills/contenido/profile-optimizer",
+        ".agents/skills/contenido/quote-post",
+        ".agents/skills/contenido/reels-scripting",
+        ".agents/skills/contenido/voice-builder",
+        ".agents/skills/contenido/youtube-thumbnail"
+      ]
+    }
+  ],
+  "installed_count": 80,
+  "checks": [
+    {
+      "skill": "ab-testing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/ab-testing/SKILL.md"
+    },
+    {
+      "skill": "ad-creative",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/ad-creative/SKILL.md"
+    },
+    {
+      "skill": "ads",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/ads/SKILL.md"
+    },
+    {
+      "skill": "ai-seo",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/ai-seo/SKILL.md"
+    },
+    {
+      "skill": "analytics",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/analytics/SKILL.md"
+    },
+    {
+      "skill": "aso",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/aso/SKILL.md"
+    },
+    {
+      "skill": "attribution",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/attribution/SKILL.md"
+    },
+    {
+      "skill": "churn-prevention",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/churn-prevention/SKILL.md"
+    },
+    {
+      "skill": "co-marketing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/co-marketing/SKILL.md"
+    },
+    {
+      "skill": "cold-email",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/cold-email/SKILL.md"
+    },
+    {
+      "skill": "community-marketing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/community-marketing/SKILL.md"
+    },
+    {
+      "skill": "competitor-profiling",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/competitor-profiling/SKILL.md"
+    },
+    {
+      "skill": "competitors",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/competitors/SKILL.md"
+    },
+    {
+      "skill": "content-strategy",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/content-strategy/SKILL.md"
+    },
+    {
+      "skill": "copy-editing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/copy-editing/SKILL.md"
+    },
+    {
+      "skill": "copywriting",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/copywriting/SKILL.md"
+    },
+    {
+      "skill": "cro",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/cro/SKILL.md"
+    },
+    {
+      "skill": "customer-research",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/customer-research/SKILL.md"
+    },
+    {
+      "skill": "directory-submissions",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/directory-submissions/SKILL.md"
+    },
+    {
+      "skill": "emails",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/emails/SKILL.md"
+    },
+    {
+      "skill": "events",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/events/SKILL.md"
+    },
+    {
+      "skill": "free-tools",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/free-tools/SKILL.md"
+    },
+    {
+      "skill": "image",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/image/SKILL.md"
+    },
+    {
+      "skill": "influencer-marketing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/influencer-marketing/SKILL.md"
+    },
+    {
+      "skill": "launch",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/launch/SKILL.md"
+    },
+    {
+      "skill": "lead-magnets",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/lead-magnets/SKILL.md"
+    },
+    {
+      "skill": "marketing-council",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/marketing-council/SKILL.md"
+    },
+    {
+      "skill": "marketing-ideas",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/marketing-ideas/SKILL.md"
+    },
+    {
+      "skill": "marketing-loops",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/marketing-loops/SKILL.md"
+    },
+    {
+      "skill": "marketing-plan",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/marketing-plan/SKILL.md"
+    },
+    {
+      "skill": "marketing-psychology",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/marketing-psychology/SKILL.md"
+    },
+    {
+      "skill": "offers",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/offers/SKILL.md"
+    },
+    {
+      "skill": "onboarding",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/onboarding/SKILL.md"
+    },
+    {
+      "skill": "paywalls",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/paywalls/SKILL.md"
+    },
+    {
+      "skill": "popups",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/popups/SKILL.md"
+    },
+    {
+      "skill": "pricing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/pricing/SKILL.md"
+    },
+    {
+      "skill": "product-marketing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/product-marketing/SKILL.md"
+    },
+    {
+      "skill": "programmatic-seo",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/programmatic-seo/SKILL.md"
+    },
+    {
+      "skill": "prospecting",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/prospecting/SKILL.md"
+    },
+    {
+      "skill": "public-relations",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/public-relations/SKILL.md"
+    },
+    {
+      "skill": "referrals",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/referrals/SKILL.md"
+    },
+    {
+      "skill": "revops",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/revops/SKILL.md"
+    },
+    {
+      "skill": "sales-enablement",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/sales-enablement/SKILL.md"
+    },
+    {
+      "skill": "schema",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/schema/SKILL.md"
+    },
+    {
+      "skill": "seo-audit",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/seo-audit/SKILL.md"
+    },
+    {
+      "skill": "signup",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/signup/SKILL.md"
+    },
+    {
+      "skill": "site-architecture",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/site-architecture/SKILL.md"
+    },
+    {
+      "skill": "sms",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/sms/SKILL.md"
+    },
+    {
+      "skill": "social",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/social/SKILL.md"
+    },
+    {
+      "skill": "video",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/marketing/video/SKILL.md"
+    },
+    {
+      "skill": "ad-library-teardown",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/ad-library-teardown/SKILL.md"
+    },
+    {
+      "skill": "audience-research",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/audience-research/SKILL.md"
+    },
+    {
+      "skill": "comment-mining",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/comment-mining/SKILL.md"
+    },
+    {
+      "skill": "competitor-social-research",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/competitor-social-research/SKILL.md"
+    },
+    {
+      "skill": "content-repurposing",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/content-repurposing/SKILL.md"
+    },
+    {
+      "skill": "creator-profile-teardown",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/creator-profile-teardown/SKILL.md"
+    },
+    {
+      "skill": "influencer-prospecting",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/influencer-prospecting/SKILL.md"
+    },
+    {
+      "skill": "outlier-post-finder",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/outlier-post-finder/SKILL.md"
+    },
+    {
+      "skill": "product-demand-research",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/product-demand-research/SKILL.md"
+    },
+    {
+      "skill": "scrapecreators-api",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/scrapecreators-api/SKILL.md"
+    },
+    {
+      "skill": "social-listening-brief",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/social-listening-brief/SKILL.md"
+    },
+    {
+      "skill": "transcript-intelligence",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/transcript-intelligence/SKILL.md"
+    },
+    {
+      "skill": "trend-discovery",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/benchmark/trend-discovery/SKILL.md"
+    },
+    {
+      "skill": "analytics-dashboard",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/analytics-dashboard/SKILL.md"
+    },
+    {
+      "skill": "content-matrix",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/content-matrix/SKILL.md"
+    },
+    {
+      "skill": "gemini-carousel",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/gemini-carousel/SKILL.md"
+    },
+    {
+      "skill": "gemini-infographic",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/gemini-infographic/SKILL.md"
+    },
+    {
+      "skill": "graphic-designer",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/graphic-designer/SKILL.md"
+    },
+    {
+      "skill": "hook-generator",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/hook-generator/SKILL.md"
+    },
+    {
+      "skill": "newsletter-voice",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/newsletter-voice/SKILL.md"
+    },
+    {
+      "skill": "niche-research",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/niche-research/SKILL.md"
+    },
+    {
+      "skill": "pinned-comment",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/pinned-comment/SKILL.md"
+    },
+    {
+      "skill": "post-formatter",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/post-formatter/SKILL.md"
+    },
+    {
+      "skill": "post-scorer",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/post-scorer/SKILL.md"
+    },
+    {
+      "skill": "post-writer",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/post-writer/SKILL.md"
+    },
+    {
+      "skill": "profile-optimizer",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/profile-optimizer/SKILL.md"
+    },
+    {
+      "skill": "quote-post",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/quote-post/SKILL.md"
+    },
+    {
+      "skill": "reels-scripting",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/reels-scripting/SKILL.md"
+    },
+    {
+      "skill": "voice-builder",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/voice-builder/SKILL.md"
+    },
+    {
+      "skill": "youtube-thumbnail",
+      "valid": true,
+      "message": "Skill is valid!",
+      "path": ".agents/skills/contenido/youtube-thumbnail/SKILL.md"
+    }
+  ],
+  "adaptations": [
+    {
+      "skill": "ad-library-teardown",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "audience-research",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "comment-mining",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "competitor-social-research",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "content-repurposing",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "creator-profile-teardown",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "influencer-prospecting",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "outlier-post-finder",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "product-demand-research",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "scrapecreators-api",
+      "metadata_moved": [
+        "homepage"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "social-listening-brief",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "transcript-intelligence",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    },
+    {
+      "skill": "trend-discovery",
+      "metadata_moved": [
+        "version",
+        "author",
+        "homepage",
+        "repository"
+      ],
+      "description_shortened": false
+    }
+  ],
+  "link_repairs": [
+    {
+      "file": ".agents\\skills\\marketing\\ad-creative\\SKILL.md",
+      "old": "../../ads/references/meta-decision-system.md",
+      "new": "../ads/references/meta-decision-system.md"
+    },
+    {
+      "file": ".agents/skills/marketing/ads/references/creative-research-automation.md",
+      "old": "../../positioning/SKILL.md",
+      "new": "../../product-marketing/SKILL.md",
+      "reason": "Upstream positioning skill absent; use installed product-marketing context."
+    },
+    {
+      "file": ".agents/skills/marketing/ads/references/creative-research-automation.md",
+      "old": "../../positioning/SKILL.md",
+      "new": "../../product-marketing/SKILL.md",
+      "reason": "Upstream positioning skill absent; use installed product-marketing context."
+    }
+  ],
+  "credential_presence": {
+    "SCRAPECREATORS_API_KEY": false,
+    "APIFY_API_TOKEN": false,
+    "GOOGLE_AI_API_KEY": false
+  },
+  "example_links": [
+    {
+      "file": ".agents\\skills\\marketing\\competitors\\references\\content-architecture.md",
+      "target": "/alternatives/notion"
+    },
+    {
+      "file": ".agents\\skills\\marketing\\competitors\\references\\content-architecture.md",
+      "target": "/alternatives/airtable"
+    },
+    {
+      "file": ".agents\\skills\\marketing\\competitors\\references\\content-architecture.md",
+      "target": "/alternatives/monday"
+    },
+    {
+      "file": ".agents\\skills\\marketing\\site-architecture\\SKILL.md",
+      "target": "/features/analytics"
+    },
+    {
+      "file": ".agents\\skills\\marketing\\sms\\references\\compliance.md",
+      "target": "link"
+    },
+    {
+      "file": ".agents\\skills\\marketing\\sms\\references\\compliance.md",
+      "target": "link"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\ad-library-teardown\\SKILL.md",
+      "target": "url"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\ad-library-teardown\\SKILL.md",
+      "target": "url"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\competitor-social-research\\SKILL.md",
+      "target": "url"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\content-repurposing\\SKILL.md",
+      "target": "url"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\outlier-post-finder\\SKILL.md",
+      "target": "url"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\social-listening-brief\\SKILL.md",
+      "target": "url"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\transcript-intelligence\\SKILL.md",
+      "target": "url"
+    },
+    {
+      "file": ".agents\\skills\\benchmark\\trend-discovery\\SKILL.md",
+      "target": "url"
+    }
+  ],
+  "unresolved_links": [],
+  "installed_on": "2026-09-28",
+  "shared_resources": ".agents/tools",
+  "live_integrations_tested": false,
+  "organization": {
+    "date": "2026-09-28",
+    "collections": {
+      "coreyhaines31/marketingskills": "marketing",
+      "ScrapeCreators/social-media-research-skills": "benchmark",
+      "charlie947/social-media-skills": "contenido"
+    },
+    "skill_names_unchanged": true,
+    "files_preserved": 391,
+    "relative_reference_files_adjusted": 21,
+    "codex_discovery": {
+      "detected": {
+        "marketing": 50,
+        "benchmark": 13,
+        "contenido": 17
+      },
+      "enabled": {
+        "marketing": 50,
+        "benchmark": 13,
+        "contenido": 17
+      },
+      "errors": []
+    }
+  }
+}

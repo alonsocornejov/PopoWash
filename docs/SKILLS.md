@@ -1,5 +1,7 @@
 # Skills de PopoWash
 
+Las tres colecciones incorporadas para marketing, benchmark social y creación de reels están documentadas en [Skills de marketing](marketing/SKILLS-MARKETING.md): 80 skills instaladas el 28 de septiembre de 2026, con sus revisiones y requisitos externos.
+
 Integradas el 19 de septiembre de 2026 a solicitud de Gabo, con apoyo de Codex. Viven en `.agents/skills/` y acompañan al proyecto cuando se suben a Git y se descargan en otro equipo. Añadir estas herramientas no cambia las páginas web ni selecciona una identidad definitiva.
 
 ## Qué usar y cómo pedirlo
