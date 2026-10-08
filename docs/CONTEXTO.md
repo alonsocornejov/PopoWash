@@ -10,10 +10,13 @@ PopoWash es un prototipo de identidad y landing page para un bidet mecánico que
 - Hay propuestas iniciales de logotipo en [`branding/`](../branding/README.md).
 - Se incorporaron cinco recursos de diseño, revisión web y 3D como skills del proyecto. El detalle está en [`tareas/2026-09-19-integracion-skills.md`](tareas/2026-09-19-integracion-skills.md). Sus usos y requisitos están en [`SKILLS.md`](SKILLS.md). La instalación no cambia las propuestas web ni confirma la identidad visual.
 - El cierre del hero de Opción 4 está documentado en [`tareas/2026-09-21-opcion-4-hero-gabo.md`](tareas/2026-09-21-opcion-4-hero-gabo.md).
+- La reunión con el dueño del 2026-09-28 orienta el público hacia personas mayores y familias, con foco comercial en lugares con muchos baños: especialmente residencias de personas mayores, además de hoteles y moteles. Los ejes planteados son higiene y calidad. Las [notas de la reunión en curso](tareas/2026-09-28-reunion-dueno-marca.md) recogen también el cambio de logo solicitado, la propuesta de postventa y problemas reportados del producto.
 
 ## Pendientes
 
 - Completar y validar el cuaderno de marketing antes de definir la identidad, el tono y el plan editorial de Instagram; preparar las integraciones externas cuando se necesiten.
 - Confirmar precio, garantía, compatibilidad y contenido de la caja.
+- Desarrollar la propuesta de logo solicitada y revisar el protocolo de postventa que tiene Fabián.
+- Validar la propuesta de garantías para ecommerce y revisar los problemas reportados de acumulación de sarro/mugre y goteo al cerrar la perilla.
 
 Este archivo resume solo el estado vigente. Las decisiones y entregables cerrados se documentan en [`tareas/`](tareas/).
