@@ -2,6 +2,12 @@
 
 Prototipo de identidad y landing page para PopoWash, un bidet mecánico que se instala directamente en el inodoro.
 
+## Comparador vigente
+
+[Abrir todas las propuestas en una sola página](https://alonsocornejov.github.io/PopoWash/propuestas.html).
+
+El archivo [`propuestas.html`](propuestas.html) integra las cuatro propuestas web y únicamente el Ecommerce 1. **Web 4 · Principal** aparece primero y se abre por defecto. El Ecommerce 1 conserva **Ver esqueleto**, sin enlaces a los otros ecommerce. Las versiones individuales que se enumeran más abajo se conservan como histórico del proyecto.
+
 ## Vista local
 
 Abre `index.html` en un navegador o ejecuta un servidor estático desde la carpeta del proyecto.
@@ -29,3 +35,15 @@ La opción 4 se incorpora a esta publicación; su enlace estará disponible cuan
 - Precio, garantía, compatibilidad y contenido de la caja pendientes de confirmación.
 
 Las propuestas de identidad pueden revisarse con fondo claro en [`branding/README.md`](branding/README.md).
+
+## Ecommerce de producto único
+
+| Propuesta | Estrategia | GitHub Pages | Código |
+|---|---|---|---|
+| Opción 1 | Marca y deseo | [Abrir](https://alonsocornejov.github.io/PopoWash/mockup-ecommerce/) | [`index.html`](mockup-ecommerce/index.html) |
+| Opción 2 | Confianza y compatibilidad | [Abrir](https://alonsocornejov.github.io/PopoWash/mockup-ecommerce/opcion-2.html) | [`opcion-2.html`](mockup-ecommerce/opcion-2.html) |
+| Opción 3 | Impacto y conversión | [Abrir](https://alonsocornejov.github.io/PopoWash/mockup-ecommerce/opcion-3.html) | [`opcion-3.html`](mockup-ecommerce/opcion-3.html) |
+| Opción 4 | Compra y arquitectura transaccional | [Abrir](https://alonsocornejov.github.io/PopoWash/mockup-ecommerce/opcion-4.html) | [`opcion-4.html`](mockup-ecommerce/opcion-4.html) |
+| Opción 5 | Variación de impacto | [Abrir](https://alonsocornejov.github.io/PopoWash/mockup-ecommerce/opcion-5.html) | [`opcion-5.html`](mockup-ecommerce/opcion-5.html) |
+
+El selector superior permite comparar las cinco propuestas. Las primeras tres y la Opción 5 incluyen **Ver esqueleto**; la Opción 4 incluye **Ver lógica**. La justificación y recomendación están en [`mockup-ecommerce/estrategia.html`](mockup-ecommerce/estrategia.html), y las instrucciones de publicación en [`mockup-ecommerce/README.md`](mockup-ecommerce/README.md).
