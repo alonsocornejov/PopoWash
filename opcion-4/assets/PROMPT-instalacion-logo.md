@@ -1,0 +1,8 @@
+# Logo oficial en la imagen de instalación
+
+Edición con ImageGen integrado. Imagen 1: `instalacion.png` (objetivo). Imagen 2: `producto-frontal-sin-fondo.png` (referencia oficial).
+
+Image 1 is the edit target: the existing square installation photograph of two hands positioning a white bidet attachment over a toilet with the seat removed. Image 2 is the official product identity reference. The product in Image 2 is the exact product: preserve its printed branding unchanged, including the lettering shapes, layout and blue mark.
+Make a tightly localized edit to Image 1: add the official product's printed PopoWash logo to the plain white upper surface of the curved control arm, above the silver collar, in the same physical place as Image 2. Transfer the existing black and blue artwork from the official reference, scaling and perspective-warping it naturally onto the angled surface so it looks factory-printed. Add the official small control scale markings near the collar if needed for consistency with the reference. Preserve the target photograph's exact framing, toilet, hands, fingers, product geometry, mounting discs and slots, chrome collar, dial, shadows, lighting, and background. Do not move or replace the product, change its shape, change the hands, or add a floating logo/watermark. This is the same installation scene with only the missing official printing restored.
+Commercial product photography, magazine-grade. Tack-sharp, true-to-life detail, natural material response, photorealistic.
+Avoid: smeared or invented lettering; melted or doubled geometry; extra or missing fingers; marks not present in the official reference; repeated logos; typography drifting from the reference. Match the original lighting and resolution.

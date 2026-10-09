@@ -5,7 +5,7 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 ## Estado vigente
 
 - Marketing cuenta con un cuaderno rellenable y 80 skills agrupadas en marketing, benchmark y contenido. Entregables y comprobaciones en el [cierre de preparación de marketing de Gabo](tareas/2026-09-28-marketing-cuaderno-skills-gabo.md), aprobado para publicación en Git.
-- Hay cuatro propuestas web enlazadas desde el [README](../README.md). La opción 4 tiene el hero fotográfico integrado, sus imágenes y fuentes locales; el material 3D sigue aplazado.
+- Hay cuatro propuestas web enlazadas desde el [README](../README.md). Web 4 es la principal: tipografía de Web 1, fotografías oficiales, instalación y dos funciones integradas, calculadora por hogar y carrusel de reseñas de ejemplo. El cierre de Alonso está en [`tareas/2026-10-09-principal-alonso.md`](tareas/2026-10-09-principal-alonso.md). El material 3D sigue aplazado.
 - Se desarrollaron cinco propuestas de ecommerce de producto único; la Opción 04 queda recomendada como base transaccional y la Opción 05 conserva una variación de impacto.
 - Las decisiones y entregables están documentados en [`tareas/2026-09-20-ecommerce-producto-unico.md`](tareas/2026-09-20-ecommerce-producto-unico.md).
 - La identidad visual es provisional: azul eléctrico, lima ácido, negro y blanco cálido.
@@ -17,10 +17,11 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 ## Pendientes
 
 - Completar y validar el cuaderno de marketing antes de definir la identidad, el tono y el plan editorial de Instagram; preparar las integraciones externas cuando se necesiten.
-- Confirmar precio, garantía, compatibilidad y contenido de la caja.
+- Ajustar alturas y recorrido por secciones en computador, compactar la ficha de compra y optimizar la composición móvil; tareas pendientes, no implementadas.
+- Confirmar precio y contenido de la caja; la compatibilidad comunicada requiere tapa y asiento desmontables. No se incluyen menciones a garantía en la principal.
 - Desarrollar la propuesta de logo solicitada y revisar el protocolo de postventa que tiene Fabián.
 - Validar la propuesta de garantías para ecommerce y revisar los problemas reportados de acumulación de sarro/mugre y goteo al cerrar la perilla.
 - Definir pagos, despacho, cambios, devoluciones y soporte.
-- Producir fotografías, video de instalación y reseñas verificadas.
+- Definir logo definitivo, contacto y redes; validar FAQ con Fabián. Incorporar video real de instalación y reseñas verificadas; el carrusel actual muestra ejemplos.
 
 Este archivo resume solo el estado vigente. Las decisiones y entregables cerrados se documentan en [`tareas/`](tareas/).

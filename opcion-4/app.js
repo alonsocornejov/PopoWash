@@ -11,43 +11,104 @@ pauseButton.addEventListener('click', () => {
 });
 
 const clp = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
-const spend = document.querySelector('#monthly-spend');
-const reduction = document.querySelector('#paper-reduction');
-function updateSavings() {
-  const rawValue = spend.valueAsNumber;
-  const valid = Number.isFinite(rawValue) && rawValue >= 0 && rawValue <= 1000000;
-  spend.setAttribute('aria-invalid', String(!valid));
-  document.querySelector('#spend-note').textContent = valid ? 'Ejemplo editable. Ingresa el gasto de tu hogar en papel higiénico.' : 'Ingresa un gasto entre $0 y $1.000.000 CLP.';
-  const monthly = valid ? rawValue : 0;
-  const fraction = Number(reduction.value) / 100;
-  document.querySelector('#annual-spend').textContent = valid ? clp.format(monthly * 12) : 'Por calcular';
-  document.querySelector('#monthly-label').textContent = valid ? clp.format(monthly) : 'por calcular';
-  document.querySelector('#reduction-label').textContent = reduction.value + '%';
-  reduction.setAttribute('aria-valuetext', reduction.value + '% menos papel');
-  document.querySelector('#monthly-saving').textContent = valid ? clp.format(monthly * fraction) : 'Por calcular';
-  document.querySelector('#annual-saving').textContent = valid ? clp.format(monthly * fraction * 12) : 'Por calcular';
+// Scenario high among researched references (US 2018, not a Chilean average).
+// Retail reference: Elite Ultra Suave 12 x 25 m, upper-price sample from Jumbo/Lider checked 2026-10-08.
+const paperAssumptions = Object.freeze({ rollsPerPersonPerYear: 141, rollPrice: 850 });
+const household = document.querySelector('#household-size');
+function updateSpend() {
+  const people = household.valueAsNumber;
+  const valid = Number.isInteger(people) && people >= 1 && people <= 20;
+  household.setAttribute('aria-invalid', String(!valid));
+  const perPerson = paperAssumptions.rollsPerPersonPerYear * paperAssumptions.rollPrice;
+  const annual = valid ? people * perPerson : 0;
+  document.querySelector('#annual-spend').textContent = valid ? clp.format(annual) : 'Por calcular';
+  document.querySelector('#annual-saving').textContent = valid ? clp.format(annual * 0.5) : 'Por calcular';
+  const message = document.querySelector('#household-message');
+  message.hidden = valid;
+  message.textContent = valid ? '' : 'Ingresa un número entero de personas entre 1 y 20.';
+  const joke = document.querySelector('#household-joke');
+  joke.hidden = !valid || people <= 6;
+  joke.textContent = joke.hidden ? '' : people > 15
+    ? '¿Esto es una casa o una pensión? Ese baño debería cobrar horas extra.'
+    : 'Con tantos en casa, ojalá tengan dos baños. Y dos PopoWash.';
 }
-spend.addEventListener('input', updateSavings);
-reduction.addEventListener('input', updateSavings);
-updateSavings();
+household.addEventListener('input', updateSpend);
+updateSpend();
 
 const stepImages = [
-  ['assets/instalacion.webp', 'Imagen ilustrativa de unas manos colocando PopoWash sobre los anclajes del inodoro', 'Instalación ilustrativa. Confirma las conexiones y el montaje en el manual de tu modelo.'],
+  ['assets/instalacion-logo-popowash.webp', 'Imagen ilustrativa de unas manos colocando PopoWash sobre los anclajes del inodoro', 'Montaje ilustrativo: PopoWash se coloca bajo el asiento y se fija con sus anclajes.'],
   ['assets/11-instalado-chorro-general.webp', 'Demostración del chorro de agua de PopoWash con el asiento levantado', 'Demostración del chorro. Durante el uso, permanece sentado y comienza con poca presión.'],
   ['assets/10-instalado-detalle.webp', 'PopoWash instalado y apagado, listo para el próximo uso', 'Cierra el agua con la perilla y sécate con un poco de papel. Listo para la próxima vez.']
 ];
-document.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
-  document.querySelectorAll('[data-step]').forEach(other => { other.classList.toggle('active', other === button); other.setAttribute('aria-pressed', String(other === button)); });
-  const [src, alt, caption] = stepImages[Number(button.dataset.step)];
+const stepsSection = document.querySelector('#instalacion');
+const stepButtons = [...document.querySelectorAll('[data-step]')];
+const stepPause = document.querySelector('#pause-steps');
+const stepDuration = 1500;
+let currentStep = 0;
+let stepsPaused = motionPreference.matches;
+let stepsVisible = false;
+let elapsed = 0;
+let lastTick = 0;
+let animationFrame = null;
+
+function showStep(index) {
+  currentStep = index;
+  stepButtons.forEach((button, i) => { button.closest('.step').classList.toggle('active', i === index); button.setAttribute('aria-pressed', String(i === index)); });
+  const [src, alt, caption] = stepImages[index];
   Object.assign(document.querySelector('#step-photo'), { src, alt });
   document.querySelector('#step-caption').textContent = caption;
+  elapsed = 0;
+  updatePlaybackLabel();
+}
+function updatePlaybackLabel() {
+  stepPause.setAttribute('aria-pressed', String(stepsPaused));
+  stepPause.textContent = stepsPaused ? 'Reanudar pasos' : 'Pausar pasos';
+  document.querySelector('#step-status').textContent = `Paso ${currentStep + 1} de 3`;
+}
+function tick(timestamp) {
+  if (lastTick) elapsed += timestamp - lastTick;
+  lastTick = timestamp;
+  if (elapsed >= stepDuration) showStep((currentStep + 1) % stepButtons.length);
+  animationFrame = requestAnimationFrame(tick);
+}
+function syncPlayback() {
+  const running = stepsVisible && !stepsPaused && !document.hidden && !motionPreference.matches;
+  if (!running && animationFrame !== null) {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
+    lastTick = 0;
+  } else if (running && animationFrame === null) {
+    lastTick = 0;
+    animationFrame = requestAnimationFrame(tick);
+  }
+  updatePlaybackLabel();
+}
+stepButtons.forEach((button, index) => button.closest('.step').addEventListener('click', () => {
+  stepsPaused = true;
+  showStep(index);
+  syncPlayback();
 }));
+stepPause.addEventListener('click', () => { stepsPaused = !stepsPaused; syncPlayback(); });
+new IntersectionObserver(entries => { stepsVisible = entries[0].isIntersecting; syncPlayback(); }, { threshold: 0.15 }).observe(stepsSection);
+document.addEventListener('visibilitychange', syncPlayback);
+motionPreference.addEventListener('change', () => { if (motionPreference.matches) stepsPaused = true; syncPlayback(); });
+syncPlayback();
 
-const dialog = document.querySelector('#compatibility-dialog');
-document.querySelector('#open-checklist').addEventListener('click', () => dialog.showModal());
-dialog.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => dialog.close()));
-dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
-dialog.querySelectorAll('input').forEach(input => input.addEventListener('change', () => {
-  const ready = dialog.querySelectorAll('input:checked').length;
-  document.querySelector('#checklist-status').textContent = ready === 3 ? 'Ya tienes los tres datos para consultar la compatibilidad.' : `${ready} de 3 datos preparados.`;
+const quantity = document.querySelector('#product-quantity');
+const bagDialog = document.querySelector('#bag-dialog');
+let bagQuantity = 0;
+document.querySelectorAll('[data-add-to-bag]').forEach(button => button.addEventListener('click', () => {
+  const count = quantity.valueAsNumber;
+  const valid = Number.isInteger(count) && count >= 1 && count <= 10;
+  quantity.setAttribute('aria-invalid', String(!valid));
+  document.querySelector('#quantity-note').textContent = valid ? 'Vista previa de compra. Precio y disponibilidad por confirmar.' : 'Ingresa una cantidad entera entre 1 y 10.';
+  if (!valid) { document.querySelector('#producto').scrollIntoView(); quantity.focus(); return; }
+  bagQuantity += count;
+  document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
+  bagDialog.showModal();
+}));
+bagDialog.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => bagDialog.close()));
+document.querySelectorAll('a[href="#faq-compatibilidad"], a[href="#faq-condiciones"]').forEach(link => link.addEventListener('click', () => {
+  document.querySelector(link.getAttribute('href')).open = true;
+  if (bagDialog.open) bagDialog.close();
 }));
