@@ -1,13 +1,27 @@
-<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PopoWash: revisión 3D</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#eceeec}canvas{display:block;width:100%;height:100%}</style><script type="importmap">{"imports":{"three":"../assets/vendor/three.module.min.js"}}</script><script type="module">
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PopoWash: revisión 3D</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#eceeec}canvas{display:block;width:100%;height:100%}</style><script type="importmap">{"imports":{"three":"../assets/vendor/three.module.min.js","three/examples/jsm/":"../assets/vendor/addons/"}}</script><script type="module">
 import * as THREE from 'three';
-import {createPopoWashMechanicalBidetModel} from './createBidet.js';
+import {createPopoWashMechanicalBidetModel,createPopoWashMechanicalBidetEnvironment} from './createBidet.js?v=4';
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(1);renderer.setSize(innerWidth,innerHeight);renderer.setClearColor('#eceeec');renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1;document.body.append(renderer.domElement);
-const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(37,innerWidth/innerHeight,.1,100);camera.position.set(0,-2.4,6.1);camera.lookAt(0,0,0);
+const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(37,innerWidth/innerHeight,.1,100);camera.position.set(.6,-2.0,6.3);camera.lookAt(0,0,0);
 scene.add(new THREE.HemisphereLight(0xffffff,0x777777,1));for(const [pos,intensity] of [[[ -3,5,6],2],[[4,1,3],.6],[[0,2,-4],1]]){const light=new THREE.DirectionalLight(0xffffff,intensity);light.position.set(...pos);scene.add(light);}
-const model=createPopoWashMechanicalBidetModel({textureSize:128});const box=new THREE.Box3().setFromObject(model);const center=box.getCenter(new THREE.Vector3());model.position.sub(center);const turntable=new THREE.Group();turntable.add(model);scene.add(turntable);
+const model=createPopoWashMechanicalBidetModel({textureSize:1024});const box=new THREE.Box3().setFromObject(model);const center=box.getCenter(new THREE.Vector3());model.position.sub(center);const turntable=new THREE.Group();turntable.add(model);scene.add(turntable);
 // Blockout deliberately has no surface maps, to inspect only geometry.
-model.traverse(o=>{if(o.isMesh){o.material=new THREE.MeshStandardMaterial({color:'#909090',roughness:.7,metalness:0});}});
+const stage=new URLSearchParams(location.search).get('stage')||'blockout';
+if(['blockout','structural-pass','form-refinement'].includes(stage))model.traverse(o=>{if(o.isMesh){o.material=new THREE.MeshStandardMaterial({color:'#909090',roughness:.7,metalness:0});}});
+else scene.environment=createPopoWashMechanicalBidetEnvironment(renderer);
+let ground=null,key=null;
+if(['lighting-pass','interaction-pass','optimization-pass'].includes(stage)){
+ scene.children.filter(o=>o.isLight).forEach(o=>scene.remove(o));
+ scene.environmentIntensity=.8;renderer.toneMappingExposure=.8;
+ scene.add(new THREE.HemisphereLight(0xffffff,0x737782,.45));
+ key=new THREE.DirectionalLight(0xffffff,2);key.position.set(-3,5,6);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.camera.left=-4;key.shadow.camera.right=4;key.shadow.camera.top=4;key.shadow.camera.bottom=-4;key.shadow.normalBias=.01;key.shadow.radius=5;scene.add(key);
+ const fill=new THREE.DirectionalLight(0xe8eeff,.35);fill.position.set(4,1,3);scene.add(fill);
+ const rim=new THREE.DirectionalLight(0xffffff,.7);rim.position.set(0,2,-4);scene.add(rim);
+ renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+ model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+ ground=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshStandardMaterial({color:'#e3e5e4',roughness:.95}));ground.position.z=-.7;ground.receiveShadow=true;scene.add(ground);
+}
 function render(){renderer.render(scene,camera);}render();
-window.modelReview={scene,model,renderer,camera,turntable,render,setAngle(degrees){turntable.rotation.y=degrees*Math.PI/180;render();},getStats(){return renderer.info.render;}};
+window.modelReview={scene,model,renderer,camera,turntable,ground,key,render,setAngle(degrees){turntable.rotation.y=degrees*Math.PI/180;render();},getStats(){return renderer.info.render;}};
 window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);render();});
 </script></html>

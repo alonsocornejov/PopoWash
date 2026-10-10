@@ -43,7 +43,7 @@ const stepImages = [
 const stepsSection = document.querySelector('#instalacion');
 const stepButtons = [...document.querySelectorAll('[data-step]')];
 const stepPause = document.querySelector('#pause-steps');
-const stepDuration = 1500;
+const stepDuration = 6000;
 let currentStep = 0;
 let stepsPaused = motionPreference.matches;
 let stepsVisible = false;
@@ -101,10 +101,11 @@ document.querySelectorAll('[data-add-to-bag]').forEach(button => button.addEvent
   const count = quantity.valueAsNumber;
   const valid = Number.isInteger(count) && count >= 1 && count <= 10;
   quantity.setAttribute('aria-invalid', String(!valid));
-  document.querySelector('#quantity-note').textContent = valid ? 'Vista previa de compra. Precio y disponibilidad por confirmar.' : 'Ingresa una cantidad entera entre 1 y 10.';
+  document.querySelector('#quantity-note').textContent = valid ? 'Vista previa de compra. Pagos aún no habilitados.' : 'Ingresa una cantidad entera entre 1 y 10.';
   if (!valid) { document.querySelector('#producto').scrollIntoView(); quantity.focus(); return; }
   bagQuantity += count;
   document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
+  document.querySelector('#bag-subtotal').textContent = clp.format(bagQuantity * 39990);
   bagDialog.showModal();
 }));
 bagDialog.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => bagDialog.close()));

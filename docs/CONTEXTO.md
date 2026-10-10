@@ -5,7 +5,8 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 ## Estado vigente
 
 - Marketing cuenta con un cuaderno rellenable y 80 skills agrupadas en marketing, benchmark y contenido. Entregables y comprobaciones en el [cierre de preparación de marketing de Gabo](tareas/2026-09-28-marketing-cuaderno-skills-gabo.md), aprobado para publicación en Git.
-- Hay cuatro propuestas web enlazadas desde el [README](../README.md). Web 4 es la principal: tipografía de Web 1, fotografías oficiales, instalación y dos funciones integradas, calculadora por hogar y carrusel de reseñas de ejemplo. El cierre de Alonso está en [`tareas/2026-10-09-principal-alonso.md`](tareas/2026-10-09-principal-alonso.md). El material 3D sigue aplazado.
+- Hay cuatro propuestas web enlazadas desde el [README](../README.md). Web 4 es la principal: tipografía de Web 1, fotografías oficiales, instalación y dos funciones integradas, calculadora por hogar y carrusel de reseñas de ejemplo. El cierre de Alonso está en [`tareas/2026-10-09-principal-alonso.md`](tareas/2026-10-09-principal-alonso.md). Existe un visor 3D local independiente aprobado visualmente por Gabo, incluido en el alcance de publicación de este cierre.
+- Opción 4 tiene hero con spotlight sin foco visible, franja verde debajo de la hero, CTA final compacto y pasos de uso con selección enmarcada. Banner panorámico de 2048 × 768 sin pérdida; cierre aprobado por Gabo para publicación. Detalle en el [cierre de Gabo del 10 de octubre](tareas/2026-10-10-opcion-4-hero-cta-pasos-gabo.md).
 - Se desarrollaron cinco propuestas de ecommerce de producto único; la Opción 04 queda recomendada como base transaccional y la Opción 05 conserva una variación de impacto.
 - Las decisiones y entregables están documentados en [`tareas/2026-09-20-ecommerce-producto-unico.md`](tareas/2026-09-20-ecommerce-producto-unico.md).
 - La identidad visual es provisional: azul eléctrico, lima ácido, negro y blanco cálido.
@@ -17,8 +18,13 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 ## Pendientes
 
 - Completar y validar el cuaderno de marketing antes de definir la identidad, el tono y el plan editorial de Instagram; preparar las integraciones externas cuando se necesiten.
-- Ajustar alturas y recorrido por secciones en computador, compactar la ficha de compra y optimizar la composición móvil; tareas pendientes, no implementadas.
-- Confirmar precio y contenido de la caja; la compatibilidad comunicada requiere tapa y asiento desmontables. No se incluyen menciones a garantía en la principal.
+- Próxima revisión de Web 4, en este orden indicado por Gabo:
+  1. Revisar solución/cómo usar y analizar cambios de diseño y estructura.
+  2. Mejorar el CTA.
+  3. Mejorar reseñas.
+  4. Mejorar la sección de gasto por rollo.
+  5. Después de lo anterior, revisar textos e imágenes; usar la skill `copywriting` para los textos.
+- Web 4 muestra $39.990 por PopoWash e instalación opcional en Santiago por $15.000 adicionales, según indicación de Gabo del 10 de octubre. Su compra está unificada en un CTA compacto antes del footer. Confirmar contenido de la caja; la compatibilidad comunicada requiere tapa y asiento desmontables. No se incluyen menciones a garantía en la principal.
 - Desarrollar la propuesta de logo solicitada y revisar el protocolo de postventa que tiene Fabián.
 - Validar la propuesta de garantías para ecommerce y revisar los problemas reportados de acumulación de sarro/mugre y goteo al cerrar la perilla.
 - Definir pagos, despacho, cambios, devoluciones y soporte.

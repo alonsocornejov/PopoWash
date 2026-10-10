@@ -1,0 +1,9 @@
+# Retoque del banner
+
+Modo: ImageGen integrado, edición con referencia local `hero-spotlight-azul-sin-foco.png`. Esa iteración intermedia se conserva localmente y no forma parte de la publicación; el resultado final y su original están incluidos.
+Salida: `hero-spotlight-detalle.png` y conversión WebP sin pérdida (sin redimensionar).
+Dimensiones devueltas: 2048 × 768. El tamaño 3840 × 1440 solicitado en el prompt no fue entregado; no presentar el archivo como 4K.
+
+## Prompt
+
+Retouch the supplied banner photograph to professional polished smooth product photography quality. Preserve the exact framing, 8:3 wide aspect ratio, the position of the bidet, all dimensions and orientation. VERY IMPORTANT: the white plastic currently has angular polygon flat shading everywhere. Replace those triangular facets on the curved left arm, cylindrical handle, attachment discs and nozzle housing with continuous physically smooth glossy white ABS molded plastic surfaces, photographic light gradients and fluid broad specular highlights. The handle is a smooth straight cylindrical rounded object with a broad softbox highlight, NOT flat angular faces, NOT polygon planes, NOT crystalline reflections. This is a photoreal high resolution catalog retouch, not a low polygon render. Keep identical silhouette, straight handle pointing down-left at image left of the bidet, two discs and their slots, knob ring and tiny markings. Do not move, rotate or redesign the product. Preserve vivid electric cobalt blue background #3155ff light pool with deep navy on empty left half. Preserve large overhead softbox lighting and white highlights but NO visible light fixture or white shape at top. No text. No pedestal. Output highest available native resolution, ideally 3840 x 1440. Eliminate jagged edges and compression artifacts.

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PopoWash · Modelo 3D</title>
+<link rel="stylesheet" href="viewer.css">
+<script type="importmap">{"imports":{"three":"../assets/vendor/three.module.min.js","three/examples/jsm/":"../assets/vendor/addons/"}}</script></head>
+<body>
+<header><a href="../" aria-label="Volver a la opción 4">POPO<span>WASH</span></a><span class="tag">ESTUDIO DEL PRODUCTO · 3D</span></header>
+<main>
+ <section class="intro"><p class="eyebrow">MÍRALO DESDE OTRO ÁNGULO</p><h1>Tu PopoWash.<br>En cada detalle.</h1><p>Gíralo, acércate y explora sus piezas.</p></section>
+ <div id="studio" aria-label="Vista interactiva del bidet PopoWash"><img class="fallback" src="../assets/01-estudio-giro-000.png" alt="Bidet PopoWash blanco, con mando al lado izquierdo"><p id="status" role="status">Cargando modelo…</p></div>
+ <aside><p class="eyebrow">EXPLORAR</p><div class="views"><button data-view="front" aria-pressed="true">Frente</button><button data-view="left" aria-pressed="false">Izquierda</button><button data-view="rear" aria-pressed="false">Reverso</button><button data-view="detail" aria-pressed="false">Mando</button></div>
+ <button id="explode" class="primary" aria-pressed="false">Separar piezas</button>
+ <button id="reset">Restablecer vista</button>
+ <label for="parts">Seleccionar una pieza</label><select id="parts"><option value="">Producto completo</option></select>
+ <p id="part-info" aria-live="polite">Arrastra para girar. Usa la rueda o dos dedos para acercarte.</p></aside>
+ <footer>Reconstrucción visual a partir de fotografías. Proporciones relativas; las caras ocultas y las marcas impresas son aproximadas.</footer>
+</main>
+<script type="module" src="viewer.js"></script></body></html>

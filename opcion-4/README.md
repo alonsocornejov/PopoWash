@@ -32,7 +32,7 @@ Probados en navegador: cambios de foto, pausa de reseñas, cálculo y validació
 
 Lighthouse se intentó con `pnpm dlx lighthouse@12.8.2`, pero no pudo arrancar por `ERR_MODULE_NOT_FOUND: lighthouse-logger` en el entorno de ejecución. No se reportan puntuaciones Lighthouse ni métricas de Core Web Vitals como verificadas.
 
-El trabajo secundario 3D está en `model/`; su estado y limitaciones se documentan allí. El usuario decidió aplazarlo para revisar primero la web con fotografías.
+El modelo 3D está en `model/`, con visor independiente y documentación de sus límites. Gabo aprobó su resultado visual y pidió incluirlo en la publicación del cierre del 10 de octubre de 2026.
 
 ## Supuestos del 8 de octubre de 2026
 
@@ -63,3 +63,17 @@ Se retiró el asterisco del hero. Según la condición de montaje confirmada por
 Se retiraron las menciones a garantía de la ficha comercial, el FAQ y el pie de página, sin sustituirlas por un aviso.
 
 Imagen de «Instala una vez» corregida con ImageGen integrado: impresión del logo y marcas de control a partir de la foto frontal oficial, conservando la escena. Archivo `assets/instalacion-logo-popowash.png`, versión WebP y prompt `assets/PROMPT-instalacion-logo.md`. La imagen sigue siendo ilustrativa.
+
+## Hero con spotlight · 10 de octubre de 2026
+
+Se integró la foto adjunta elegida por Gabo como banner completo, con el producto grande a la derecha y el texto vigente a la izquierda. Fondo adaptado al azul de marca `#3155ff` con ImageGen integrado. En la revisión posterior se retiró el foco blanco del borde superior conservando la iluminación y los reflejos. La versión final publicada es `assets/hero-spotlight-detalle.png`, su WebP para la landing y `assets/PROMPT-hero-detalle.md`. En móvil, el producto aparece bajo el texto, completo y sin superposición. Se actualizó también Web 4 en el comparador, conservando las otras propuestas.
+
+La compra se unificó en un único CTA justo antes del footer: mensaje a la izquierda y tarjeta de precio a la derecha, tomando como referencia la estructura de Web 1. Producto a $39.990 CLP, instalación opcional en Santiago por $15.000 adicionales y despacho por calcular, según lo solicitado por Gabo. La sección anterior de compra y el CTA duplicado fueron sustituidos por este bloque. Los enlaces `#producto` llevan al CTA final y se conserva `#comprar-final`. La bolsa sigue siendo una vista previa sin pagos; muestra el subtotal de productos y mantiene la instalación separada. FAQ sincronizada con estos precios. Comprobados subtotal para dos unidades ($79.980) y rechazo de cantidad cero. El CTA ocupa unos 552 px a 1280 px de ancho.
+
+## Nitidez y recorrido · 10 de octubre de 2026
+
+Hero retocado con ImageGen conservando encuadre, orientación y luz; archivo `assets/hero-spotlight-detalle.webp` exportado sin pérdida desde el PNG. Resolución nativa 2048 × 768 (panorámica), no 3840 × 1440: el generador no entregó el tamaño solicitado. Cubre el ancho de una pantalla Full HD sin ampliar la imagen en escritorio. Las versiones anteriores se conservan solo localmente, fuera de esta publicación.
+
+La franja verde se movió inmediatamente después del hero. Instalación y uso conserva toda su explicación, con título horizontal, dos columnas y foto de altura estable. El paso activo lleva fondo translúcido, borde claro y acento lateral; selección manual pausa la secuencia. Avance automático cada seis segundos, con pausa y respeto por movimiento reducido.
+
+Revisión en navegador: sección de 611 px a 1280 × 720, completamente visible desde su enlace; 637 px en un marco de 1920 × 1080. Marcos móviles de 390 y 320 px sin desborde horizontal (375 y 305 px útiles con scrollbar). Selección manual, fotografía correspondiente y pausa comprobadas. Sin errores de consola en la landing.

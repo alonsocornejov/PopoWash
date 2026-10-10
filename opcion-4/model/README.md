@@ -1,13 +1,19 @@
-# Modelo 3D en preparación
+# PopoWash · modelo 3D
 
-El usuario pidió el 19 de septiembre de 2026 revisar primero la landing y dejar el 3D para después. **No está integrado a la landing y no está aprobado como modelo terminado.**
+Visor independiente: `opcion-4/model/index.html`. Servir la raíz del proyecto por HTTP y abrir `/opcion-4/model/`; los módulos ES requieren HTTP. La landing conserva su banner actual.
 
-Se conservan el análisis de las referencias, inventario de detalles, especificación, evidencias estimadas de materiales y primera fábrica procedural generada con img2threejs. La especificación pasó `validate_sculpt_spec.py --strict-quality` antes de generar código.
+Reconstrucción procedural aproximada a partir de las fotografías originales 000, 045 y 180, retomada el 9 de octubre de 2026. Mango recto a la izquierda, discos con ranuras abiertas, carcasa central, dos boquillas, plástico blanco y collar metálico. Las caras ocultas, medidas relativas y marcas impresas son aproximadas. El pequeño logotipo está recreado; los parámetros de material y la iluminación son estimaciones.
 
-La primera revisión de geometría (`blockout.png`) falló el diagnóstico de silueta: el render estaba sobreexpuesto y la máscara de fondo no medía bien el objeto. `blockout-v2.png` ajusta exposición y cámara, pero **no ha pasado una nueva validación**. Los bordes, ranuras, unión del brazo y boquillas requieren refinamiento; no se completaron las pasadas estructural, material, interacción ni optimización.
+El visor permite girar con ratón o gestos, acercarse, seleccionar mediante clic o lista, cambiar entre cuatro vistas y separar/unir nueve piezas. Acepta flechas del teclado. No usa animación automática. Si WebGL no está disponible conserva una fotografía alternativa.
 
-`review.html` es un visor técnico provisional, no una sección comercial. `createBidet.ts` es la fuente generada y refinada; `createBidet.js` es la versión sin tipos para navegador. Usa Three.js 0.180.0 y las copias locales bajo `../assets/vendor/`.
+`createBidet.ts` es la fábrica generada; `createBidet.js` su versión sin tipos para navegador. `refineGeometry.js` aplica los refinamientos documentados en `bidet-spec.json`; `refine-source.mjs` los vuelve a conectar después de regenerar. `viewer.js` implementa la interacción. Three.js 0.180.0 y doce módulos auxiliares están bajo `../assets/vendor/`, con licencia MIT: el visor no necesita CDN ni `node_modules` en producción.
 
-Para retomar, ejecutar primero `forge/next.py --state opcion-4/model/state.json` desde la raíz del repositorio, resolviendo `forge/` desde `.agents/skills/img2threejs/`. El estado y las revisiones de `bidet-spec.json` conservan lo validado y lo pendiente. Las coordenadas son relativas: no usar el modelo para fabricación, instrucciones de instalación ni comprobación de compatibilidad.
+Se completaron las ocho pasadas de img2threejs, con comparación visual y vistas de giro. Consultar el flujo con `forge/next.py --state opcion-4/model/state.json opcion-4/model/bidet-spec.json`, resolviendo `forge/` desde `.agents/skills/img2threejs/`. `state.json` es la autoridad; para ejecutar las verificaciones de plugins se usó una copia temporal de lectura del estado bajo `tmp/popowash-3d-gates/.img2threejs/`. No hubo plugins de dominio aplicables ni se seleccionó un formato adicional de exportación.
 
-No cambiar la landing para mostrar esta primera malla sin completar la revisión y el visor accesible con alternativa fotográfica.
+Validación: 33.966 triángulos, 14 llamadas de dibujo, renderizado bajo demanda, nueve piezas con pivotes y ocho sockets. `interaction-tests.json` registra clic real, separación, selección, reset, vistas, teclado y móvil: sin errores ni solicitudes a `node_modules`. `part-coverage.json` pasa sin errores ni advertencias. `self-intersection.json` no detecta cruces en una muestra de 1.036 de 79.234 vértices; no es una prueba exhaustiva. Colisiones y destrucción son metadatos para acciones futuras, no física activa.
+
+Las capturas completas se conservan localmente; las comparaciones usan escala uniforme y traslación para igualar el encuadre, sin deformar geometría. Los últimos diagnósticos usan copias a 384px, porque sus métricas internas operan a 64px, mientras que la inspección visual usa capturas a 1000px. El comparador de materiales pasó; el cromado conserva diferencias en microestructura bajo iluminación distinta. No se afirma una réplica exacta ni apta para fabricación o validación de instalación.
+
+Gabo aprobó el resultado visual y pidió incluir este modelo en la publicación del cierre del 10 de octubre. Se proponen el visor, fuentes de construcción y refinamiento, especificación, estado y evidencias de cierre, registros de interacción y dependencias locales. Las series exploratorias de ángulos, pedestales y banners se conservan solo localmente. El manifiesto exacto está en `../../docs/tareas/2026-10-10-opcion-4-archivos-gabo.txt`.
+
+En este cierre se comprobaron las 17 dependencias del visor y la sintaxis JavaScript; el registro de pruebas de interacción corresponde al desarrollo anterior, no a una nueva ejecución visual. Gabo autorizó su publicación junto con la Opción 4 mediante «Aprobado, sube a git» el 10 de octubre de 2026.
