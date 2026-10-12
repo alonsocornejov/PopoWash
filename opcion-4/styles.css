@@ -42,33 +42,33 @@
 @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 
 /* Apply the full heading treatment of Web 1, including titles outside h1–h3. */
-h1,h2,h3,.step strong,.confidence strong,.receipt-top,.purchase-info dt,.faq-list summary{
+h1,h2,h3,.step strong,.confidence strong,.receipt-top,.purchase-info dt{
   font-family:var(--display);font-weight:400;font-synthesis:none;text-transform:uppercase;
 }
 h1,h2{letter-spacing:-.055em}
 .hero h1{letter-spacing:-.055em}
-h3,.step strong,.confidence strong,.receipt-top,.purchase-info dt,.faq-list summary{letter-spacing:normal}
+h3,.step strong,.confidence strong,.receipt-top,.purchase-info dt{letter-spacing:normal}
 
 /* Web 1 uses bold display headings and regular display FAQ prompts. */
 h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
 
 /* PDF direction: preserve Web 1 lettering and color blocks, simplify the reading path. */
 .hero{position:relative;isolation:isolate;overflow:hidden;padding-top:0;background:#030a35}
-.hero-stage{position:relative;isolation:isolate}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:.43fr .57fr;gap:0;align-items:center;min-height:clamp(460px,37.5vw,660px);padding-block:40px;pointer-events:none}
+.hero-stage{position:relative;isolation:isolate;background:#030a35}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:.43fr .57fr;gap:0;align-items:center;min-height:clamp(420px,37.5vw,760px);padding-block:40px;pointer-events:none}
 .hero-copy{width:100%;padding:0;min-width:0}
 .hero-copy{pointer-events:auto}
-.hero-visual{position:absolute;inset:0;z-index:0;min-width:0}
+.hero-visual{position:absolute;inset:0;z-index:0;display:block;min-width:0}
 .hero-product{width:100%;height:100%;object-fit:cover;object-position:center;filter:none}
-.hero h1{font-size:clamp(40px,3.7vw,62px);white-space:normal;line-height:1.08;text-wrap:balance}
-.hero-copy>p{font-size:17px;margin:24px 0 28px}
+.hero h1{font-size:clamp(36px,3.5vw,52px);white-space:normal;line-height:1.08;text-wrap:balance}
+.hero-copy>p{font-size:18px;line-height:1.55;max-width:35ch;margin:24px 0 28px}
 .hero-actions{gap:24px}
 .hero-actions .button{box-shadow:none;border-color:var(--lime)}
 .hero-bottom{margin-top:0;border-color:#ffffff50;padding-block:20px}
-.campaign{background:var(--lime);text-align:center;padding:140px 0;min-height:calc(100svh - 80px);display:grid;align-items:center;overflow:hidden}
-.campaign>.wrap{width:min(1180px,calc(100% - 40px))}
-.campaign h2{font-size:clamp(60px,10vw,145px);max-width:1050px;margin:0 auto;line-height:.93;letter-spacing:-.055em}
-.campaign p{font-size:22px;font-weight:700;line-height:normal;margin:1em 0}
+.campaign{background:var(--lime);padding-block:36px;overflow:hidden}
+.campaign-inner{display:flex;align-items:center;justify-content:space-between;gap:48px}
+.campaign h2{font-size:clamp(30px,3.4vw,46px);line-height:1.05;letter-spacing:-.045em}
+.campaign p{font-size:18px;font-weight:600;line-height:1.5;margin:0;padding-left:32px;border-left:2px solid #11131840}
 .how{padding-block:56px}
 .how-grid{grid-template-columns:1fr 1fr;gap:56px;margin-top:0;align-items:stretch}
 .how h2{font-size:clamp(36px,3.5vw,48px);line-height:1.05}
@@ -96,7 +96,8 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
 .faq h2{font-size:clamp(36px,4.4vw,60px)}
 .faq-heading p{font-size:18px;margin-top:18px}
 .faq-list{max-width:880px;margin:36px auto 0}
-.faq-list summary{font-size:clamp(16px,1.7vw,21px);line-height:1.4;padding-block:24px;min-height:68px}
+.faq-list summary{font-family:var(--body);font-size:20px;font-weight:650;font-synthesis:none;text-transform:none;letter-spacing:-.015em;line-height:1.45;padding-block:22px;min-height:68px;gap:24px}
+.faq-list summary>span{font-family:var(--body);font-size:25px;font-weight:400;line-height:1;flex-shrink:0}
 .faq details p{font-size:17px;line-height:1.7;max-width:70ch;margin:0 32px 24px 0}
 .final-cta{background:#14265c;color:white;padding-block:48px}
 .cta-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1120px}
@@ -126,27 +127,26 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
 .footer-bottom{padding-bottom:24px}
 .footer .review-archive>summary{font-size:12px;padding-block:16px}
 @media(min-width:1600px){.hero-grid{min-height:min(37.5vw,760px)}}
-@media(min-width:768px) and (max-width:1100px){.hero-grid{min-height:420px}.hero h1{font-size:clamp(32px,4vw,44px)}.hero-copy>p{font-size:15px}.hero-actions{gap:16px}.hero-actions .button{font-size:12px;gap:12px;padding-inline:18px}.how-grid{gap:28px}.how h2{font-size:36px}.step{padding:12px;gap:10px}.step strong{font-size:16px}.step>span>span{font-size:13px}}
+@media(min-width:768px) and (max-width:1100px){.hero-grid{min-height:420px;grid-template-columns:.45fr .55fr}.hero h1{font-size:clamp(27px,3.55vw,39px)}.hero-copy>p{font-size:16px;max-width:29ch}.hero-actions{gap:14px}.hero-actions .button{font-size:12px;gap:12px;padding-inline:18px}.hero-actions .text-link{font-size:12px;gap:10px}.hero-visual{left:43%;display:flex;align-items:center}.hero-product{height:auto;object-fit:contain;mask-image:linear-gradient(to right,transparent,#000 8%),linear-gradient(to bottom,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}.how-grid{gap:28px}.how h2{font-size:36px}.step{padding:12px;gap:10px}.step strong{font-size:16px}.step>span>span{font-size:13px}}
 @media(max-width:767px){
  .hero-grid{min-height:0;grid-template-columns:1fr;padding:36px 0 24px;gap:24px}.hero-copy{width:100%;max-width:520px}
- .hero h1{font-size:clamp(28px,7.3vw,52px)}.hero-copy>p{font-size:15px}
- .hero-visual{position:relative;inset:auto;height:60vw}
- .hero-product{height:100%;object-position:right center;filter:none}
+ .hero h1{font-size:clamp(28px,7.3vw,52px)}.hero-copy>p{font-size:17px;max-width:33ch;margin:20px 0 24px}
+ .hero-visual{position:relative;inset:auto;width:100%;max-width:680px;margin-inline:auto;aspect-ratio:3/2}
+ .hero-product{height:100%;object-fit:contain;object-position:center;filter:none;mask-image:linear-gradient(to bottom,transparent,#000 8%,#000 92%,transparent)}
  .hero-bottom{padding-block:16px;flex-direction:column;gap:8px;font-size:11px}
- .campaign{padding-block:82px;min-height:calc(100svh - 72px)}
+ .campaign{padding-block:28px}.campaign-inner{display:block}.campaign h2{font-size:clamp(30px,7.8vw,40px)}.campaign p{font-size:16px;border:0;padding:0;margin-top:18px}
  .how{padding-block:48px}.how-grid{grid-template-columns:1fr;gap:28px}.how h2{font-size:clamp(32px,9vw,42px)}
  .how .section-intro{font-size:15px}.step{padding:14px 12px}.step strong{font-size:17px}.step>span>span{font-size:14px}
  .step-playback{gap:12px}.step-playback .pause-button{font-size:12px;padding-inline:12px}.step-visual img{height:auto;min-height:0;aspect-ratio:1.1}
  .problem h2{font-size:clamp(36px,10vw,48px)}
  .faq{padding-block:48px}.faq-heading{text-align:left}.faq h2{font-size:clamp(32px,9vw,42px)}.faq-heading p{font-size:17px}
- .faq-list{margin-top:28px}.faq-list summary{font-size:16px;padding-block:20px}.faq details p{font-size:16px;margin-right:0}
+ .faq-list{margin-top:28px}.faq-list summary{font-size:18px;padding-block:20px;gap:16px}.faq details p{font-size:16px;margin-right:0}
  .final-cta{padding-block:36px 44px}.cta-grid{grid-template-columns:1fr;gap:28px;max-width:520px}.final-cta h2{font-size:clamp(32px,8vw,44px)}.cta-copy>p{font-size:16px;margin-top:16px}
  .price-card{padding:24px 20px;border-radius:20px;box-shadow:6px 6px 0 var(--lime)}.price-card .price{font-size:clamp(36px,12vw,46px);margin:14px 0 18px}.price-options{margin-bottom:18px}.price-options>div{font-size:13px;padding-block:11px}
  .buy-actions{grid-template-columns:62px 1fr;gap:12px}.buy-actions .button{font-size:12px;padding-inline:12px}.buy-actions .button span{display:none}
  .footer{padding-top:36px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px 24px}.footer-brand{grid-column:1/-1}.footer-grid h3{font-size:16px}.footer-grid a:not(.brand){font-size:14px}.footer-grid p{font-size:13px}
 }
 @media(max-width:374px){.hero h1{font-size:28px}.hero-actions{gap:16px}.hero-actions .button{padding-inline:16px}.navigation .button-small{font-size:11px;padding-inline:10px;gap:8px}.step-playback{align-items:flex-start}.step-playback p{max-width:140px}}
-@media(max-width:520px){.campaign>.wrap{width:calc(100% - 26px)}}
 @media(min-width:768px) and (max-height:820px){
  .how{padding-block:32px}.how-grid{gap:40px}.how h2{font-size:38px}
  .how .section-intro{font-size:14px;margin-top:14px}.steps{margin-top:18px}
@@ -194,3 +194,47 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
  .how .step-visual img{height:auto;aspect-ratio:1.12}.how .step-visual figcaption{min-height:0}
 }
 @media(prefers-reduced-motion:reduce){.how .step{transition:none}}
+
+/* On desktop, the first screen is entirely the hero, including its benefit rail. */
+@media(min-width:1101px){
+ .hero{min-height:calc(100svh - 80px);display:flex;flex-direction:column}
+ .hero-stage{flex:1;display:flex;flex-direction:column}
+ .hero-grid{flex:1;min-height:0}
+ .hero-visual::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 73% 39%,#3155ff 0%,#1435cd 30%,transparent 67%),linear-gradient(90deg,#030a35 0%,#071653 44%,#1435cd 100%)}
+ .hero-product{position:relative;object-fit:contain;mask-image:linear-gradient(to bottom,transparent,#000 10%,#000 90%,transparent)}
+ .hero-bottom{flex:none}
+}
+
+/* Narrative sequence: problem, visible benefits, use, then visual demonstration. */
+.truth{position:relative;display:flex;align-items:stretch;min-height:clamp(560px,40vw,730px);background:#05090f;color:white;overflow:hidden}
+.truth-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center}
+.truth-layout{position:relative;z-index:1;display:flex;justify-content:flex-end;align-items:center;min-height:inherit;padding-block:64px}
+.truth-copy{width:min(450px,40%);padding:24px 0 24px 12px}
+.truth-copy .section-tag{font-size:12px;color:var(--lime)}
+.truth-copy h2{font-size:clamp(50px,5.1vw,78px);line-height:1.04;letter-spacing:-.045em;text-transform:uppercase;margin:22px 0 24px}
+.truth-copy p{max-width:35ch;font-size:clamp(18px,1.45vw,22px);line-height:1.55;color:#f0f3ff}
+
+/* Compact planning marker; full solution design is deferred. */
+.solution-placeholder{background:var(--paper);padding-block:32px;border-bottom:1px solid var(--line)}
+.solution-reserve{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.solution-placeholder h2{font-size:28px;line-height:1.15}
+.solution-placeholder p{font-size:15px;line-height:1.5;color:var(--muted)}
+.solution-placeholder p span{font-size:13px}
+.truth{background:#000}
+@media(max-width:1100px){
+ .truth{display:block;min-height:0}
+ .truth-photo{position:relative;width:100%;height:auto;aspect-ratio:1.8;object-position:left center}
+ .truth-layout{display:block;min-height:0;padding-block:30px 62px}
+ .truth-copy{width:min(620px,100%);padding:0}
+ .truth-copy h2{font-size:clamp(44px,6.3vw,68px);margin-block:20px}
+}
+@media(max-width:767px){
+ .truth-photo{aspect-ratio:1.4}
+ .truth-layout{padding-block:30px 58px}
+ .truth-copy h2{font-size:clamp(43px,10vw,58px)}
+ .truth-copy p{font-size:17px;max-width:38ch}
+ .solution-placeholder{padding-block:24px}
+ .solution-reserve{display:block}
+ .solution-placeholder h2{font-size:25px;margin-bottom:10px}
+ .solution-placeholder p{font-size:14px}
+}

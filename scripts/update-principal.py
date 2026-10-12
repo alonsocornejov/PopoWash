@@ -21,7 +21,8 @@ def local(ref, parent):
     return path
 
 def data_url(path):
-    mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+    # Windows MIME registration does not always include WebP.
+    mime = "image/webp" if path.suffix.lower() == ".webp" else (mimetypes.guess_type(path.name)[0] or "application/octet-stream")
     return "data:" + mime + ";base64," + base64.b64encode(path.read_bytes()).decode()
 
 def attribute(tag, name):
@@ -61,6 +62,19 @@ def build():
         target = local(match[2], SOURCE.parent)
         return match[1] + data_url(target) + match[3] if target else match[0]
     text = re.sub(r"(<(?:img|source)\b[^>]*\bsrc=[\'\"])([^\'\"]+)([\'\"])", image, text, flags=re.I)
+    # Preserve art direction in the standalone comparator, including local srcset.
+    # Candidates here are project file paths with width/density descriptors.
+    def srcset(match):
+        candidates = []
+        for candidate in match[2].split(","):
+            parts = candidate.strip().split()
+            if not parts:
+                continue
+            target = local(parts[0], SOURCE.parent)
+            parts[0] = data_url(target) if target else parts[0]
+            candidates.append(" ".join(parts))
+        return match[1] + ", ".join(candidates) + match[3]
+    text = re.sub(r"(<(?:img|source)\b[^>]*\bsrcset=[\'\"])([^\'\"]+)([\'\"])", srcset, text, flags=re.I)
     text = text.replace('href="../"', 'data-proposal="1" href="#"')
     return text
 

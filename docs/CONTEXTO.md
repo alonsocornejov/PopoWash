@@ -6,10 +6,12 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 
 - Marketing cuenta con un cuaderno rellenable y 80 skills agrupadas en marketing, benchmark y contenido. Entregables y comprobaciones en el [cierre de preparación de marketing de Gabo](tareas/2026-09-28-marketing-cuaderno-skills-gabo.md), aprobado para publicación en Git.
 - Hay cuatro propuestas web enlazadas desde el [README](../README.md). Web 4 es la principal: tipografía de Web 1, fotografías oficiales, instalación y dos funciones integradas, calculadora por hogar y carrusel de reseñas de ejemplo. El cierre de Alonso está en [`tareas/2026-10-09-principal-alonso.md`](tareas/2026-10-09-principal-alonso.md). Existe un visor 3D local independiente aprobado visualmente por Gabo, incluido en el alcance de publicación de este cierre.
-- Opción 4 tiene hero con spotlight sin foco visible, franja verde debajo de la hero, CTA final compacto y pasos de uso con selección enmarcada. Banner panorámico de 2048 × 768 sin pérdida; cierre aprobado por Gabo para publicación. Detalle en el [cierre de Gabo del 10 de octubre](tareas/2026-10-10-opcion-4-hero-cta-pasos-gabo.md).
+- Opción 4 conserva el hero con spotlight sin foco visible, el CTA final compacto y pasos con selección enmarcada del [cierre de Gabo del 10 de octubre](tareas/2026-10-10-opcion-4-hero-cta-pasos-gabo.md). La iteración posterior actualiza su recorrido y recursos según el cierre del 12 de octubre.
 - Se desarrollaron cinco propuestas de ecommerce de producto único; la Opción 04 queda recomendada como base transaccional y la Opción 05 conserva una variación de impacto.
 - Las decisiones y entregables están documentados en [`tareas/2026-09-20-ecommerce-producto-unico.md`](tareas/2026-09-20-ecommerce-producto-unico.md).
 - La identidad visual es provisional: azul eléctrico, lima ácido, negro y blanco cálido.
+- Gabo confirmó el 11 de octubre que la personalidad de la landing es humorística, disruptiva y juvenil. Las líneas de familias, personas mayores e instituciones son exploraciones futuras, no la voz que debe adoptar ahora Opción 4. Prioridad: diseño y narrativa antes de habilitar compra; solución y paso a paso se reconstruirán en otra tarea.
+- Estado local de Opción 4: hero responsive que ocupa la primera pantalla de escritorio → problema con papel iluminado y bóxer sobre negro, sin bruma → solución provisional compacta → tres pasos → reseñas de ejemplo → gasto en papel → FAQ → compra. Se retiraron la franja verde intermedia, el remate separado y «Míralo en tu WC». Solución y pasos se rediseñarán después; faltan testimonios reales. Auditorías, decisiones, imágenes finales y pruebas en el [cierre de Gabo del 12 de octubre](tareas/2026-10-12-opcion-4-hero-responsive-y-auditoria-gabo.md), aprobado por Gabo para publicación en Git.
 - Hay propuestas iniciales de logotipo en [`branding/`](../branding/README.md).
 - Se incorporaron cinco recursos de diseño, revisión web y 3D como skills del proyecto. El detalle está en [`tareas/2026-09-19-integracion-skills.md`](tareas/2026-09-19-integracion-skills.md). Sus usos y requisitos están en [`SKILLS.md`](SKILLS.md). La instalación no cambia las propuestas web ni confirma la identidad visual.
 - El cierre del hero de Opción 4 está documentado en [`tareas/2026-09-21-opcion-4-hero-gabo.md`](tareas/2026-09-21-opcion-4-hero-gabo.md).
@@ -17,6 +19,7 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 
 ## Pendientes
 
+- Todas las debilidades de la auditoría del 11 de octubre están convertidas en tareas en [PENDIENTES-WEB4.md](PENDIENTES-WEB4.md), con el alcance actual, el trabajo posterior de diseño y la preparación comercial separados. Esta lista incorpora las aclaraciones de Gabo sobre humor, reseñas disponibles, CTA de demostración y FAQ pendiente.
 - Completar y validar el cuaderno de marketing antes de definir la identidad, el tono y el plan editorial de Instagram; preparar las integraciones externas cuando se necesiten.
 - Próxima revisión de Web 4, en este orden indicado por Gabo:
   1. Revisar solución/cómo usar y analizar cambios de diseño y estructura.
