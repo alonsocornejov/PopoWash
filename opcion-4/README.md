@@ -2,50 +2,23 @@
 
 Landing estática independiente de las opciones 1, 2 y 3. Abrir `/opcion-4/` desde un servidor estático en la raíz del repositorio. No necesita compilación para la landing.
 
-## Recorrido vigente · 12 de octubre de 2026
-
-Orden: hero → problema concreto → solución provisional compacta → tres pasos → carrusel de reseñas de ejemplo → gasto en papel → FAQ → compra.
-
-Por indicación de Gabo, el problema ahora usa [`assets/problema-banner-papel-boxer-negro.jpg`](assets/problema-banner-papel-boxer-negro.jpg): fondo negro, papel iluminado y sin bruma azul. El [PNG independiente](assets/problema-banner-papel-boxer-negro.png) y la [primera montaña de papel](assets/problema-montana-papel-original.jpg) están guardados. Copy: «Seamos sinceros / El papel no lava». [Prompt de la edición](assets/PROMPT-problema-negro.md).
-
-Solución queda como una franja pequeña de planificación; su diseño y el paso a paso se resolverán después. Se restauró el carrusel original después de los pasos, con estrellas, pausa y rótulos de ejemplo, pendiente de testimonios reales. Se retiró «Míralo en tu WC». La bolsa sigue siendo una demostración local.
-
-Las secciones fechadas a continuación registran iteraciones anteriores; sus descripciones de orden y pendientes no sustituyen este recorrido vigente.
-
-## Ajuste de escritorio y propuestas del problema · 12 de octubre de 2026
-
-El hero ocupa como mínimo el alto visible de escritorio bajo la navegación, incluida su línea de beneficios. Así, la franja lima siguiente no debería asomar en la primera pantalla. La imagen conserva todo el producto mediante `object-fit: contain`; un fondo azul con luz suave llena el espacio que deja el encuadre panorámico en pantallas altas. El cambio está limitado a `min-width: 1101px`; el hero móvil y tablet no se modificó. El comparador se sincronizó con la nueva regla.
-
-Se prepararon [tres banners JPG para el problema](../docs/propuestas/opcion-4-problema/README.md) y una [auditoría de la narrativa](../docs/auditorias/2026-10-12-narrativa-opcion-4.md). En ese momento los nuevos visuales y textos aún no estaban insertados; la integración final está descrita arriba.
-
-## Iteración vigente · 11 de octubre de 2026
-
-Retoque de superficies del hero con ImageGen integrado. El PNG independiente reemplaza el anterior en la misma ruta. Dos composiciones: panorámica de 2048 × 768 y compacta de 1536 × 1024; seis exportaciones WebP entre 13 y 63 KB. No se amplió artificialmente la resolución. [Prompts y archivos](assets/PROMPT-hero-detalle.md).
-
-La descripción identifica el bidet y su instalación bajo el asiento. Titular ajustado a dos líneas en los anchos revisados. “Frenazo de camión” ahora es un remate junto al problema, de unos 163 px de alto a 1265 px útiles, frente a unos 745 px de la auditoría. FAQ con preguntas en DM Sans de 20 px en escritorio y 18 px en móvil, sin mayúsculas forzadas.
-
-Comprobado en navegador: escritorio de 1280 × 720 (1265 px útiles en esta sesión) y marcos de 1920 × 1080, 820 × 1024, 390 × 844 y 320 × 844. Los marcos tienen 1905, 805, 375 y 305 px útiles. Producto completo, fuentes correctas, titular en dos líneas, selección de recursos por dispositivo y ausencia de desborde horizontal. FAQ abierto por clic y cerrado con Enter. Sin errores de consola observados. No se midieron Core Web Vitals ni conversiones.
-
-Comparador actualizado con `srcset` embebidos y MIME WebP explícito; otras cuatro propuestas preservadas. Se comprobó que reseñas, funcionamiento, calculadora, contenido del FAQ y CTA no cambiaron. Pendientes y decisiones en [PENDIENTES-WEB4.md](../docs/PENDIENTES-WEB4.md). Sin commit ni push de esta iteración.
-
 ## Composición
 
 - Conserva azul `#3155ff`, lima `#c8ff36`, negro `#111318` y blanco cálido `#f8f7f2` de la opción 1.
-- Archivo Black en titulares de impacto; DM Sans en texto y preguntas del FAQ, estas últimas en mayúsculas normales. Fuentes alojadas localmente con licencia OFL.
-- Orden vigente: hero; problema; solución provisional compacta; tres pasos; reseñas de ejemplo; calculadora; FAQ; CTA final; footer.
+- Tipografía de Web 1: Archivo Black en mayúsculas para todos los títulos, pasos, confianza, recibo y encabezados de FAQ; DM Sans para texto, alojadas localmente con licencia OFL. Se conservan las fuentes anteriores como material histórico.
+- Orden vigente: hero; banner móvil; producto y compra con el carrusel de reseñas de ejemplo; problema «El papel no limpia»; campaña «Evita el frenazo de camión»; instalación y dos funciones integradas; calculadora; FAQ; CTA «Tu nuevo ritual de baño»; footer. El comprobador independiente y el bloque de beneficios siguen retirados. Se eliminó el bloque de confianza comercial.
 - Fotografías suministradas en PNG como originales y WebP para la página. Todos los recursos de la landing se sirven localmente.
-- El carrusel de reseñas conserva ejemplos rotulados como maqueta; se reemplazarán por testimonios autorizados. No son clientes reales.
+- Reseñas de ejemplo rotuladas, con pausa y modo estático/desplazable cuando se solicita movimiento reducido. No representan clientes reales.
 - Calculadora por hogar con el diseño original de boleta y dos columnas: personas (1–20, enteras) × 141 rollos/año × $850/rollo. Muestra gasto y ahorro anual estimados. Por petición del usuario se retiraron los supuestos visibles y el control de reducción; el cálculo interno conserva un 50% ilustrativo, no un rendimiento medido. No incluye agua ni costo del bidet. No se usa una vida útil sin confirmar.
-- Hero con producto grande, mango a la izquierda y spotlight azul sin foco visible. Original independiente `assets/hero-spotlight-detalle.png`; variante compacta `assets/hero-spotlight-compacto.png`. La página usa WebP con `picture`, `srcset` y precargas por breakpoint. Título «Tu poto merece más que papel» y descripción «El bidet que lava con agua y se instala bajo el asiento de tu WC». Logo Branding V1 provisional.
-- Los tres pasos de uso tienen selección enmarcada y avance automático cada seis segundos. Seleccionar un paso detiene el avance hasta pulsar «Reanudar pasos». Se suspende fuera de pantalla y con pestaña oculta; movimiento reducido usa avance manual.
+- Hero con el último banner de estudio azul aprobado para integrar por Alonso el 12 de octubre (`assets/hero-estudio-azul-con-logo.png` y WebP). Conserva la orientación elegida, el logo impreso y las marcas de control visibles; la edición generativa puede variar pequeños detalles de la foto original. Degradado oscuro a la izquierda y luz difusa detrás del producto a la derecha. Título, texto y botones siguen en HTML. En escritorio el banner ocupa todo el fondo; en tablet y celular se muestra debajo del texto con un encuadre que conserva el producto completo. Título «Tu poto merece más que papel» y logo Branding V1 provisional. Las imágenes anteriores se conservan como material histórico. Referencias y límites en [`assets/PROMPT-hero-estudio-azul-con-logo.md`](assets/PROMPT-hero-estudio-azul-con-logo.md).
+- Instalación y dos funciones comparten «Así funciona PopoWash»: texto a la izquierda y foto a la derecha. Todo el bloque de cada paso es seleccionable. Tres pasos automáticos cada 1,5 segundos, sin indicar el intervalo ni mostrar barra de progreso. El loop 1 → 2 → 3 → 1 continúa al pasar el mouse; seleccionar un paso lo detiene hasta pulsar «Reanudar pasos». Se suspende fuera de pantalla y con pestaña oculta; movimiento reducido usa avance manual.
 - Humor de la calculadora debajo del resultado: mensaje de dos baños y dos PopoWash para 7–15 personas, y mensaje de pensión/horas extra desde 16. Se oculta con seis personas o menos y ante entradas inválidas.
 - FAQ con la estructura de Web 1, una columna y texto más grande. Footer con navegación y ayuda; canales de contacto y redes por confirmar.
-- “Comprar Ahora” lleva al CTA final. Cantidad y “Comprar PopoWash” abren una bolsa de demostración local; no generan pedidos ni pagos. Producto a $39.990 CLP e instalación opcional en Santiago por $15.000 adicionales. Despacho, pagos, soporte y caja pendientes. La usabilidad comercial se implementará después del diseño, según Gabo.
-- Voz confirmada: humorística, disruptiva y juvenil. Público geriátrico, familias e instituciones son líneas futuras, no una indicación de suavizar la personalidad de esta landing. Ver [pendientes completos](../docs/PENDIENTES-WEB4.md).
+- “Comprar Ahora” lleva al producto. Cantidad y “Agregar a la bolsa” abren una bolsa de demostración local; no generan pedidos ni pagos. Precio, despacho, pagos, soporte y caja siguen por confirmar. La información de compatibilidad se consulta en FAQ. Video real de instalación pendiente.
 
 ## Pendiente de contenido real
 
-Definir logo definitivo; incorporar testimonios autorizados de clientes existentes; confirmar despacho y contenido de la caja, manual definitivo, vida útil, reducción real de papel, contacto y redes. Validar FAQ con Fabián. Las imágenes de uso muestran el chorro con asiento levantado como demostración; el texto indica usarlo sentado. El CTA continúa como demostración por decisión de Gabo mientras se trabaja el diseño. Revisar los pendientes restantes en [el registro de tareas](../docs/PENDIENTES-WEB4.md).
+Definir logo definitivo; testimonios autorizados; precio, despacho y contenido de la caja; manual definitivo; vida útil y reducción real de papel; canales de contacto y redes oficiales. Validar las respuestas de FAQ con Fabián. Las imágenes de uso muestran el chorro con el asiento levantado como demostración, y el texto indica usarlo sentado. Ajustar alturas y recorrido en computador y optimizar móvil, especialmente producto e instalación: estas tareas solo se midieron, no se implementaron. Véase el [cierre de Alonso](../docs/tareas/2026-10-09-principal-alonso.md).
 
 ## Imagen de instalación
 
@@ -59,7 +32,7 @@ Probados en navegador: cambios de foto, pausa de reseñas, cálculo y validació
 
 Lighthouse se intentó con `pnpm dlx lighthouse@12.8.2`, pero no pudo arrancar por `ERR_MODULE_NOT_FOUND: lighthouse-logger` en el entorno de ejecución. No se reportan puntuaciones Lighthouse ni métricas de Core Web Vitals como verificadas.
 
-El modelo 3D está en `model/`, con visor independiente y documentación de sus límites. Gabo aprobó su resultado visual y pidió incluirlo en la publicación del cierre del 10 de octubre de 2026.
+El visor 3D independiente está en `model/`, aprobado visualmente por Gabo y publicado en su cierre del 10 de octubre. Su estado y limitaciones se documentan allí; no se modifica en esta integración.
 
 ## Supuestos del 8 de octubre de 2026
 
@@ -91,16 +64,6 @@ Se retiraron las menciones a garantía de la ficha comercial, el FAQ y el pie de
 
 Imagen de «Instala una vez» corregida con ImageGen integrado: impresión del logo y marcas de control a partir de la foto frontal oficial, conservando la escena. Archivo `assets/instalacion-logo-popowash.png`, versión WebP y prompt `assets/PROMPT-instalacion-logo.md`. La imagen sigue siendo ilustrativa.
 
-## Hero con spotlight · 10 de octubre de 2026
+## Base aprobada de main · 12 de octubre de 2026
 
-Se integró la foto adjunta elegida por Gabo como banner completo, con el producto grande a la derecha y el texto vigente a la izquierda. Fondo adaptado al azul de marca `#3155ff` con ImageGen integrado. En la revisión posterior se retiró el foco blanco del borde superior conservando la iluminación y los reflejos. La versión final publicada es `assets/hero-spotlight-detalle.png`, su WebP para la landing y `assets/PROMPT-hero-detalle.md`. En móvil, el producto aparece bajo el texto, completo y sin superposición. Se actualizó también Web 4 en el comparador, conservando las otras propuestas.
-
-La compra se unificó en un único CTA justo antes del footer: mensaje a la izquierda y tarjeta de precio a la derecha, tomando como referencia la estructura de Web 1. Producto a $39.990 CLP, instalación opcional en Santiago por $15.000 adicionales y despacho por calcular, según lo solicitado por Gabo. La sección anterior de compra y el CTA duplicado fueron sustituidos por este bloque. Los enlaces `#producto` llevan al CTA final y se conserva `#comprar-final`. La bolsa sigue siendo una vista previa sin pagos; muestra el subtotal de productos y mantiene la instalación separada. FAQ sincronizada con estos precios. Comprobados subtotal para dos unidades ($79.980) y rechazo de cantidad cero. El CTA ocupa unos 552 px a 1280 px de ancho.
-
-## Nitidez y recorrido · 10 de octubre de 2026
-
-Hero retocado con ImageGen conservando encuadre, orientación y luz; archivo `assets/hero-spotlight-detalle.webp` exportado sin pérdida desde el PNG. Resolución nativa 2048 × 768 (panorámica), no 3840 × 1440: el generador no entregó el tamaño solicitado. Cubre el ancho de una pantalla Full HD sin ampliar la imagen en escritorio. Las versiones anteriores se conservan solo localmente, fuera de esta publicación.
-
-La franja verde se movió inmediatamente después del hero. Instalación y uso conserva toda su explicación, con título horizontal, dos columnas y foto de altura estable. El paso activo lleva fondo translúcido, borde claro y acento lateral; selección manual pausa la secuencia. Avance automático cada seis segundos, con pausa y respeto por movimiento reducido.
-
-Revisión en navegador: sección de 611 px a 1280 × 720, completamente visible desde su enlace; 637 px en un marco de 1920 × 1080. Marcos móviles de 390 y 320 px sin desborde horizontal (375 y 305 px útiles con scrollbar). Selección manual, fotografía correspondiente y pausa comprobadas. Sin errores de consola en la landing.
+La rama `codex/opcion-4-problema` (`b55f570`) queda integrada por avance directo en `main`. Se incorpora la montaña de papel sola, el título «El papel no limpia» y la pregunta de las manos, con sus estilos e imágenes. Se conservan los cambios de Alonso en hero, compra/reseñas, FAQ, video de instalación y medios de pago. El comparador se regenera. Alonso autorizó publicar esta versión como base compartida. Las próximas mejoras se trabajan por sección en ramas `codex/` desde `main` actualizada, conservando el resto de la página al integrar. El orden vigente está en Composición y el cierre en [`docs/tareas/2026-10-12-base-main-alonso.md`](../docs/tareas/2026-10-12-base-main-alonso.md).

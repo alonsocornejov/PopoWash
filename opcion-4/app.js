@@ -43,7 +43,7 @@ const stepImages = [
 const stepsSection = document.querySelector('#instalacion');
 const stepButtons = [...document.querySelectorAll('[data-step]')];
 const stepPause = document.querySelector('#pause-steps');
-const stepDuration = 6000;
+const stepDuration = 1500;
 let currentStep = 0;
 let stepsPaused = motionPreference.matches;
 let stepsVisible = false;
@@ -101,11 +101,11 @@ document.querySelectorAll('[data-add-to-bag]').forEach(button => button.addEvent
   const count = quantity.valueAsNumber;
   const valid = Number.isInteger(count) && count >= 1 && count <= 10;
   quantity.setAttribute('aria-invalid', String(!valid));
-  document.querySelector('#quantity-note').textContent = valid ? 'Vista previa de compra. Pagos aún no habilitados.' : 'Ingresa una cantidad entera entre 1 y 10.';
+  document.querySelector('#quantity-note').textContent = valid ? 'Vista previa de compra. Disponibilidad por confirmar.' : 'Ingresa una cantidad entera entre 1 y 10.';
   if (!valid) { document.querySelector('#producto').scrollIntoView(); quantity.focus(); return; }
   bagQuantity += count;
   document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
-  document.querySelector('#bag-subtotal').textContent = clp.format(bagQuantity * 39990);
+  document.querySelector('#bag-subtotal').textContent = `Subtotal: ${new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }).format(bagQuantity * 39990)}.`;
   bagDialog.showModal();
 }));
 bagDialog.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => bagDialog.close()));
@@ -113,3 +113,16 @@ document.querySelectorAll('a[href="#faq-compatibilidad"], a[href="#faq-condicion
   document.querySelector(link.getAttribute('href')).open = true;
   if (bagDialog.open) bagDialog.close();
 }));
+
+const installationVideoDialog = document.querySelector('#installation-video-dialog');
+document.querySelectorAll('[data-installation-video]').forEach(button => button.addEventListener('click', () => {
+  const frame = document.createElement('iframe');
+  frame.src = 'https://www.youtube.com/embed/q2sO9ERbWnE?rel=0';
+  frame.title = 'Video de instalación de PopoWash';
+  frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  frame.allowFullscreen = true;
+  installationVideoDialog.querySelector('.video-frame').replaceChildren(frame);
+  installationVideoDialog.showModal();
+}));
+installationVideoDialog.querySelector('.dialog-close').addEventListener('click', () => installationVideoDialog.close());
+installationVideoDialog.addEventListener('close', () => installationVideoDialog.querySelector('.video-frame').replaceChildren());
