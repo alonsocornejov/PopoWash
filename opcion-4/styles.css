@@ -155,20 +155,20 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
 .how .step:focus-within{outline:3px solid var(--lime);outline-offset:4px}
 .how .step-choice:focus-visible{outline:none}
 .how .step p{font-size:15px;line-height:1.5;margin-top:10px;color:#e4e9ff}
-.how .step:nth-child(2){padding-block:22px}
-.wash-functions{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px}
-.wash-function+.wash-function{border-left:1px solid #91a5ff;padding-left:24px}
-.how .wash-function h3{font-family:var(--body);font-weight:800;font-size:16px;line-height:1.25;letter-spacing:0;text-transform:none}
-.how .wash-function p{font-size:14px;line-height:1.45;margin-top:7px}
+
+
+
+
+
 .how .step-visual img{flex:none;width:100%;height:492px;min-height:0;max-height:none;aspect-ratio:auto;object-fit:cover;border-radius:var(--radius)}
 .how .step-visual figcaption{line-height:1.5;margin-top:14px;color:#e4e9ff}
 .how .installation-note{line-height:1.5;margin-top:6px;color:#e4e9ff}
 .how .step-playback{border-top:1px solid #91a5ff;margin-top:0;padding-top:16px}
-@media(min-width:768px) and (max-width:1100px){.how .how-grid{gap:28px}.how .step-visual img{height:520px}.wash-functions{gap:16px}.wash-function+.wash-function{padding-left:16px}.how .step-choice{font-size:21px}}
+@media(min-width:768px) and (max-width:1100px){.how .how-grid{gap:28px}.how .step-visual img{height:520px}.how .step-choice{font-size:21px}}
 @media(max-width:767px){
  .how .how-heading{display:block;margin-bottom:26px}.how .how-heading h2{font-size:clamp(32px,9vw,42px)}.how-heading>p{font-size:15px;max-width:none;margin-top:18px}
  .how .how-grid{gap:26px}.how .step{padding-block:18px;grid-template-columns:30px 1fr;gap:10px}.how .step-number{font-size:24px}.how .step-choice{font-size:22px}
- .wash-functions{grid-template-columns:1fr;gap:16px}.wash-function+.wash-function{border-left:0;border-top:1px solid #91a5ff;padding:16px 0 0}.how .wash-function p{font-size:15px}
+
  .how .step-visual img{height:auto;aspect-ratio:1.12}
 }
 
@@ -251,6 +251,37 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
 .payment-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:7px;padding:6px 10px;background:white;font-size:12px;line-height:1.2}
 .payment-webpay{color:#692575}.payment-mercado{color:#007eb5}
 
+/* Installation heading and its compatibility prerequisite. */
+.how .how-heading{display:block}
+.how-heading>p:not(.how-prereq){max-width:none;margin-top:18px}
+.how .how-prereq{display:flex;align-items:center;flex-wrap:wrap;gap:14px;max-width:max-content;margin-top:24px;padding:14px 18px;border:2px dotted color-mix(in srgb,var(--white) 45%,transparent);border-radius:14px;font-size:16px;color:var(--white)}
+.how-prereq b{background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:4px 12px;font:400 14px/1.4 var(--display);transform:rotate(-3deg);white-space:nowrap}
+.how-prereq a{color:var(--lime);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.how-prereq a:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+.how .step p,.how .step-visual figcaption,.how .installation-note{color:var(--white)}
+@media(max-width:767px){.how .how-prereq{width:100%;max-width:none}}
+
+/* Reference treatment for the selectable installation text cards. */
+#instalacion .steps{gap:20px}
+#instalacion .step{grid-template-columns:52px minmax(0,1fr);gap:24px;padding:24px;border:2px solid color-mix(in srgb,var(--white) 40%,transparent);border-radius:24px;background:transparent;color:var(--white)}
+#instalacion .step-number{display:grid;place-items:center;width:52px;height:52px;padding:0;border:2px solid color-mix(in srgb,var(--white) 50%,transparent);border-radius:50%;background:transparent;color:var(--white);font-size:24px}
+#instalacion .step-choice{color:inherit;font-size:26px;line-height:1.2;padding-top:8px}
+#instalacion .step p{color:inherit;font-size:18px;line-height:1.55;margin-top:14px}
+#instalacion .step.active{background:var(--paper);color:var(--ink);border-color:var(--ink);box-shadow:6px 8px 0 var(--ink)}
+#instalacion .step.active .step-number{background:var(--lime);border-color:var(--ink);color:var(--ink);transform:rotate(-8deg)}
+
+
+
+#instalacion .step:focus-within{outline:3px solid var(--lime);outline-offset:5px}
+#instalacion .step-playback{border-top:0;padding-top:18px}
+@media(max-width:767px){
+ #instalacion .step{grid-template-columns:40px minmax(0,1fr);gap:14px;padding:20px 16px;border-radius:20px}
+ #instalacion .step-number{width:40px;height:40px;font-size:21px}
+ #instalacion .step-choice{font-size:21px;padding-top:6px}
+ #instalacion .step p{font-size:16px}
+
+}
+
 /* Problem: full-height composition with a lit still life and balanced type. */
 .truth{position:relative;isolation:isolate;background:#000;color:white;overflow:hidden}
 .truth-layout{position:relative;width:min(1440px,calc(100% - 96px));display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:clamp(48px,4.5vw,80px);align-items:center;min-height:clamp(660px,calc(100svh - 80px),860px);padding-block:90px}
@@ -287,3 +318,66 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
  .solution-placeholder h2{font-size:25px;margin-bottom:10px}
  .solution-placeholder p{font-size:14px}
 }
+
+/* Instalación y uso: una vista */
+#instalacion .how-prereq{gap:8px 14px;padding:12px 16px;font-size:15px}
+#instalacion .how-prereq b{padding:6px 12px}
+#instalacion .how-prereq span{min-width:0}
+#instalacion .how-prereq-link{padding:0;border:0;background:transparent;color:var(--lime);font-weight:700;text-decoration:underline;text-underline-offset:4px;text-align:left}
+#instalacion .how-prereq-link:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+@media(min-width:768px){
+ #instalacion{min-height:calc(100svh - 81px);display:flex;flex-direction:column;justify-content:center;padding-block:clamp(24px,4.5vh,56px)}
+ #instalacion .how-heading{display:grid;grid-template-columns:1fr 1fr;column-gap:48px;row-gap:8px;align-items:end;margin-bottom:clamp(14px,2.6vh,28px)}
+ #instalacion .how-heading h2{grid-column:1;grid-row:1 / span 2;font-size:clamp(34px,min(4.2vw,6.2vh),60px)}
+ #instalacion .how-heading>p:not(.how-prereq){grid-column:2;grid-row:1;margin-top:0;padding-bottom:0;max-width:none}
+ #instalacion .how-prereq{grid-column:2;grid-row:2;min-width:0;margin-top:0;max-width:max-content}
+ #instalacion .how-grid{align-items:stretch;gap:48px}
+ #instalacion .how-copy{min-width:0}
+ #instalacion .step-visual{position:relative;min-height:0;min-width:0}
+ #instalacion .step-visual img{position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto;object-fit:cover}
+ #instalacion .steps{gap:12px}
+ #instalacion .step{grid-template-columns:40px minmax(0,1fr);gap:16px;padding:clamp(10px,1.9vh,20px) 20px}
+ #instalacion .step-number{width:40px;height:40px;font-size:22px}
+ #instalacion .step-choice{font-size:clamp(20px,1.8vw,26px);padding-top:4px}
+ #instalacion .step p{font-size:clamp(14px,1.05vw,18px);line-height:1.5;margin-top:clamp(4px,.8vh,10px)}
+
+
+ #instalacion .step-playback{padding-top:clamp(8px,1.4vh,16px)}
+}
+@media(min-width:768px) and (max-width:1100px){
+ #instalacion .how-heading{column-gap:28px}
+ #instalacion .how-grid{gap:28px}
+}
+@media(max-width:767px){
+ #instalacion .how-prereq{width:100%;max-width:none}
+ #instalacion .step-visual{position:static;min-height:0}
+ #instalacion .step-visual img{position:static;width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:1.12}
+}
+
+/* Instalación y uso: una vista */
+#instalacion{--how-padding:clamp(24px,4.5vh,56px)}
+#instalacion .how-copy>h2{font-size:clamp(34px,min(4.2vw,6.2vh),60px);line-height:1.04;margin-bottom:clamp(14px,2.6vh,28px)}
+#instalacion .how-copy>h2 em{color:var(--lime)}
+#instalacion .how-grid{align-items:center}
+#instalacion .how-prereq{display:block;width:auto;max-width:none;border:0;border-radius:0;padding:0;margin:14px 0 0 78px;font-size:14px;line-height:1.6;color:var(--white)}
+#instalacion .how-prereq b{display:inline-block;margin-right:6px;border-width:1.5px;padding:3px 9px;font-size:12px;vertical-align:middle}
+#instalacion .how-prereq-link{font-size:inherit;text-underline-offset:3px}
+#instalacion .step-visual{position:static;min-height:0}
+#instalacion .step-visual img{position:static;inset:auto;flex:none;width:100%;height:auto;min-height:0;max-height:calc(100svh - 81px - 2 * var(--how-padding));aspect-ratio:1.1;object-fit:cover}
+@media(min-width:768px){
+ #instalacion{padding-block:var(--how-padding)}
+ #instalacion .step{padding-block:clamp(12px,2.2vh,24px)}
+ #instalacion .step p{margin-top:clamp(6px,1vh,12px)}
+ #instalacion .how-prereq{margin-left:78px}
+}
+@media(max-width:767px){
+ #instalacion .how-copy>h2{font-size:clamp(32px,9vw,42px);margin-bottom:26px}
+ #instalacion .how-prereq{width:auto;margin-left:72px}
+ #instalacion .step-visual img{max-height:none;aspect-ratio:1.12}
+}
+@media(min-width:768px){
+ #instalacion .how-prereq{display:flex;align-items:center;flex-wrap:nowrap;gap:6px;margin-left:0;white-space:nowrap;font-size:clamp(12px,1.03vw,14px)}
+ #instalacion .how-prereq b{flex:none;margin-right:0;font-size:11px;padding:3px 7px}
+ #instalacion .how-prereq-link{flex:none}
+}
+@media(min-width:768px) and (max-width:1100px){#instalacion .how-prereq{gap:2px}}

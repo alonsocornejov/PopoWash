@@ -56,7 +56,8 @@ function showStep(index) {
   stepButtons.forEach((button, i) => { button.closest('.step').classList.toggle('active', i === index); button.setAttribute('aria-pressed', String(i === index)); });
   const [src, alt, caption] = stepImages[index];
   Object.assign(document.querySelector('#step-photo'), { src, alt });
-  document.querySelector('#step-caption').textContent = caption;
+  const stepCaption = document.querySelector('#step-caption');
+  if (stepCaption) stepCaption.textContent = caption;
   elapsed = 0;
   updatePlaybackLabel();
 }
