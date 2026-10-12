@@ -206,13 +206,16 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
 }
 
 /* Narrative sequence: problem, visible benefits, use, then visual demonstration. */
-.truth{position:relative;display:flex;align-items:stretch;min-height:clamp(560px,40vw,730px);background:#05090f;color:white;overflow:hidden}
-.truth-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center}
-.truth-layout{position:relative;z-index:1;display:flex;justify-content:flex-end;align-items:center;min-height:inherit;padding-block:64px}
-.truth-copy{width:min(450px,40%);padding:24px 0 24px 12px}
-.truth-copy .section-tag{font-size:12px;color:var(--lime)}
-.truth-copy h2{font-size:clamp(50px,5.1vw,78px);line-height:1.04;letter-spacing:-.045em;text-transform:uppercase;margin:22px 0 24px}
-.truth-copy p{max-width:35ch;font-size:clamp(18px,1.45vw,22px);line-height:1.55;color:#f0f3ff}
+/* Problem: full-height composition with a lit still life and balanced type. */
+.truth{position:relative;isolation:isolate;background:#000;color:white;overflow:hidden}
+.truth-layout{position:relative;width:min(1440px,calc(100% - 96px));display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:clamp(48px,4.5vw,80px);align-items:center;min-height:clamp(660px,calc(100svh - 80px),860px);padding-block:90px}
+.truth-photo{position:absolute;left:clamp(-128px,-7vw,-56px);top:50%;transform:translateY(-50%);width:58%;max-width:900px;height:auto;object-fit:contain;z-index:0;pointer-events:none;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 78%,transparent);mask-composite:intersect}
+.truth-copy{position:relative;z-index:1;grid-column:2;width:auto;min-width:0;padding:0}
+.truth-eyebrow{display:block;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:white}
+.truth-copy h2{font-size:clamp(52px,5.3vw,80px);line-height:1.04;letter-spacing:-.045em;text-transform:uppercase;margin:20px 0 24px}
+.truth-copy h2 em{color:var(--lime)}
+.truth-copy p{max-width:37ch;font-size:clamp(20px,1.55vw,24px);line-height:1.55;color:#f0f3ff}
+.truth-copy .truth-question{max-width:none;white-space:nowrap;margin-top:26px;padding-top:22px;border-top:1px solid #ffffff35;font-size:clamp(15px,1.15vw,19px);font-weight:600;line-height:1.45;color:var(--lime)}
 
 /* Compact planning marker; full solution design is deferred. */
 .solution-placeholder{background:var(--paper);padding-block:32px;border-bottom:1px solid var(--line)}
@@ -222,17 +225,18 @@ h1,h2,h3,.step strong{font-weight:700;font-synthesis:weight}
 .solution-placeholder p span{font-size:13px}
 .truth{background:#000}
 @media(max-width:1100px){
- .truth{display:block;min-height:0}
- .truth-photo{position:relative;width:100%;height:auto;aspect-ratio:1.8;object-position:left center}
- .truth-layout{display:block;min-height:0;padding-block:30px 62px}
- .truth-copy{width:min(620px,100%);padding:0}
- .truth-copy h2{font-size:clamp(44px,6.3vw,68px);margin-block:20px}
+ .truth-layout{width:calc(100% - 56px);gap:32px;min-height:620px;padding-block:64px}
+ .truth-copy h2{font-size:clamp(40px,4.9vw,54px)}
+ .truth-copy p{font-size:18px}
+ .truth-copy .truth-question{font-size:20px;white-space:normal}
 }
 @media(max-width:767px){
- .truth-photo{aspect-ratio:1.4}
- .truth-layout{padding-block:30px 58px}
- .truth-copy h2{font-size:clamp(43px,10vw,58px)}
- .truth-copy p{font-size:17px;max-width:38ch}
+ .truth-layout{width:calc(100% - 40px);grid-template-columns:1fr;gap:32px;min-height:0;padding-block:52px 64px}
+ .truth-photo{position:relative;left:auto;top:auto;transform:none;grid-column:1;width:calc(100% + 40px);max-width:600px;margin-inline:-20px}
+ .truth-copy{grid-column:1}
+ .truth-copy h2{font-size:clamp(44px,10.8vw,62px)}
+ .truth-copy p{font-size:18px;max-width:38ch}
+ .truth-copy .truth-question{font-size:20px}
  .solution-placeholder{padding-block:24px}
  .solution-reserve{display:block}
  .solution-placeholder h2{font-size:25px;margin-bottom:10px}
