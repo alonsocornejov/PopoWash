@@ -695,3 +695,18 @@ footer.footer .footer-identity{margin-bottom:24px}
 #banner-papel .ticker-group{display:flex;align-items:center;justify-content:space-around;gap:44px;padding-right:44px;min-width:100vw;flex-shrink:0}
 #banner-papel .ticker-track span{margin:0;flex-shrink:0}
 #banner-papel .ticker-track{animation-duration:44s}
+
+/* Instalación móvil: cada explicación con su foto, sin selector rotativo. */
+#instalacion .step-mobile-title,#instalacion .step-mobile-photo{display:none}
+@media(max-width:767px){
+ #instalacion .how-copy{display:flex;flex-direction:column}
+ #instalacion .how-copy>h2{order:0}
+ #instalacion .how-prereq{order:1;margin:20px 0}
+ #instalacion .steps{order:2;gap:20px}
+ #instalacion .step-visual,#instalacion .step-playback,#instalacion .step-choice{display:none}
+ #instalacion .step,#instalacion .step.active{background:transparent;border-color:#ffffff70;color:var(--white);box-shadow:none;transform:none}
+ #instalacion .step-number,#instalacion .step.active .step-number{background:var(--lime);border:2px solid var(--ink);color:var(--ink)}
+ #instalacion .step-mobile-title{display:block;font-family:var(--display);font-size:22px;line-height:1.25;color:var(--white)}
+ #instalacion .step p{color:var(--white);font-size:16px;line-height:1.6}
+ #instalacion .step-mobile-photo{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:2px solid var(--ink);border-radius:14px;margin-top:16px}
+}

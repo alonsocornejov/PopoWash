@@ -43,3 +43,7 @@ Posterior: «Agua para limpiar el poto después de ir al baño. Después, un poc
 Alonso autorizó publicar el recorte con velocidad incorporada al archivo: chorros a 1,5× y resto a 1,2×; duración final 7,63 segundos. Se actualizan los momentos de resaltado. Ambos videos fijan silencio y reproducción dentro de la página, reintentan al entrar en pantalla/cargar y ofrecen botón si el navegador bloquea autoplay. El CTA tiene poster; se conserva imagen fija con reducción de movimiento. Pruebas a 390px: ambos videos avanzan, respaldo visible y recuperación con toque ante bloqueo simulado, sin errores de JavaScript. No se garantiza autoplay bajo restricciones del dispositivo; falta prueba en teléfono físico.
 
 La franja lima usa dos grupos idénticos con separación final incluida y duración ajustada para conservar velocidad. Verificada a 390, 1440 y 1920px: grupos de igual ancho, sin hueco ni desbordamiento y continuidad en el reinicio. Comparador regenerado. No se incluyen otros cambios locales del proyecto.
+
+## Instalación adaptada a móvil
+
+Alonso aprobó y autorizó publicar la vista móvil de instalación: Paso 0 antes de los pasos, cada explicación con su foto visible debajo y sin rotación automática. A partir de 768px se conserva el selector y foto dinámica actuales. Comprobado a 390px: tres fotos cargadas, Paso 0 anterior, sin rotación ni desbordamiento; a 1440px: rotación y selección manual funcionan, imágenes móviles ocultas. Sin errores de JavaScript.

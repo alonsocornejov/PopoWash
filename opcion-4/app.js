@@ -41,6 +41,7 @@ const stepImages = [
   ['assets/10-instalado-detalle.webp', 'PopoWash instalado y apagado, listo para el próximo uso', 'Cierra el agua con la perilla y sécate con un poco de papel. Listo para la próxima vez.']
 ];
 const stepsSection = document.querySelector('#instalacion');
+const mobileSteps = window.matchMedia('(max-width: 767px)');
 const stepButtons = [...document.querySelectorAll('[data-step]')];
 const stepPause = document.querySelector('#pause-steps');
 const stepDuration = 1500;
@@ -73,7 +74,7 @@ function tick(timestamp) {
   animationFrame = requestAnimationFrame(tick);
 }
 function syncPlayback() {
-  const running = stepsVisible && !stepsPaused && !document.hidden && !motionPreference.matches;
+  const running = stepsVisible && !stepsPaused && !document.hidden && !motionPreference.matches && !mobileSteps.matches;
   if (!running && animationFrame !== null) {
     cancelAnimationFrame(animationFrame);
     animationFrame = null;
@@ -85,10 +86,12 @@ function syncPlayback() {
   updatePlaybackLabel();
 }
 stepButtons.forEach((button, index) => button.closest('.step').addEventListener('click', () => {
+  if (mobileSteps.matches) return;
   stepsPaused = true;
   showStep(index);
   syncPlayback();
 }));
+mobileSteps.addEventListener('change', syncPlayback);
 stepPause.addEventListener('click', () => { stepsPaused = !stepsPaused; syncPlayback(); });
 new IntersectionObserver(entries => { stepsVisible = entries[0].isIntersecting; syncPlayback(); }, { threshold: 0.15 }).observe(stepsSection);
 document.addEventListener('visibilitychange', syncPlayback);

@@ -11,9 +11,9 @@
   <link rel="preload" href="assets/archivo-black.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/hero-producto-corregido-1200.webp" as="image" imagesrcset="assets/hero-producto-corregido-1200.webp 1200w, assets/hero-producto-corregido-1589.webp 1589w" imagesizes="(max-width: 767px) 90vw, 50vw">
-  <link rel="stylesheet" href="styles.css?v=20261013-mobile-banner">
+  <link rel="stylesheet" href="styles.css?v=20261013-pasos-mobile">
   <script src="cart.js?v=20261013-carrito" defer></script>
-  <script src="app.js?v=20261013-mobile-banner" defer></script>
+  <script src="app.js?v=20261013-pasos-mobile" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -113,9 +113,9 @@
        <div class="how-grid"><div class="how-copy">
         <h2 id="how-title">Tres pasos.<br><em>Cero misterio.</em></h2>
         <div class="steps" aria-label="Pasos de instalación y uso">
-          <div class="step active"><span class="step-number">1</span><div><button class="step-choice" data-step="0" type="button" aria-pressed="true" aria-controls="step-photo">Instala una vez.</button><p>Cierra la llave del agua, saca la tapa y el asiento, pon PopoWash debajo y vuelve a fijarlos. Conecta el agua, abre de a poco y revisa que no gotee.</p></div></div>
-          <div class="step"><span class="step-number">2</span><div><button class="step-choice" data-step="1" type="button" aria-pressed="false" aria-controls="step-photo">Gira y regula.</button><p>Sentado (sí, sentado), gira la perilla de a poco y sube la presión hasta donde te acomode.</p></div></div>
-          <div class="step"><span class="step-number">3</span><div><button class="step-choice" data-step="2" type="button" aria-pressed="false" aria-controls="step-photo">Seca. Listo.</button><p>Vuelve la perilla a OFF y sécate con un poco de papel. El rollo pasa a actor secundario.</p></div></div>
+          <div class="step active"><span class="step-number">1</span><div><span class="step-mobile-title">Instala una vez.</span><button class="step-choice" data-step="0" type="button" aria-pressed="true" aria-controls="step-photo">Instala una vez.</button><p>Cierra la llave del agua, saca la tapa y el asiento, pon PopoWash debajo y vuelve a fijarlos. Conecta el agua, abre de a poco y revisa que no gotee.</p><img class="step-mobile-photo" src="assets/instalacion-logo-popowash.webp" alt="Imagen ilustrativa del montaje de PopoWash bajo el asiento" width="1100" height="1100" loading="lazy"></div></div>
+          <div class="step"><span class="step-number">2</span><div><span class="step-mobile-title">Gira y regula.</span><button class="step-choice" data-step="1" type="button" aria-pressed="false" aria-controls="step-photo">Gira y regula.</button><p>Sentado (sí, sentado), gira la perilla de a poco y sube la presión hasta donde te acomode.</p><img class="step-mobile-photo" src="assets/11-instalado-chorro-general.webp" alt="Demostración del chorro de PopoWash; durante el uso permanece sentado" width="1100" height="1100" loading="lazy"></div></div>
+          <div class="step"><span class="step-number">3</span><div><span class="step-mobile-title">Seca. Listo.</span><button class="step-choice" data-step="2" type="button" aria-pressed="false" aria-controls="step-photo">Seca. Listo.</button><p>Vuelve la perilla a OFF y sécate con un poco de papel. El rollo pasa a actor secundario.</p><img class="step-mobile-photo" src="assets/10-instalado-detalle.webp" alt="PopoWash instalado con la perilla apagada" width="1100" height="1100" loading="lazy"></div></div>
         </div>
         <p class="how-prereq"><b>Paso 0</b> Tu tapa y tu asiento tienen que poder sacarse. <button type="button" class="how-prereq-link" data-compatibility>¿No sabes? Revísalo aquí</button></p>
         <div class="step-playback"><p id="step-status">Paso 1 de 3</p><button id="pause-steps" class="pause-button" type="button" aria-pressed="false" hidden>Pausar pasos</button></div>
