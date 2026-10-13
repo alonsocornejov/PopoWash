@@ -667,3 +667,17 @@ footer.footer .footer-identity{margin-bottom:24px}
 #beneficios .benefits-modes-group{min-width:0}
 #beneficios .benefits-modes-intro{font-size:18px;line-height:1.55;text-align:center;color:var(--muted);margin:0 0 16px}
 @media(max-width:767px){#beneficios .benefits-modes-intro{font-size:16px}}
+
+/* Bloque de compra: PopoWash solo sobre crema */
+#producto .purchase-visual{background:radial-gradient(circle at 50% 45%,#f6f3ea 0%,#ebe7dc 72%);border:1px solid var(--line)}
+#producto .purchase-photo{padding:clamp(28px,3.4vw,44px);filter:drop-shadow(8px 14px 14px rgba(80,70,50,.18))}
+
+/* Carrito: foto del kit y contenido de la caja */
+#bag-dialog .cart-item{grid-template-columns:1fr;gap:18px}
+#bag-dialog .cart-kit{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#eae5d9}
+#bag-dialog .cart-kit img{display:block;width:100%;height:clamp(180px,26vh,260px);object-fit:contain}
+#bag-dialog .cart-item .cart-box-title{margin-top:14px;font-size:13px;font-weight:700;color:var(--ink)}
+#bag-dialog .cart-box{list-style:none;margin:8px 0 14px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+#bag-dialog .cart-box li{position:relative;padding-left:20px;font-size:14px;line-height:1.4;color:var(--muted)}
+#bag-dialog .cart-box li::before{content:"";position:absolute;left:0;top:.4em;width:10px;height:6px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
+@media(max-width:767px){#bag-dialog .cart-kit img{height:180px}#bag-dialog .cart-box{grid-template-columns:1fr}}
