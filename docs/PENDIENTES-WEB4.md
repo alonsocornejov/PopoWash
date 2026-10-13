@@ -31,8 +31,8 @@ Registro solicitado por Gabo el 11 de octubre de 2026 a partir de la [auditoría
 
 ### 2. CTA · diseño primero
 
-- [ ] **C01 — Composición del cierre:** mejorar la relación entre promesa, producto, precio, instalación opcional y acción. Conservar $39.990 y +$15.000 por instalación en Santiago; despacho separado.
-- [ ] **C02 — Confianza junto a la acción:** diseñar espacio para compatibilidad y soporte, sin inventar garantías, contactos ni plazos. Determinar qué información necesita realmente el comprador en ese punto.
+- [x] **C01 — Composición del cierre:** resuelto en `codex/opcion-4-cta` (13 de octubre). Promesa breve, animación del durazno y ficha compacta con $39.990. La instalación (+$15.000, Santiago) queda oculta en un desplegable a pedido del dueño. El despacho sigue separado.
+- [ ] **C02 — Confianza junto a la acción:** la nota de compatibilidad ya está junto al botón, con enlace al FAQ. Falta el soporte real, con número de WhatsApp y enlaces del pie, sin inventar garantías, contactos ni plazos.
 
 ### 3. Reseñas de clientes existentes
 

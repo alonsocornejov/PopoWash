@@ -96,16 +96,30 @@ syncPlayback();
 
 const quantity = document.querySelector('#product-quantity');
 const bagDialog = document.querySelector('#bag-dialog');
-let bagQuantity = 0;
-document.querySelectorAll('[data-add-to-bag]').forEach(button => button.addEventListener('click', () => {
-  const count = quantity.valueAsNumber;
-  const valid = Number.isInteger(count) && count >= 1 && count <= 10;
+const unitPrice = 39990;
+const installAdd = document.querySelector('#install-add');
+const installChoice = () => installAdd.checked ? Number(installAdd.value) : 0;
+function validQuantity() { const n = quantity.valueAsNumber; return Number.isInteger(n) && n >= 1 && n <= 10; }
+function updateTotal() {
+  const valid = validQuantity();
   quantity.setAttribute('aria-invalid', String(!valid));
+  document.querySelector('#order-total').textContent = valid ? clp.format(quantity.valueAsNumber * (unitPrice + installChoice())) : '—';
   document.querySelector('#quantity-note').textContent = valid ? 'Vista previa de compra. Pagos aún no habilitados.' : 'Ingresa una cantidad entera entre 1 y 10.';
-  if (!valid) { document.querySelector('#producto').scrollIntoView(); quantity.focus(); return; }
-  bagQuantity += count;
-  document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
-  document.querySelector('#bag-subtotal').textContent = clp.format(bagQuantity * 39990);
+}
+document.querySelectorAll('[data-qty]').forEach(button => button.addEventListener('click', () => {
+  const next = (validQuantity() ? quantity.valueAsNumber : 1) + Number(button.dataset.qty);
+  quantity.value = Math.min(10, Math.max(1, next));
+  updateTotal();
+}));
+quantity.addEventListener('input', updateTotal);
+installAdd.addEventListener('change', updateTotal);
+updateTotal();
+document.querySelectorAll('[data-add-to-bag]').forEach(button => button.addEventListener('click', () => {
+  if (!validQuantity()) { updateTotal(); document.querySelector('#producto').scrollIntoView(); quantity.focus(); return; }
+  const count = quantity.valueAsNumber, install = installChoice();
+  document.querySelector('#bag-quantity').textContent = `${count} ${count === 1 ? 'unidad' : 'unidades'}`;
+  document.querySelector('#bag-install').textContent = install ? 'Con instalación en Santiago' : 'Sin instalación';
+  document.querySelector('#bag-subtotal').textContent = clp.format(count * (unitPrice + install));
   bagDialog.showModal();
 }));
 bagDialog.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => bagDialog.close()));
@@ -113,3 +127,29 @@ document.querySelectorAll('a[href="#faq-compatibilidad"], a[href="#faq-condicion
   document.querySelector(link.getAttribute('href')).open = true;
   if (bagDialog.open) bagDialog.close();
 }));
+
+// Animación del CTA: se reproduce al verse en pantalla y se repite con una pausa; con «reducir movimiento» queda la imagen fija.
+const ctaAnim = document.querySelector('#cta-anim');
+if (ctaAnim) {
+  let ctaVisible = false, ctaTimer = null;
+  const ctaSync = () => {
+    if (motionPreference.matches || !ctaVisible || document.hidden) { ctaAnim.pause(); clearTimeout(ctaTimer); ctaTimer = null; return; }
+    if (ctaAnim.paused && !ctaTimer) ctaAnim.play().catch(() => {});
+  };
+  ctaAnim.addEventListener('ended', () => {
+    ctaTimer = setTimeout(() => { ctaTimer = null; ctaAnim.currentTime = 0; ctaSync(); }, 2500);
+  });
+  new IntersectionObserver(entries => { ctaVisible = entries[0].isIntersecting; ctaSync(); }, { threshold: 0.35 }).observe(ctaAnim);
+  document.addEventListener('visibilitychange', ctaSync);
+  motionPreference.addEventListener('change', ctaSync);
+}
+
+// Pie de página: enlaces aún sin destino y formulario que abrirá WhatsApp cuando exista el número.
+document.querySelectorAll('[data-link-pendiente]').forEach(link => link.addEventListener('click', event => event.preventDefault()));
+const waForm = document.querySelector('#wa-form');
+if (waForm) waForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const number = waForm.dataset.whatsapp.replace(/\D/g, '');
+  const message = waForm.querySelector('input').value.trim();
+  if (number) window.open(`https://wa.me/${number}${message ? `?text=${encodeURIComponent(message)}` : ''}`, '_blank', 'noopener');
+});
