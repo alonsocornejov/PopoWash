@@ -2,6 +2,18 @@
 
 Registro solicitado por Gabo el 11 de octubre de 2026 a partir de la [auditoría completa](auditorias/2026-10-11-opcion-4.md). Este documento convierte sus debilidades en trabajo concreto; no supone aprobar todas las soluciones propuestas en la auditoría.
 
+## Próximas tareas priorizadas por Alonso · 13 de octubre de 2026
+
+La versión integrada y publicada en `main` se resume en [el cierre de Web 4](tareas/2026-10-13-web4-integracion-y-logo-alonso.md). Estas siete tareas ordenan la siguiente etapa; los pendientes de lanzamiento del resto del documento siguen vigentes.
+
+1. [ ] Mejorar la foto del primer CTA / bloque de compra (`#producto`).
+2. [ ] Pensar cómo mejorar «PopoWash es la solución.» (`#beneficios`).
+3. [ ] Mejorar las conexiones y transiciones entre las secciones de la página.
+4. [ ] Enlazar el icono de Instagram a la cuenta que ya está creada. Falta incorporar su URL real; no inventar un perfil.
+5. [ ] Crear el documento de chequeo de compatibilidad.
+6. [ ] Una vez disponible el documento, corregir los enlaces según corresponda: CTA, bolsa, FAQ, Paso 0 y footer.
+7. [ ] Agregar el icono de carrito y desarrollar las secciones de compra; definir el alcance del siguiente entregable comercial.
+
 ## Dirección confirmada por Gabo
 
 - La identidad debe ser **humorística, disruptiva y juvenil**. Conservar la voz chilena, el humor del poto, azul eléctrico, lima, logo y protagonismo del producto.
@@ -24,14 +36,14 @@ Registro solicitado por Gabo el 11 de octubre de 2026 a partir de la [auditoría
 
 - [x] **N01 — Recorrido global, primera versión:** hero → problema → solución → tres pasos → reseñas de ejemplo → gasto en papel → FAQ → compra. Queda pendiente medir si el ritmo y la comprensión funcionan con clientes reales.
 - [x] **N02 — Repetición del problema, primera versión:** retirar el ticker intermedio y pasar del problema visual a la solución con agua. Copy elegido: «Seamos sinceros / El papel no lava».
-- [ ] **S01 — Solución:** diseñar desde cero. Se retiró la primera versión por ser demasiado grande; ahora hay un marcador compacto. Desarrollar beneficios y apoyos visuales más adelante.
+- [ ] **S01 — Solución:** revisar la sección actual «PopoWash es la solución.», con modos posterior/frontal. Pensar su composición y apoyos visuales en la siguiente etapa indicada por Alonso.
 - [ ] **U01 — Paso a paso:** rediseñar más adelante junto a solución. Se conserva por ahora el selector de instalación, uso y secado; demostración real y guía completa pendientes en U03.
 - [ ] **U02 — Lectura y jerarquía:** revisar el texto de 13–14 px del funcionamiento al reconstruirlo; probar cuerpo de 16–18 px y disminuir información simultánea.
 - [ ] **U03 — Demostración real:** preparar video/fotos de instalación y uso, guía completa accesible y encuadres que expliquen perilla, boquillas y conexión. El chorro con asiento levantado es demostrativo; explicar el uso sentado.
 
 ### 2. CTA · diseño primero
 
-- [ ] **C01 — Composición del cierre:** mejorar la relación entre promesa, producto, precio, instalación opcional y acción. Conservar $39.990 y +$15.000 por instalación en Santiago; despacho separado.
+- [x] **C01 — Composición del cierre:** CTA final de Gabo integrado el 13 de octubre: durazno animado, cantidad/total, instalación opcional y acción. Se conservan $39.990 y +$15.000 por instalación en Santiago; despacho separado.
 - [ ] **C02 — Confianza junto a la acción:** diseñar espacio para compatibilidad y soporte, sin inventar garantías, contactos ni plazos. Determinar qué información necesita realmente el comprador en ese punto.
 
 ### 3. Reseñas de clientes existentes
@@ -49,7 +61,7 @@ Registro solicitado por Gabo el 11 de octubre de 2026 a partir de la [auditoría
 
 - [ ] **E01 — Copywriting completo:** revisar todo el recorrido con la skill `copywriting`. Humor en titulares; precisión en explicaciones. Evitar promesas no comprobadas de tiempo, ahorro, compatibilidad universal o resultados clínicos.
 - [ ] **E02 — Consistencia visual:** unificar luz, escala, encuadre y acabado de imágenes restantes. Diferenciar fotografías reales e ilustraciones cuando corresponda; revisar reflejos y geometría de los recursos generados.
-- [ ] **F01 — Orden del FAQ:** priorizar compatibilidad, instalación, uso, mantenimiento y compra. Diseñar el orden ahora y validar después las respuestas con Fabián.
+- [x] **F01 — Orden del FAQ:** ocho preguntas ordenadas por Alonso, con compatibilidad primero, más instalación, caja, electricidad, temperatura, papel, limpieza y despacho. La validación comercial definitiva sigue en F02.
 - [ ] **F02 — Información definitiva:** completar caja, conexiones, manual, mantenimiento, despacho, pagos, soporte, cambios y devoluciones con información confirmada.
 - [x] **A01 — Franja verde:** retirada del recorrido. Reseñas y pasos mantienen pausa y respeto por movimiento reducido; comprobar de nuevo después de su rediseño.
 - [ ] **A02 — Verificación visual y accesibilidad:** volver a revisar contraste sobre imágenes, foco, teclado, acordeones y tamaños móviles después de la reconstrucción. Las mediciones de colores planos de la auditoría no cubren todos los estados.

@@ -98,7 +98,7 @@ syncPlayback();
 const quantity = document.querySelector('#product-quantity');
 const bagDialog = document.querySelector('#bag-dialog');
 let bagQuantity = 0;
-document.querySelectorAll('[data-add-to-bag]').forEach(button => button.addEventListener('click', () => {
+document.querySelectorAll('[data-add-to-bag]:not(#comprar-final [data-add-to-bag])').forEach(button => button.addEventListener('click', () => {
   const count = quantity.valueAsNumber;
   const valid = Number.isInteger(count) && count >= 1 && count <= 10;
   quantity.setAttribute('aria-invalid', String(!valid));
@@ -106,11 +106,11 @@ document.querySelectorAll('[data-add-to-bag]').forEach(button => button.addEvent
   if (!valid) { document.querySelector('#producto').scrollIntoView(); quantity.focus(); return; }
   bagQuantity += count;
   document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
-  document.querySelector('#bag-subtotal').textContent = `Subtotal: ${new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }).format(bagQuantity * 39990)}.`;
+  document.querySelector('#bag-subtotal').textContent = `Subtotal: ${new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }).format(bagQuantity * 39990 + Number(bagDialog.dataset.installTotal || 0))}.`;
   bagDialog.showModal();
 }));
 bagDialog.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => bagDialog.close()));
-document.querySelectorAll('a[href="#faq-compatibilidad"], a[href="#faq-condiciones"]').forEach(link => link.addEventListener('click', () => {
+document.querySelectorAll('a[href="#faq-compatibilidad"], a[href="#faq-despacho"]').forEach(link => link.addEventListener('click', () => {
   document.querySelector(link.getAttribute('href')).open = true;
   if (bagDialog.open) bagDialog.close();
 }));
@@ -127,3 +127,84 @@ document.querySelectorAll('[data-installation-video]').forEach(button => button.
 }));
 installationVideoDialog.querySelector('.dialog-close').addEventListener('click', () => installationVideoDialog.close());
 installationVideoDialog.addEventListener('close', () => installationVideoDialog.querySelector('.video-frame').replaceChildren());
+
+// Selector de cantidad y total del bloque de compra
+(() => {
+  const input = document.querySelector('#product-quantity');
+  const total = document.querySelector('#purchase-total');
+  if (!input || !total) return;
+  const [minus, plus] = document.querySelectorAll('[data-qty-delta]');
+  const clp = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
+  const sync = () => {
+    const n = input.valueAsNumber;
+    const valid = Number.isInteger(n) && n >= 1 && n <= 10;
+    total.textContent = clp.format((valid ? n : 1) * 39990);
+    minus.disabled = !valid || n <= 1;
+    plus.disabled = !valid || n >= 10;
+  };
+  document.querySelectorAll('[data-qty-delta]').forEach(btn => btn.addEventListener('click', () => {
+    const n = Number.isInteger(input.valueAsNumber) ? input.valueAsNumber : 1;
+    input.value = Math.min(10, Math.max(1, n + Number(btn.dataset.qtyDelta)));
+    sync();
+  }));
+  input.addEventListener('input', sync);
+  sync();
+})();
+
+// CTA de Gabo: IDs separados y bolsa compartida con la compra existente.
+(() => {
+  const cta = document.querySelector('#comprar-final');
+  const input = cta.querySelector('#cta-product-quantity');
+  const install = cta.querySelector('#cta-install-add');
+  const money = new Intl.NumberFormat('es-CL', {style:'currency',currency:'CLP',maximumFractionDigits:0});
+  const valid = () => Number.isInteger(input.valueAsNumber) && input.valueAsNumber >= 1 && input.valueAsNumber <= 10;
+  const extra = () => install.checked ? Number(install.value) : 0;
+  const sync = () => {
+    input.setAttribute('aria-invalid', String(!valid()));
+    cta.querySelector('#cta-order-total').textContent = valid() ? money.format(input.valueAsNumber * (39990 + extra())) : '—';
+    cta.querySelector('#cta-quantity-note').textContent = valid() ? 'Vista previa de compra. Pagos aún no habilitados.' : 'Ingresa una cantidad entera entre 1 y 10.';
+  };
+  cta.querySelectorAll('[data-qty]').forEach(button => button.addEventListener('click', () => {
+    input.value = Math.min(10, Math.max(1, (valid() ? input.valueAsNumber : 1) + Number(button.dataset.qty)));
+    sync();
+  }));
+  input.addEventListener('input', sync);
+  install.addEventListener('change', sync);
+  cta.querySelector('[data-add-to-bag]').addEventListener('click', () => {
+    sync();
+    if (!valid()) { input.focus(); return; }
+    bagQuantity += input.valueAsNumber;
+    const installationTotal = Number(bagDialog.dataset.installTotal || 0) + input.valueAsNumber * extra();
+    bagDialog.dataset.installTotal = String(installationTotal);
+    document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
+    document.querySelector('#bag-subtotal').textContent = `Subtotal: ${money.format(bagQuantity * 39990 + installationTotal)}.${installationTotal ? ` Incluye ${money.format(installationTotal)} de instalación en Santiago.` : ''}`;
+    bagDialog.showModal();
+  });
+  sync();
+})();
+
+// Animación del CTA: se reproduce al verse en pantalla y se repite con una pausa; con «reducir movimiento» queda la imagen fija.
+const ctaAnim = document.querySelector('#cta-anim');
+if (ctaAnim) {
+  let ctaVisible = false, ctaTimer = null;
+  const ctaSync = () => {
+    if (motionPreference.matches || !ctaVisible || document.hidden) { ctaAnim.pause(); clearTimeout(ctaTimer); ctaTimer = null; return; }
+    if (ctaAnim.paused && !ctaTimer) ctaAnim.play().catch(() => {});
+  };
+  ctaAnim.addEventListener('ended', () => {
+    ctaTimer = setTimeout(() => { ctaTimer = null; ctaAnim.currentTime = 0; ctaSync(); }, 2500);
+  });
+  new IntersectionObserver(entries => { ctaVisible = entries[0].isIntersecting; ctaSync(); }, { threshold: 0.35 }).observe(ctaAnim);
+  document.addEventListener('visibilitychange', ctaSync);
+  motionPreference.addEventListener('change', ctaSync);
+}
+
+// Pie de página: enlaces aún sin destino y formulario que abrirá WhatsApp cuando exista el número.
+document.querySelectorAll('[data-link-pendiente]').forEach(link => link.addEventListener('click', event => event.preventDefault()));
+const waForm = document.querySelector('#wa-form');
+if (waForm) waForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const number = waForm.dataset.whatsapp.replace(/\D/g, '');
+  const message = waForm.querySelector('input').value.trim();
+  if (number) window.open(`https://wa.me/${number}${message ? `?text=${encodeURIComponent(message)}` : ''}`, '_blank', 'noopener');
+});
