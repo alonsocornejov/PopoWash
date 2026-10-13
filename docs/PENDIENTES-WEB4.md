@@ -6,13 +6,15 @@ Registro solicitado por Gabo el 11 de octubre de 2026 a partir de la [auditoría
 
 La versión integrada y publicada en `main` se resume en [el cierre de Web 4](tareas/2026-10-13-web4-integracion-y-logo-alonso.md). Estas siete tareas ordenan la siguiente etapa; los pendientes de lanzamiento del resto del documento siguen vigentes.
 
-1. [ ] Mejorar la foto del primer CTA / bloque de compra (`#producto`).
-2. [ ] Pensar cómo mejorar «PopoWash es la solución.» (`#beneficios`).
-3. [ ] Mejorar las conexiones y transiciones entre las secciones de la página.
-4. [ ] Enlazar el icono de Instagram a la cuenta que ya está creada. Falta incorporar su URL real; no inventar un perfil.
-5. [ ] Crear el documento de chequeo de compatibilidad.
-6. [ ] Una vez disponible el documento, corregir los enlaces según corresponda: CTA, bolsa, FAQ, Paso 0 y footer.
-7. [ ] Agregar el icono de carrito y desarrollar las secciones de compra; definir el alcance del siguiente entregable comercial.
+1. [x] Foto del primer CTA: kit organizado v4 aprobado por Alonso.
+2. [x] «PopoWash es la solución»: video real de modos con loop sin audio a 1,2× y resaltado sincronizado.
+3. [x] Conexiones solicitadas: guía de compatibilidad y video de instalación conectados desde los puntos correspondientes. Alonso aclaró este alcance.
+4. [x] Instagram enlazado a `popowash.cl`.
+5. [x] Guía visual de chequeo de compatibilidad creada; validación técnica con Fabián pendiente.
+6. [x] CTA, carrito, FAQ, Paso 0 y footer actualizados para abrir la guía.
+7. [x] Icono de carrito y flujo visual de producto único: cantidad → método de pago → vista previa de pago. El cobro real queda pendiente de plataforma y cuenta comercial.
+
+Resultado aprobado para revisión de Gabo en [el cierre de guía, kit y carrito](tareas/2026-10-13-web4-guia-kit-y-carrito-alonso.md). Las siete prioridades tienen una versión visual implementada; los pendientes de lanzamiento comercial siguen vigentes.
 
 ## Dirección confirmada por Gabo
 
@@ -36,7 +38,7 @@ La versión integrada y publicada en `main` se resume en [el cierre de Web 4](ta
 
 - [x] **N01 — Recorrido global, primera versión:** hero → problema → solución → tres pasos → reseñas de ejemplo → gasto en papel → FAQ → compra. Queda pendiente medir si el ritmo y la comprensión funcionan con clientes reales.
 - [x] **N02 — Repetición del problema, primera versión:** retirar el ticker intermedio y pasar del problema visual a la solución con agua. Copy elegido: «Seamos sinceros / El papel no lava».
-- [ ] **S01 — Solución:** revisar la sección actual «PopoWash es la solución.», con modos posterior/frontal. Pensar su composición y apoyos visuales en la siguiente etapa indicada por Alonso.
+- [x] **S01 — Solución, primera versión visual:** revisar la sección actual «PopoWash es la solución.», con modos posterior/frontal. Pensar su composición y apoyos visuales en la siguiente etapa indicada por Alonso.
 - [ ] **U01 — Paso a paso:** rediseñar más adelante junto a solución. Se conserva por ahora el selector de instalación, uso y secado; demostración real y guía completa pendientes en U03.
 - [ ] **U02 — Lectura y jerarquía:** revisar el texto de 13–14 px del funcionamiento al reconstruirlo; probar cuerpo de 16–18 px y disminuir información simultánea.
 - [ ] **U03 — Demostración real:** preparar video/fotos de instalación y uso, guía completa accesible y encuadres que expliquen perilla, boquillas y conexión. El chorro con asiento levantado es demostrativo; explicar el uso sentado.

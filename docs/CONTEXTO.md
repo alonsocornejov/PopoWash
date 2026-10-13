@@ -4,6 +4,8 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 
 ## Estado vigente
 
+- Alonso aprobó el 13 de octubre la guía de compatibilidad integrada, Instagram, demostración real de modos en loop sin audio a 1,2×, kit organizado v4 y carrito de producto único con métodos de pago ilustrativos. Los CTA, FAQ, Paso 0, carrito y footer comparten guía; el video queda en la pregunta de instalación. Las siete prioridades visuales están implementadas; cobros, entrega y validación técnica siguen pendientes. Detalle en [el cierre de guía, kit y carrito](tareas/2026-10-13-web4-guia-kit-y-carrito-alonso.md).
+
 - Web 4 integra el trabajo de Alonso hasta el 13 de octubre: hero con fondo CSS y producto transparente, compra con cantidad/total y tarjeta crema, beneficios, FAQ revisado y secciones compactadas a una vista en escritorio. Se integraron selectivamente el CTA animado y footer de Gabo (`codex/opcion-4-cta`, `de1a2a3`), se instaló el logo v2 y se regeneró el comparador. Resultado, autoría, pruebas y continuación en [el cierre de esta versión](tareas/2026-10-13-web4-integracion-y-logo-alonso.md).
 
 - Marketing cuenta con un cuaderno rellenable y 80 skills agrupadas en marketing, benchmark y contenido. Entregables y comprobaciones en el [cierre de preparación de marketing de Gabo](tareas/2026-09-28-marketing-cuaderno-skills-gabo.md), aprobado para publicación en Git.
@@ -26,7 +28,7 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 
 - Todas las debilidades de la auditoría del 11 de octubre están convertidas en tareas en [PENDIENTES-WEB4.md](PENDIENTES-WEB4.md), con el alcance actual, el trabajo posterior de diseño y la preparación comercial separados. Esta lista incorpora las aclaraciones de Gabo sobre humor, reseñas disponibles, CTA de demostración y FAQ pendiente.
 - Completar y validar el cuaderno de marketing antes de definir la identidad, el tono y el plan editorial de Instagram; preparar las integraciones externas cuando se necesiten.
-- La siguiente etapa sigue las siete prioridades indicadas por Alonso el 13 de octubre en [PENDIENTES-WEB4.md](PENDIENTES-WEB4.md): foto del primer CTA, solución, conexiones entre secciones, Instagram (cuenta ya creada), documento de compatibilidad, actualización de enlaces y carrito/secciones de compra.
+- Las siete prioridades visuales de Alonso del 13 de octubre están implementadas en [PENDIENTES-WEB4.md](PENDIENTES-WEB4.md). La siguiente etapa es revisar con Gabo y preparar venta real: validar compatibilidad/contenido del kit, elegir pasarela y definir entrega y condiciones comerciales.
 - Web 4 muestra $39.990 por PopoWash. La instalación opcional en Santiago por $15.000 adicionales fue indicada por Gabo el 10 de octubre; su presentación se revisará en la rama de compra. Confirmar contenido de la caja; la compatibilidad comunicada requiere tapa y asiento desmontables. No se incluyen menciones a garantía en la principal.
 - Desarrollar la propuesta de logo solicitada y revisar el protocolo de postventa que tiene Fabián.
 - Validar la propuesta de garantías para ecommerce y revisar los problemas reportados de acumulación de sarro/mugre y goteo al cerrar la perilla.

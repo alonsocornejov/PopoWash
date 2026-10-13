@@ -11,8 +11,9 @@
   <link rel="preload" href="assets/archivo-black.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/hero-producto-corregido-1200.webp" as="image" imagesrcset="assets/hero-producto-corregido-1200.webp 1200w, assets/hero-producto-corregido-1589.webp 1589w" imagesizes="(max-width: 767px) 90vw, 50vw">
-  <link rel="stylesheet" href="styles.css?v=20261013-cta-logo-v2">
-  <script src="app.js?v=20261013-cta-gabo" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261013-carrito">
+  <script src="cart.js?v=20261013-carrito" defer></script>
+  <script src="app.js?v=20261013-carrito" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -21,6 +22,7 @@
       <a class="brand" href="#" aria-label="PopoWash, inicio"><picture><source media="(max-width: 1100px)" srcset="../branding/popowash-logo-v2-68.webp"><img src="../branding/popowash-logo-v2-88.webp" alt="PopoWash" width="447" height="88"></picture></a>
       <div class="nav-links"><a href="#verdad">Por qué PopoWash</a><a href="#instalacion">Cómo funciona</a><a href="#preguntas">Preguntas</a></div>
       <a class="button button-small" href="#producto">Comprar Ahora <span aria-hidden="true">↗</span></a>
+      <button type="button" class="cart-trigger" data-open-cart aria-label="Abrir carrito" aria-haspopup="dialog" aria-controls="bag-dialog"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 4h2l2.2 11h11.6l2-8H6M9 20h.01M18 20h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="cart-count" aria-hidden="true">0</span></button>
     </nav>
   </header>
   <main id="contenido">
@@ -44,13 +46,13 @@
 
 
     <div class="purchase-reviews"><section id="producto" class="purchase section-space" aria-labelledby="product-title"><div class="wrap purchase-grid">
-      <div class="purchase-visual"><img class="purchase-photo" src="assets/compra-producto-sin-fondo.webp" alt="Vista frontal de PopoWash blanco, con perilla de control y anclajes del asiento" width="1293" height="826" loading="lazy"></div>
+      <div class="purchase-visual"><img class="purchase-photo" src="assets/kit-popowash-estudio-v4.webp" alt="Kit PopoWash con bidet, piezas de montaje, gomas, conexión en T, cinta y manguera" width="1254" height="1254" loading="lazy"></div>
       <div><h2 id="product-title">Compra tu<br><span class="blue-text">PopoWash.</span></h2><p class="section-intro">Se instala bajo el asiento del WC que ya tienes. Sin enchufe, sin gásfiter, sin remodelar.</p>
       <ul class="purchase-benefits"><li>Dos modos: posterior y frontal.</li><li>Presión a tu pinta.</li><li>Cero pilas, cero enchufe.</li></ul>
       <div class="purchase-actions"><div class="quantity"><label for="product-quantity">Cantidad</label><div class="stepper"><button type="button" class="stepper-btn" data-qty-delta="-1" aria-label="Quitar una unidad">−</button><input id="product-quantity" type="number" min="1" max="10" step="1" value="1" inputmode="numeric" aria-describedby="quantity-note"><button type="button" class="stepper-btn" data-qty-delta="1" aria-label="Agregar una unidad">+</button></div></div><div class="purchase-total"><span>Total</span><output id="purchase-total" for="product-quantity" aria-live="polite">$39.990</output></div><button class="button" type="button" data-add-to-bag>Lo quiero <span aria-hidden="true">→</span></button></div>
       <div class="payment-methods" aria-label="Medios de pago"><img src="assets/logo-webpay.webp" alt="Webpay" width="216" height="64" loading="lazy"><img src="assets/logo-mercadopago.webp" alt="Mercado Pago" width="199" height="52" loading="lazy"></div>
-      <p id="quantity-note" class="small">Vista previa de compra. Disponibilidad por confirmar.</p>
-      <details class="purchase-details"><summary>Compatibilidad <span aria-hidden="true">+</span></summary><dl class="purchase-info"><div><dt>Compatibilidad</dt><dd>Necesitas poder desmontar la tapa y el asiento para colocar PopoWash debajo. <button type="button" class="inline-link installation-video-link" data-installation-video>Revisa el video de instalación ↗</button></dd></div></dl></details></div>
+      <p id="quantity-note" class="small">Elige la cantidad y continúa al carrito.</p>
+      <details class="purchase-details"><summary data-compatibility aria-haspopup="dialog" aria-controls="compatibility-dialog">Compatibilidad <span aria-hidden="true">+</span></summary><dl class="purchase-info"><div><dt>Compatibilidad</dt><dd>Necesitas poder desmontar la tapa y el asiento para colocar PopoWash debajo. <button type="button" class="inline-link installation-video-link" data-compatibility>Revisa compatibilidad ↗</button></dd></div></dl></details></div>
     </div></section>
 <section id="resenas" class="social" aria-labelledby="social-title">
       <div class="wrap social-heading"><div><h2 id="social-title">El cambio se nota. Y se comenta.</h2><p class="small">Reseñas de ejemplo para visualizar esta propuesta. Aún no son testimonios reales.</p></div><button class="pause-button" id="pause-reviews" type="button" aria-pressed="false">Pausar reseñas <span aria-hidden="true">Ⅱ</span></button></div>
@@ -88,19 +90,21 @@
       <div class="wrap">
         <div class="benefits-head"><h2 id="benefits-title">PopoWash es<br><em>la solución.</em></h2><p>Una sola perilla. Dos modos de lavado, cada uno para lo suyo.</p></div>
 
+        <div class="benefits-demo"><video id="wash-demo" controls autoplay muted loop playsinline preload="metadata" poster="assets/modos-lavado-poster.jpg" aria-label="Demostración de lavado posterior y frontal"><source src="assets/modos-lavado-loop.mp4?v=sin-logo-42" type="video/mp4"></video>
         <div class="modes" aria-label="Modos de lavado">
-          <div class="mode">
-            <h4>Posterior</h4>
+          <div class="mode" data-wash-mode="posterior">
+            <h4><button type="button" data-wash-seek="2.8" aria-pressed="false">Posterior</button></h4>
             <p>Limpia con agua después de ir al baño, en vez de arrastrar con papel.</p>
             <p class="mode-rules">Presión baja a media · 15 a 45 segundos</p>
           </div>
-          <div class="mode">
-            <h4>Frontal</h4>
+          <div class="mode" data-wash-mode="frontal">
+            <h4><button type="button" data-wash-seek="6.8" aria-pressed="false">Frontal</button></h4>
             <p>Un chorro suave para la higiene íntima externa.</p>
             <p class="mode-rules">Solo uso externo · Presión suave</p>
           </div>
         </div>
 
+        </div>
       </div>
     </section>
 
@@ -113,7 +117,7 @@
           <div class="step"><span class="step-number">2</span><div><button class="step-choice" data-step="1" type="button" aria-pressed="false" aria-controls="step-photo">Gira y regula.</button><p>Sentado (sí, sentado), gira la perilla de a poco y sube la presión hasta donde te acomode.</p></div></div>
           <div class="step"><span class="step-number">3</span><div><button class="step-choice" data-step="2" type="button" aria-pressed="false" aria-controls="step-photo">Seca. Listo.</button><p>Vuelve la perilla a OFF y sécate con un poco de papel. El rollo pasa a actor secundario.</p></div></div>
         </div>
-        <p class="how-prereq"><b>Paso 0</b> Tu tapa y tu asiento tienen que poder sacarse. <button type="button" class="how-prereq-link" data-installation-video>¿No sabes? Mira el video</button></p>
+        <p class="how-prereq"><b>Paso 0</b> Tu tapa y tu asiento tienen que poder sacarse. <button type="button" class="how-prereq-link" data-compatibility>¿No sabes? Revísalo aquí</button></p>
         <div class="step-playback"><p id="step-status">Paso 1 de 3</p><button id="pause-steps" class="pause-button" type="button" aria-pressed="false" hidden>Pausar pasos</button></div>
       </div><figure class="step-visual"><img id="step-photo" src="assets/instalacion-logo-popowash.webp" alt="Imagen ilustrativa de unas manos colocando PopoWash sobre los anclajes del inodoro" width="1100" height="1100" loading="lazy"></figure></div></div>
     </section>
@@ -134,8 +138,8 @@
     </section>
 
     <section id="preguntas" class="faq section-space" aria-labelledby="faq-title"><div class="wrap faq-grid"><div class="faq-heading"><h2 id="faq-title">Preguntas frecuentes.</h2><p>Resolvamos las dudas antes de girar la perilla.</p></div><div class="faq-list">
-      <details id="faq-compatibilidad"><summary>¿Le sirve a mi inodoro?<span aria-hidden="true">+</span></summary><p>PopoWash se fija bajo el asiento, usando sus anclajes. Debes poder desmontar la tapa y el asiento para colocarlo y volver a fijarlos. Si no se pueden desmontar, no se puede instalar.</p><p><button type="button" class="inline-link installation-video-link" data-installation-video>Revisa el video de instalación ↗</button></p></details>
-      <details><summary>¿La instalación es complicada?<span aria-hidden="true">+</span></summary><p>No. Cierra la llave del agua y saca la tapa y el asiento. Coloca PopoWash sobre los anclajes, vuelve a fijar la tapa y el asiento, y conecta el agua. Abre la llave de a poco y revisa que no gotee.</p></details>
+      <details id="faq-compatibilidad"><summary>¿Le sirve a mi inodoro?<span aria-hidden="true">+</span></summary><p>En general, sirve en inodoros con anclajes accesibles que permiten sacar la tapa y el asiento, colocar PopoWash debajo y volver a fijarlos. También necesitas acceso a la conexión de agua. Si la tapa y el asiento no se pueden desmontar, no se puede instalar.</p><p><button type="button" class="inline-link installation-video-link" data-compatibility>Revisa la guía de compatibilidad ↗</button></p></details>
+      <details><summary>¿La instalación es complicada?<span aria-hidden="true">+</span></summary><p>No. Cierra la llave del agua y saca la tapa y el asiento. Coloca PopoWash sobre los anclajes, vuelve a fijar la tapa y el asiento, y conecta el agua. Abre la llave de a poco y revisa que no gotee.</p><p><button type="button" class="inline-link installation-video-link" data-installation-video>Revisa el video de instalación ↗</button></p></details>
       <details><summary>¿Qué viene en la caja?<span aria-hidden="true">+</span></summary><p>PopoWash, la manguera, la pieza en T y los adaptadores para conectarlo a la llave de agua de tu WC.</p></details>
       <details><summary>¿Necesito un enchufe?<span aria-hidden="true">+</span></summary><p>No. Es un bidet mecánico: funciona con la presión del agua de tu casa, sin pilas ni electricidad.</p></details>
       <details><summary>¿El agua sale fría?<span aria-hidden="true">+</span></summary><p>Sale a la temperatura del agua de tu casa. Este modelo no calienta el agua.</p></details>
@@ -164,8 +168,8 @@
           </div>
           <button class="button cta-buy" type="button" data-add-to-bag>Comprar PopoWash <span aria-hidden="true">↗</span></button>
           <details class="install-more"><summary>¿Quieres que te lo instalemos?</summary><label class="install-check"><input type="checkbox" id="cta-install-add" value="15000"> Agregar instalación en Santiago <span>+$15.000</span></label></details>
-          <p class="compat-note">Te sirve si puedes sacar la tapa y el asiento de tu WC. <a href="#faq-compatibilidad">Revisa compatibilidad</a></p>
-          <p id="cta-quantity-note" class="small">Vista previa de compra. Pagos aún no habilitados.</p>
+          <p class="compat-note">Te sirve si puedes sacar la tapa y el asiento de tu WC. <a href="#faq-compatibilidad" data-compatibility aria-haspopup="dialog" aria-controls="compatibility-dialog">Revisa compatibilidad</a></p>
+          <p id="cta-quantity-note" class="small">Elige la cantidad y continúa al carrito.</p>
         </div>
       </div>
     </section>
@@ -173,15 +177,38 @@
   <footer class="footer">
     <div class="wrap footer-identity"><a class="brand" href="#hero" aria-label="PopoWash, volver al inicio"><picture><source media="(max-width: 1100px)" srcset="../branding/popowash-logo-v2-68.webp"><img src="../branding/popowash-logo-v2-88.webp" alt="PopoWash" width="447" height="88"></picture></a></div>
     <div class="wrap footer-grid">
-      <nav class="footer-col footer-links" aria-label="Información de PopoWash"><h3>Links</h3><ul><li><span class="footer-pending">Política de privacidad</span></li><li><span class="footer-pending">Términos y condiciones</span></li><li><a href="#faq-despacho">Despacho</a></li><li><span class="footer-pending">Cambios y devoluciones</span></li><li><span class="footer-pending">Política de reembolso</span></li><li><span class="footer-pending">Garantías</span></li><li><span class="footer-pending">Información de contacto</span></li><li><a href="#instalacion">Cómo instalar tu PopoWash</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li><li><a href="#faq-compatibilidad">Compatibilidad</a></li></ul></nav>
+      <nav class="footer-col footer-links" aria-label="Información de PopoWash"><h3>Links</h3><ul><li><span class="footer-pending">Política de privacidad</span></li><li><span class="footer-pending">Términos y condiciones</span></li><li><a href="#faq-despacho">Despacho</a></li><li><span class="footer-pending">Cambios y devoluciones</span></li><li><span class="footer-pending">Política de reembolso</span></li><li><span class="footer-pending">Garantías</span></li><li><span class="footer-pending">Información de contacto</span></li><li><a href="#instalacion">Cómo instalar tu PopoWash</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li><li><a href="#faq-compatibilidad" data-compatibility aria-haspopup="dialog" aria-controls="compatibility-dialog">Compatibilidad</a></li></ul></nav>
       <div class="footer-col footer-whatsapp"><h3>Escríbenos</h3><p>Si te quedan dudas, escribe a nuestro WhatsApp.</p>
         <form class="wa-form" id="wa-form" data-whatsapp="" novalidate><label class="sr-only" for="wa-message">Tu mensaje para WhatsApp</label><input id="wa-message" name="mensaje" type="text" placeholder="Escribe tu mensaje" autocomplete="off"><button type="submit" disabled aria-label="WhatsApp pendiente de configurar"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form>
       </div>
-      <div class="footer-col footer-social"><h3>Síguenos</h3><button class="social-btn" type="button" disabled aria-label="Instagram pendiente de configurar"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg></button></div>
+      <div class="footer-col footer-social"><h3>Síguenos</h3><a class="social-btn" href="https://www.instagram.com/popowash.cl/" target="_blank" rel="noopener noreferrer" aria-label="PopoWash en Instagram (abre en otra pestaña)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg></a></div>
     </div>
     <div class="wrap footer-bottom"><span>© 2026 PopoWash</span><span>Requiere tapa y asiento desmontables.</span></div>
   </footer>
-  <dialog id="bag-dialog" aria-labelledby="bag-title"><button type="button" class="dialog-close" aria-label="Cerrar bolsa">×</button><h2 id="bag-title">Tu bolsa.</h2><p>PopoWash · <strong id="bag-quantity">1 unidad</strong></p><p>Precio unitario: $39.990. <span id="bag-subtotal"></span></p><p class="small">Esta bolsa es una vista previa. No genera pedidos ni procesa pagos.</p><a class="text-link" href="#faq-compatibilidad" id="bag-compat-link">Revisar compatibilidad <span aria-hidden="true">↓</span></a><button class="button dialog-done" type="button">Seguir explorando</button></dialog>
+  <dialog id="bag-dialog" class="cart-dialog" aria-labelledby="bag-title">
+<button type="button" class="dialog-close" aria-label="Cerrar carrito">×</button>
+<div class="cart-heading"><span class="cart-eyebrow">TU POPOWASH, EN UN PASO</span><h2 id="bag-title">Tu carrito.</h2><p>Elige cuántos quieres y cómo pagar.</p></div>
+<div class="cart-layout"><div class="cart-item"><img src="assets/kit-popowash-estudio-v4.webp" alt="Kit PopoWash con sus accesorios" width="1254" height="1254"><div><h3>PopoWash</h3><p>Bidet mecánico · Kit de instalación incluido</p><span class="cart-unit">$39.990 por unidad</span><label for="cart-quantity">Cantidad</label><div class="stepper"><button type="button" data-cart-delta="-1" aria-label="Quitar una unidad">−</button><input id="cart-quantity" type="number" min="1" max="10" step="1" value="1" inputmode="numeric" aria-describedby="cart-error"><button type="button" data-cart-delta="1" aria-label="Agregar una unidad">+</button></div><p id="cart-error" role="status"></p></div></div>
+<div class="cart-checkout"><div class="cart-line"><span>PopoWash</span><output id="cart-product-total">$39.990</output></div><details class="cart-install"><summary>¿Agregar instalación en Santiago?</summary><label><input type="checkbox" id="cart-install"> Instalación <output id="cart-install-total">$15.000</output></label><p>$15.000 por unidad.</p></details><div class="cart-total"><span>Total productos y servicios</span><output id="cart-total" aria-live="polite">$39.990</output></div>
+<fieldset class="cart-methods"><legend>¿Cómo quieres pagar?</legend><label><input type="radio" name="cart-payment" value="Webpay" checked><img src="assets/logo-webpay.webp" alt="Webpay" width="216" height="64"><span>Tarjeta de débito o crédito</span></label><label><input type="radio" name="cart-payment" value="Mercado Pago"><img src="assets/logo-mercadopago.webp" alt="Mercado Pago" width="199" height="52"><span>Cuenta o tarjeta</span></label></fieldset>
+<button type="button" class="button" id="cart-pay">Continuar al pago <span aria-hidden="true">→</span></button><p class="cart-demo-note">Vista previa: los métodos de pago son ejemplos. No se realiza ningún cobro.</p>
+<div id="cart-payment-preview" class="cart-payment-preview" tabindex="-1" hidden><h3>Así continúa tu pago</h3><p>Pasarías a <strong>Webpay</strong> por <output>$39.990</output>.</p><p>La pasarela y las condiciones de entrega se configurarán antes de habilitar la compra. No se ha creado un pedido.</p></div>
+</div></div><div class="cart-footer"><button type="button" class="inline-link" data-cart-back>Volver a la página</button><a class="inline-link" href="#faq-compatibilidad" data-compatibility id="bag-compat-link">Revisa compatibilidad ↗</a></div>
+</dialog>
 <dialog id="installation-video-dialog" class="video-dialog" aria-labelledby="installation-video-title"><button type="button" class="dialog-close" aria-label="Cerrar video">×</button><h2 id="installation-video-title">Instalación de PopoWash</h2><div class="video-frame"></div><p class="small"><a class="inline-link" href="https://www.youtube.com/watch?v=q2sO9ERbWnE" target="_blank" rel="noopener">Ver en YouTube ↗</a></p></dialog>
+<dialog id="compatibility-dialog" aria-labelledby="compatibility-title"><div class="content">
+<div class="top"><img class="logo" src="../branding/popowash-logo-v2-88.webp" alt="PopoWash" width="447" height="88"><button class="close" aria-label="Cerrar guía" autofocus>×</button></div>
+<h2 id="compatibility-title">¿Le sirve a <span>mi inodoro?</span></h2>
+<p class="intro">Dos cosas para revisar: el asiento y la conexión de agua.</p>
+<div class="examples">
+<figure class="example"><div class="photo"><img src="assets/compatibilidad-wc-estanque-visible.jpg" alt="Inodoro con estanque visible y conexión de agua bajo el estanque"><span class="badge">Sí, si…</span></div><figcaption><h2>Estanque y conexión accesibles</h2><p>La tapa y el asiento se pueden sacar y volver a fijar. Además, puedes acceder a la conexión de agua para instalar PopoWash.</p></figcaption></figure>
+<figure class="example"><div class="photo"><img src="assets/compatibilidad-wc-suspendido.webp" alt="Inodoro suspendido con estanque oculto dentro de la pared"><span class="badge review">Revisar antes</span></div><figcaption><h2>Estanque oculto en la pared</h2><p>Si no hay una conexión de agua accesible, no puedes hacer la instalación estándar. Que esté suspendido o empotrado, por sí solo, no lo descarta.</p></figcaption></figure>
+</div>
+<div class="check"><span class="cross" aria-hidden="true">×</span><span><strong>No sirve si la tapa y el asiento no se pueden desmontar.</strong> PopoWash va debajo del asiento y necesita sus anclajes.</span></div>
+<p class="help"><b>¿No estás seguro?</b> Antes de comprar, prepara fotos del inodoro completo, los anclajes del asiento y la conexión de agua para revisar tu caso.</p>
+<details><summary>Ver un PopoWash instalado</summary><div class="real"><img src="assets/compatibilidad-popowash-instalado-real.jpeg" alt="Fotografía real de PopoWash instalado bajo el asiento de un inodoro"><p>Así queda debajo del asiento. Este es un ejemplo real de instalación; para tu inodoro también hay que revisar el espacio y las conexiones.</p></div></details>
+<p class="tiny">Las fotos ilustran tipos de inodoro; no son una lista de modelos certificados compatibles.</p>
+</div>
+</dialog>
 </body>
 </html>

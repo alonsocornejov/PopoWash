@@ -97,20 +97,16 @@ syncPlayback();
 
 const quantity = document.querySelector('#product-quantity');
 const bagDialog = document.querySelector('#bag-dialog');
-let bagQuantity = 0;
+
 document.querySelectorAll('[data-add-to-bag]:not(#comprar-final [data-add-to-bag])').forEach(button => button.addEventListener('click', () => {
   const count = quantity.valueAsNumber;
   const valid = Number.isInteger(count) && count >= 1 && count <= 10;
   quantity.setAttribute('aria-invalid', String(!valid));
-  document.querySelector('#quantity-note').textContent = valid ? 'Vista previa de compra. Disponibilidad por confirmar.' : 'Ingresa una cantidad entera entre 1 y 10.';
+  document.querySelector('#quantity-note').textContent = valid ? 'Elige la cantidad y continúa al carrito.' : 'Ingresa una cantidad entera entre 1 y 10.';
   if (!valid) { document.querySelector('#producto').scrollIntoView(); quantity.focus(); return; }
-  bagQuantity += count;
-  document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
-  document.querySelector('#bag-subtotal').textContent = `Subtotal: ${new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }).format(bagQuantity * 39990 + Number(bagDialog.dataset.installTotal || 0))}.`;
-  bagDialog.showModal();
+  window.popowashCart.open(count, false);
 }));
-bagDialog.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => bagDialog.close()));
-document.querySelectorAll('a[href="#faq-compatibilidad"], a[href="#faq-despacho"]').forEach(link => link.addEventListener('click', () => {
+document.querySelectorAll('a[href="#faq-despacho"]').forEach(link => link.addEventListener('click', () => {
   document.querySelector(link.getAttribute('href')).open = true;
   if (bagDialog.open) bagDialog.close();
 }));
@@ -162,7 +158,7 @@ installationVideoDialog.addEventListener('close', () => installationVideoDialog.
   const sync = () => {
     input.setAttribute('aria-invalid', String(!valid()));
     cta.querySelector('#cta-order-total').textContent = valid() ? money.format(input.valueAsNumber * (39990 + extra())) : '—';
-    cta.querySelector('#cta-quantity-note').textContent = valid() ? 'Vista previa de compra. Pagos aún no habilitados.' : 'Ingresa una cantidad entera entre 1 y 10.';
+    cta.querySelector('#cta-quantity-note').textContent = valid() ? 'Elige la cantidad y continúa al carrito.' : 'Ingresa una cantidad entera entre 1 y 10.';
   };
   cta.querySelectorAll('[data-qty]').forEach(button => button.addEventListener('click', () => {
     input.value = Math.min(10, Math.max(1, (valid() ? input.valueAsNumber : 1) + Number(button.dataset.qty)));
@@ -173,12 +169,7 @@ installationVideoDialog.addEventListener('close', () => installationVideoDialog.
   cta.querySelector('[data-add-to-bag]').addEventListener('click', () => {
     sync();
     if (!valid()) { input.focus(); return; }
-    bagQuantity += input.valueAsNumber;
-    const installationTotal = Number(bagDialog.dataset.installTotal || 0) + input.valueAsNumber * extra();
-    bagDialog.dataset.installTotal = String(installationTotal);
-    document.querySelector('#bag-quantity').textContent = `${bagQuantity} ${bagQuantity === 1 ? 'unidad' : 'unidades'}`;
-    document.querySelector('#bag-subtotal').textContent = `Subtotal: ${money.format(bagQuantity * 39990 + installationTotal)}.${installationTotal ? ` Incluye ${money.format(installationTotal)} de instalación en Santiago.` : ''}`;
-    bagDialog.showModal();
+    window.popowashCart.open(input.valueAsNumber, install.checked);
   });
   sync();
 })();
@@ -208,3 +199,36 @@ if (waForm) waForm.addEventListener('submit', event => {
   const message = waForm.querySelector('input').value.trim();
   if (number) window.open(`https://wa.me/${number}${message ? `?text=${encodeURIComponent(message)}` : ''}`, '_blank', 'noopener');
 });
+
+// Todos los accesos de compatibilidad comparten la misma guía.
+const compatibilityDialog = document.querySelector('#compatibility-dialog');
+document.querySelectorAll('[data-compatibility]').forEach(control => control.addEventListener('click', event => {
+  event.preventDefault();
+  if (bagDialog.open) bagDialog.close();
+  if (!compatibilityDialog.open) compatibilityDialog.showModal();
+}));
+compatibilityDialog.querySelector('.close').addEventListener('click', () => compatibilityDialog.close());
+
+// El modo activo sigue el tiempo real del video, también al buscar o repetir.
+const washDemo = document.querySelector('#wash-demo');
+if (washDemo) {
+  washDemo.defaultPlaybackRate = 1.2;
+  washDemo.playbackRate = 1.2;
+  const washModes = [...document.querySelectorAll('#beneficios [data-wash-mode]')];
+  const syncWashMode = () => {
+    const t = washDemo.currentTime;
+    const active = t >= 2.5 && t < 5.1 ? 'posterior' : t >= 6.1 && t < 9.1 ? 'frontal' : null;
+    washModes.forEach(mode => {
+      const selected = mode.dataset.washMode === active;
+      mode.classList.toggle('is-active', selected);
+      mode.querySelector('button').setAttribute('aria-pressed', String(selected));
+    });
+  };
+  ['timeupdate', 'seeking', 'seeked', 'loadedmetadata', 'ended'].forEach(event => washDemo.addEventListener(event, syncWashMode));
+  document.querySelectorAll('#beneficios [data-wash-seek]').forEach(button => button.addEventListener('click', () => {
+    washDemo.currentTime = Number(button.dataset.washSeek);
+    syncWashMode();
+    washDemo.play().catch(() => {});
+  }));
+  syncWashMode();
+}
