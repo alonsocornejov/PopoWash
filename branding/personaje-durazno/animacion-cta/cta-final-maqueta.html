@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="file:///mnt/user-data/uploads/POPOWASH/opcion-4/">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ===== Propuesta CTA · solo maqueta, no toca el archivo real ===== */
+.cta2{background:#14265c;color:#fff;padding-block:88px 96px;position:relative;overflow:hidden}
+.cta-anim{position:relative;width:min(560px,100%);aspect-ratio:4/3;flex-shrink:0;margin-left:-12px}
+.cta-anim video,.cta-anim img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#14265c}
+.cta-anim img{display:none}
+@media (prefers-reduced-motion:reduce){.cta-anim video{display:none}.cta-anim img{display:block}}
+.cta2-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center;max-width:1180px}
+.cta2-grid>*{min-width:0}
+.cta2-eyebrow{display:inline-block;font:800 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+.cta2 h2{font-size:clamp(40px,4.6vw,64px);line-height:1.04;margin-top:18px;text-transform:uppercase}
+.cta2 h2 em{color:var(--lime)}
+.cta2-lead{font-size:18px;line-height:1.6;color:#edf0ff;margin-top:20px;max-width:440px}
+.cta2-visual{position:relative;margin-top:18px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+
+.cta2-facts{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 22px}
+.cta2-facts li{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:700;color:#fff}
+.cta2-facts li:before{content:"";width:10px;height:10px;border-radius:50%;background:var(--lime);flex-shrink:0;box-shadow:0 0 0 4px #c8ff3633}
+
+.card2{background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:24px;box-shadow:10px 10px 0 var(--ink);padding:30px 30px 26px}
+.card2-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card2-label{font:800 12px/1.4 var(--body);letter-spacing:.08em;text-transform:uppercase}
+.card2-tag{font:800 11px/1 var(--body);background:var(--lime);border:1.5px solid var(--ink);border-radius:100px;padding:6px 10px;white-space:nowrap}
+.card2-legend{font:700 13px/1.4 var(--body);margin:22px 0 10px}
+.opt{display:grid;grid-template-columns:22px 1fr auto;gap:14px;align-items:center;border:1.5px solid var(--line);border-radius:16px;padding:16px 18px;background:#fff;margin-top:10px;cursor:pointer}
+.opt.on{border:2px solid var(--blue);background:#eef1ff;padding:15.5px 17.5px}
+.radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;background:#fff}
+.opt.on .radio{border-color:var(--blue)}
+.opt.on .radio:after{content:"";width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.opt b{display:block;font-size:15px;letter-spacing:-.01em}
+.opt small{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.4}
+.opt .amt{font:400 20px/1 var(--display);letter-spacing:-.03em;white-space:nowrap}
+.opt .amt span{display:block;font:700 11px/1 var(--body);color:var(--muted);text-align:right;margin-top:5px;letter-spacing:0}
+.summary{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;padding-top:20px;border-top:1px dashed #b7b8b5}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden;background:#fff}
+.stepper button{width:44px;height:44px;border:0;background:transparent;font-size:20px;font-weight:700}
+.stepper output{min-width:28px;text-align:center;font-weight:800;font-size:16px}
+.stepper-wrap span{display:block;font-size:12px;font-weight:700;margin-bottom:6px}
+.total{text-align:right}
+.total span{display:block;font-size:12px;font-weight:700;color:var(--muted)}
+.total strong{display:block;font:400 clamp(40px,3.6vw,52px)/1.05 var(--display);letter-spacing:-.04em;margin-top:4px}
+.total small{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.card2 .button{width:100%;margin-top:22px;min-height:58px;font-size:15px;box-shadow:4px 5px 0 var(--ink)}
+.compat{display:flex;gap:12px;align-items:flex-start;margin-top:18px;padding:14px 16px;border-radius:14px;background:#111318;color:#fff;font-size:13px;line-height:1.5}
+.compat i{font-style:normal;flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-weight:900;font-size:13px}
+.compat a{color:var(--lime);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.card2-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5}
+
+@media(max-width:767px){
+ .cta2{padding-block:56px 64px}
+ .cta2-grid{grid-template-columns:1fr;gap:34px}
+ .cta2 h2{font-size:clamp(34px,10vw,46px)}
+ .cta2-lead{font-size:16px}
+ .cta2-visual{margin-top:18px;gap:12px}
+ .cta2-visual{flex-wrap:wrap}.cta-anim{width:100%}
+ .cta2-facts li{font-size:13px}
+ .card2{padding:22px 18px 20px;box-shadow:6px 6px 0 var(--ink);border-radius:20px}
+ .opt{padding:14px;gap:12px}.opt.on{padding:13.5px}
+ .opt b{font-size:14px}.opt .amt{font-size:17px}
+ .total strong{font-size:36px}
+}
+</style>
+</head>
+<body>
+<section class="cta2" id="producto" aria-labelledby="cta2-title">
+ <div class="wrap cta2-grid">
+  <div class="cta2-copy">
+   <span class="cta2-eyebrow">Último paso</span>
+   <h2 id="cta2-title">Tu poto ya<br><em>esperó suficiente.</em></h2>
+   <p class="cta2-lead">Agua para lavar, papel solo para secar. Se instala bajo el asiento de tu WC y funciona sin enchufe.</p>
+   <div class="cta2-visual">
+    <div class="cta-anim" id="ctaAnim" aria-hidden="true"><video id="ctaVid" src="popowash-cta-fijo.mp4" poster="poster-fijo.jpg" muted playsinline preload="metadata"></video><img src="poster-fijo.jpg" alt=""></div>
+    <ul class="cta2-facts">
+     <li>Sin enchufe ni pilas</li>
+     <li>Presión regulable</li>
+     <li>Lavado posterior y frontal</li>
+    </ul>
+   </div>
+  </div>
+
+  <div class="card2">
+   <div class="card2-top"><span class="card2-label">PopoWash · bidet mecánico</span></div>
+   <p class="card2-legend">¿Cómo lo quieres?</p>
+   <div class="opt on" role="radio" aria-checked="true"><span class="radio"></span><span><b>Lo instalo yo</b><small>Te mostramos cómo, paso a paso</small></span><span class="amt">$39.990</span></div>
+   <div class="opt" role="radio" aria-checked="false"><span class="radio"></span><span><b>Con instalación</b><small>Solo en Santiago</small></span><span class="amt">$54.990<span>+$15.000</span></span></div>
+   <div class="summary">
+    <div class="stepper-wrap"><span>Cantidad</span><div class="stepper"><button aria-label="Quitar uno">−</button><output>1</output><button aria-label="Agregar uno">+</button></div></div>
+    <div class="total"><span>Total</span><strong>$39.990</strong><small>+ despacho por calcular</small></div>
+   </div>
+   <a class="button" href="#">Comprar PopoWash <span aria-hidden="true">↗</span></a>
+   <div class="compat"><i>✓</i><p>Te sirve si puedes sacar la tapa y el asiento de tu WC. <a href="#">¿Dudas? Revisa compatibilidad</a></p></div>
+   <p class="card2-note">Vista previa de compra. Pagos aún no habilitados.</p>
+  </div>
+ </div>
+</section>
+<script>
+(() => {
+  const v = document.getElementById('ctaVid'); const box = document.getElementById('ctaAnim');
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let visible = false, timer = null;
+  const run = () => { if (mq.matches || !visible){ v.pause(); clearTimeout(timer); return; } v.play().catch(()=>{}); };
+  v.addEventListener('ended', () => { clearTimeout(timer); timer = setTimeout(() => { if (visible && !mq.matches){ v.currentTime = 0; v.play().catch(()=>{}); } }, 2500); });
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; run(); }, {threshold:.35}).observe(box);
+  mq.addEventListener ? mq.addEventListener('change', run) : mq.addListener(run);
+})();
+</script>
+</body>
+</html>
