@@ -33,3 +33,7 @@
 - Definir pasarela y cuenta comercial, servidor para pedidos/cobros, datos de entrega, costos/plazos, disponibilidad y condiciones comerciales. Los logos de pago son ejemplos, no medios habilitados.
 - Incorporar reseñas reales autorizadas, políticas, número de WhatsApp y validación final del contenido del kit.
 - Revisar con Gabo esta versión visual. No se enviaron mensajes a Gabo desde Codex.
+
+## Ajuste de textos aprobado por Alonso
+
+Posterior: «Agua para limpiar el poto después de ir al baño. Después, un poco de papel para secar.» Se retiran los segundos y la indicación de presión. Frontal: «Un chorro suave para limpiar la zona íntima femenina.» Se mantiene «Solo uso externo». «Una perilla. Dos modos. Cada uno para su zona.» queda centrado directamente encima del bloque de modos. Alonso autorizó publicar el ajuste en main.

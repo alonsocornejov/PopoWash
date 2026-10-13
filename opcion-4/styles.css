@@ -662,3 +662,8 @@ footer.footer .footer-identity{margin-bottom:24px}
 #bag-dialog .cart-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);padding-top:18px;margin-top:24px}
 #bag-dialog .cart-footer button{background:transparent;border:0;min-height:44px;padding:0;text-decoration:underline;font-size:14px}
 @media(max-width:767px){.header .navigation{gap:12px}.header .navigation>.button{display:none}.header .nav-links{margin-right:0}#bag-dialog.cart-dialog{padding:22px 18px;border-radius:18px;width:calc(100% - 24px)}#bag-dialog .cart-layout{grid-template-columns:1fr;gap:18px;margin-top:22px}#bag-dialog .cart-item{grid-template-columns:100px 1fr;gap:14px}#bag-dialog .cart-item>img{width:100px;height:100px}#bag-dialog .cart-checkout{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:18px}#bag-dialog .cart-methods label{grid-template-columns:20px 100px 1fr;gap:8px}#bag-dialog .cart-methods img{width:100px}#bag-dialog .cart-total output{font-size:26px}#bag-dialog .cart-eyebrow{font-size:10px}}
+
+/* Modos: subtítulo centrado sobre Posterior y Frontal. */
+#beneficios .benefits-modes-group{min-width:0}
+#beneficios .benefits-modes-intro{font-size:18px;line-height:1.55;text-align:center;color:var(--muted);margin:0 0 16px}
+@media(max-width:767px){#beneficios .benefits-modes-intro{font-size:16px}}
