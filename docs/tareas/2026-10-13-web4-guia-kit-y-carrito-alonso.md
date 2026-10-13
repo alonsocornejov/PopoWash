@@ -37,3 +37,9 @@
 ## Ajuste de textos aprobado por Alonso
 
 Posterior: «Agua para limpiar el poto después de ir al baño. Después, un poco de papel para secar.» Se retiran los segundos y la indicación de presión. Frontal: «Un chorro suave para limpiar la zona íntima femenina.» Se mantiene «Solo uso externo». «Una perilla. Dos modos. Cada uno para su zona.» queda centrado directamente encima del bloque de modos. Alonso autorizó publicar el ajuste en main.
+
+## Ajustes de reproducción móvil y banner aprobados
+
+Alonso autorizó publicar el recorte con velocidad incorporada al archivo: chorros a 1,5× y resto a 1,2×; duración final 7,63 segundos. Se actualizan los momentos de resaltado. Ambos videos fijan silencio y reproducción dentro de la página, reintentan al entrar en pantalla/cargar y ofrecen botón si el navegador bloquea autoplay. El CTA tiene poster; se conserva imagen fija con reducción de movimiento. Pruebas a 390px: ambos videos avanzan, respaldo visible y recuperación con toque ante bloqueo simulado, sin errores de JavaScript. No se garantiza autoplay bajo restricciones del dispositivo; falta prueba en teléfono físico.
+
+La franja lima usa dos grupos idénticos con separación final incluida y duración ajustada para conservar velocidad. Verificada a 390, 1440 y 1920px: grupos de igual ancho, sin hueco ni desbordamiento y continuidad en el reinicio. Comparador regenerado. No se incluyen otros cambios locales del proyecto.

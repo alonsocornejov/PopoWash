@@ -11,9 +11,9 @@
   <link rel="preload" href="assets/archivo-black.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/hero-producto-corregido-1200.webp" as="image" imagesrcset="assets/hero-producto-corregido-1200.webp 1200w, assets/hero-producto-corregido-1589.webp 1589w" imagesizes="(max-width: 767px) 90vw, 50vw">
-  <link rel="stylesheet" href="styles.css?v=20261013-kit-carrito">
+  <link rel="stylesheet" href="styles.css?v=20261013-mobile-banner">
   <script src="cart.js?v=20261013-carrito" defer></script>
-  <script src="app.js?v=20261013-carrito" defer></script>
+  <script src="app.js?v=20261013-mobile-banner" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -42,7 +42,7 @@
 
 
 
-    <div id="banner-papel" class="ticker" aria-label="El papel no limpia. Más agua, menos papel. Tu poto lo sabe."><div class="ticker-track" aria-hidden="true"><span>EL PAPEL NO LIMPIA</span><span>MÁS AGUA, MENOS PAPEL</span><span>TU POTO LO SABE</span><span>EL PAPEL NO LIMPIA</span><span>MÁS AGUA, MENOS PAPEL</span><span>TU POTO LO SABE</span></div></div>
+    <div id="banner-papel" class="ticker" aria-label="El papel no limpia. Más agua, menos papel. Tu poto lo sabe."><div class="ticker-track" aria-hidden="true"><div class="ticker-group"><span>EL PAPEL NO LIMPIA</span><span>MÁS AGUA, MENOS PAPEL</span><span>TU POTO LO SABE</span><span>EL PAPEL NO LIMPIA</span><span>MÁS AGUA, MENOS PAPEL</span><span>TU POTO LO SABE</span></div><div class="ticker-group"><span>EL PAPEL NO LIMPIA</span><span>MÁS AGUA, MENOS PAPEL</span><span>TU POTO LO SABE</span><span>EL PAPEL NO LIMPIA</span><span>MÁS AGUA, MENOS PAPEL</span><span>TU POTO LO SABE</span></div></div></div>
 
 
     <div class="purchase-reviews"><section id="producto" class="purchase section-space" aria-labelledby="product-title"><div class="wrap purchase-grid">
@@ -90,15 +90,15 @@
       <div class="wrap">
         <div class="benefits-head"><h2 id="benefits-title">PopoWash es<br><em>la solución.</em></h2></div>
 
-        <div class="benefits-demo"><video id="wash-demo" controls autoplay muted loop playsinline preload="metadata" poster="assets/modos-lavado-poster.jpg" aria-label="Demostración de lavado posterior y frontal"><source src="assets/modos-lavado-loop.mp4?v=sin-logo-42" type="video/mp4"></video>
+        <div class="benefits-demo"><div class="wash-video-wrap"><video id="wash-demo" controls autoplay muted loop playsinline preload="metadata" poster="assets/modos-lavado-poster.jpg" aria-label="Demostración de lavado posterior y frontal"><source src="assets/modos-lavado-loop-rapido.mp4" type="video/mp4"></video></div>
         <div class="benefits-modes-group"><p class="benefits-modes-intro">Una perilla. Dos modos. Cada uno para su zona.</p>
         <div class="modes" aria-label="Modos de lavado">
           <div class="mode" data-wash-mode="posterior">
-            <h4><button type="button" data-wash-seek="2.8" aria-pressed="false">Posterior</button></h4>
+            <h4><button type="button" data-wash-seek="2.3" aria-pressed="false">Posterior</button></h4>
             <p>Agua para limpiar el poto después de ir al baño. Después, un poco de papel para secar.</p>
           </div>
           <div class="mode" data-wash-mode="frontal">
-            <h4><button type="button" data-wash-seek="6.8" aria-pressed="false">Frontal</button></h4>
+            <h4><button type="button" data-wash-seek="4.9" aria-pressed="false">Frontal</button></h4>
             <p>Un chorro suave para limpiar la zona íntima femenina.</p>
             <p class="mode-rules">Solo uso externo.</p>
           </div>
@@ -158,7 +158,7 @@
           <span class="cta-eyebrow">Último paso</span>
           <h2 id="cta-title">Tu poto ya<br><em>esperó suficiente.</em></h2>
           <p>Regálate un PopoWash.</p>
-          <div class="cta-visual" aria-hidden="true"><video class="cta-anim" id="cta-anim" muted playsinline preload="auto" disablepictureinpicture><source src="assets/popowash-cta.mp4" type="video/mp4"><source src="assets/popowash-cta.webm" type="video/webm"></video><img class="cta-anim-still" src="assets/popowash-cta-poster.jpg" alt="" width="720" height="540" loading="lazy"></div>
+          <div class="cta-visual"><video class="cta-anim" id="cta-anim" autoplay muted playsinline poster="assets/popowash-cta-poster.jpg" preload="auto" disablepictureinpicture><source src="assets/popowash-cta.mp4" type="video/mp4"><source src="assets/popowash-cta.webm" type="video/webm"></video><img class="cta-anim-still" src="assets/popowash-cta-poster.jpg" alt="" width="720" height="540" loading="lazy"></div>
         </div>
         <div class="price-card">
           <p class="price-label">PopoWash · bidet mecánico</p>

@@ -174,21 +174,53 @@ installationVideoDialog.addEventListener('close', () => installationVideoDialog.
   sync();
 })();
 
-// Animación del CTA: se reproduce al verse en pantalla y se repite con una pausa; con «reducir movimiento» queda la imagen fija.
-const ctaAnim = document.querySelector('#cta-anim');
-if (ctaAnim) {
-  let ctaVisible = false, ctaTimer = null;
-  const ctaSync = () => {
-    if (motionPreference.matches || !ctaVisible || document.hidden) { ctaAnim.pause(); clearTimeout(ctaTimer); ctaTimer = null; return; }
-    if (ctaAnim.paused && !ctaTimer) ctaAnim.play().catch(() => {});
+// Inicio silencioso en móviles; mantiene imagen y acción si el navegador bloquea autoplay.
+function setupInlineVideo(video, { reducedMotion = false, repeatDelay = 0 } = {}) {
+  if (!video) return;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'video-start';
+  button.textContent = 'Reproducir animación';
+  button.setAttribute('aria-label', video.id === 'wash-demo' ? 'Reproducir demostración de lavado' : 'Reproducir animación de PopoWash');
+  button.hidden = true;
+  video.insertAdjacentElement('afterend', button);
+  let visible = false, pending = false, timer = null, userPaused = false;
+  const start = () => {
+    if (!visible || document.hidden || pending || timer || userPaused || (reducedMotion && motionPreference.matches)) return;
+    if (!video.paused) return;
+    video.muted = true;
+    pending = true;
+    video.play().then(() => { button.hidden = true; }).catch(error => {
+      if (error.name !== 'AbortError' && visible) button.hidden = false;
+    }).finally(() => { pending = false; });
   };
-  ctaAnim.addEventListener('ended', () => {
-    ctaTimer = setTimeout(() => { ctaTimer = null; ctaAnim.currentTime = 0; ctaSync(); }, 2500);
+  button.addEventListener('click', () => { userPaused = false; start(); });
+  video.addEventListener('playing', () => { button.hidden = true; });
+  video.addEventListener('error', () => { button.hidden = false; button.textContent = 'Reintentar reproducción'; });
+  video.addEventListener('pointerdown', () => { userPaused = !video.paused; });
+  ['loadeddata', 'canplay'].forEach(event => video.addEventListener(event, start));
+  if (repeatDelay) video.addEventListener('ended', () => {
+    timer = setTimeout(() => { timer = null; video.currentTime = 0; start(); }, repeatDelay);
   });
-  new IntersectionObserver(entries => { ctaVisible = entries[0].isIntersecting; ctaSync(); }, { threshold: 0.35 }).observe(ctaAnim);
-  document.addEventListener('visibilitychange', ctaSync);
-  motionPreference.addEventListener('change', ctaSync);
+  new IntersectionObserver(entries => {
+    visible = entries[0].isIntersecting;
+    if (visible) start();
+    else { clearTimeout(timer); timer = null; video.pause(); }
+  }, { threshold: 0.05 }).observe(video);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); else start(); });
+  window.addEventListener('pageshow', start);
+  document.addEventListener('pointerup', () => { if (!button.hidden) start(); });
+  if (reducedMotion) motionPreference.addEventListener('change', () => {
+    if (motionPreference.matches) { video.pause(); button.hidden = true; }
+    else start();
+  });
 }
+setupInlineVideo(document.querySelector('#cta-anim'), { reducedMotion: true, repeatDelay: 2500 });
 
 // Pie de página: enlaces aún sin destino y formulario que abrirá WhatsApp cuando exista el número.
 document.querySelectorAll('[data-link-pendiente]').forEach(link => link.addEventListener('click', event => event.preventDefault()));
@@ -212,12 +244,13 @@ compatibilityDialog.querySelector('.close').addEventListener('click', () => comp
 // El modo activo sigue el tiempo real del video, también al buscar o repetir.
 const washDemo = document.querySelector('#wash-demo');
 if (washDemo) {
-  washDemo.defaultPlaybackRate = 1.2;
-  washDemo.playbackRate = 1.2;
+  setupInlineVideo(washDemo);
+  washDemo.defaultPlaybackRate = 1;
+  washDemo.playbackRate = 1;
   const washModes = [...document.querySelectorAll('#beneficios [data-wash-mode]')];
   const syncWashMode = () => {
     const t = washDemo.currentTime;
-    const active = t >= 2.5 && t < 5.1 ? 'posterior' : t >= 6.1 && t < 9.1 ? 'frontal' : null;
+    const active = t >= 2.08 && t < 3.82 ? 'posterior' : t >= 4.65 && t < 6.65 ? 'frontal' : null;
     washModes.forEach(mode => {
       const selected = mode.dataset.washMode === active;
       mode.classList.toggle('is-active', selected);

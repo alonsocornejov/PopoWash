@@ -681,3 +681,17 @@ footer.footer .footer-identity{margin-bottom:24px}
 #bag-dialog .cart-box li{position:relative;padding-left:20px;font-size:14px;line-height:1.4;color:var(--muted)}
 #bag-dialog .cart-box li::before{content:"";position:absolute;left:0;top:.4em;width:10px;height:6px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
 @media(max-width:767px){#bag-dialog .cart-kit img{height:180px}#bag-dialog .cart-box{grid-template-columns:1fr}}
+
+/* Acción visible cuando un móvil bloquea la reproducción automática. */
+.video-start{min-height:44px;padding:10px 18px;border:2px solid var(--ink);border-radius:999px;background:var(--lime);color:var(--ink);font:700 14px var(--body)}
+.video-start[hidden]{display:none}
+#comprar-final .video-start{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:2;white-space:nowrap}
+#beneficios .benefits-demo>.video-start{grid-column:1;justify-self:center}
+@media(prefers-reduced-motion:reduce){#comprar-final .video-start{display:none}}
+#beneficios .wash-video-wrap{position:relative;min-width:0}#beneficios .wash-video-wrap .video-start{position:absolute;bottom:50px;left:50%;transform:translateX(-50%);z-index:2;white-space:nowrap}
+
+/* Franja continua: dos grupos de ancho idéntico, incluido el espacio final. */
+#banner-papel .ticker-track{display:flex;width:max-content}
+#banner-papel .ticker-group{display:flex;align-items:center;justify-content:space-around;gap:44px;padding-right:44px;min-width:100vw;flex-shrink:0}
+#banner-papel .ticker-track span{margin:0;flex-shrink:0}
+#banner-papel .ticker-track{animation-duration:44s}
