@@ -1,5 +1,7 @@
 # Cierre · Opción 4: hero, compra, funcionamiento y modelo 3D
 
+> Actualización de precio (Gabo, 21-oct-2026): la instalación opcional ahora cuesta $25.000 CLP por unidad. Las menciones a $15.000 de este cierre describen el valor histórico y ya no están vigentes.
+
 - Fecha: 10 de octubre de 2026.
 - Responsable humano: Gabo; dirección visual y decisiones de producto.
 - Apoyo: Codex; implementación, edición de imágenes y comprobaciones.

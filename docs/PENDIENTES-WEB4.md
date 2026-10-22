@@ -45,7 +45,7 @@ Resultado aprobado para revisión de Gabo en [el cierre de guía, kit y carrito]
 
 ### 2. CTA · diseño primero
 
-- [x] **C01 — Composición del cierre:** CTA final de Gabo integrado el 13 de octubre: durazno animado, cantidad/total, instalación opcional y acción. Se conservan $39.990 y +$15.000 por instalación en Santiago; despacho separado.
+- [x] **C01 — Composición del cierre:** CTA final de Gabo integrado el 13 de octubre: durazno animado, cantidad/total, instalación opcional y acción. Se conservan $39.990 y +$25.000 por instalación en Santiago; despacho separado.
 - [ ] **C02 — Confianza junto a la acción:** diseñar espacio para compatibilidad y soporte, sin inventar garantías, contactos ni plazos. Determinar qué información necesita realmente el comprador en ese punto.
 
 ### 3. Reseñas de clientes existentes

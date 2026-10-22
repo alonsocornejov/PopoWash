@@ -9,8 +9,8 @@
   const sync = () => {
     const n = valid() ? input.valueAsNumber : 1;
     dialog.querySelector('#cart-product-total').textContent = money.format(n * 39990);
-    dialog.querySelector('#cart-total').textContent = money.format(n * (39990 + (install.checked ? 15000 : 0)));
-    dialog.querySelector('#cart-install-total').textContent = money.format(n * 15000);
+    dialog.querySelector('#cart-total').textContent = money.format(n * (39990 + (install.checked ? 25000 : 0)));
+    dialog.querySelector('#cart-install-total').textContent = money.format(n * 25000);
     dialog.querySelector('[data-cart-delta="-1"]').disabled = !valid() || n <= 1;
     dialog.querySelector('[data-cart-delta="1"]').disabled = !valid() || n >= 10;
     input.setAttribute('aria-invalid', String(!valid()));

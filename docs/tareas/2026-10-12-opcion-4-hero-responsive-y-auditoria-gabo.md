@@ -1,5 +1,7 @@
 # Opción 4 · hero, problema y recorrido
 
+> Actualización de precio (Gabo, 21-oct-2026): la instalación opcional ahora cuesta $25.000 CLP por unidad. Las menciones a $15.000 de este cierre describen el valor histórico y ya no están vigentes.
+
 - **Responsable humano de las decisiones:** Gabo.
 - **Apoyo de ejecución y comprobación:** Codex.
 - **Fecha:** 12 de octubre de 2026.
