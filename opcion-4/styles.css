@@ -710,3 +710,21 @@ footer.footer .footer-identity{margin-bottom:24px}
  #instalacion .step p{color:var(--white);font-size:16px;line-height:1.6}
  #instalacion .step-mobile-photo{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:2px solid var(--ink);border-radius:14px;margin-top:16px}
 }
+
+/* Popin: original Gemini motion, isolated from the source's pink backdrop and seat. */
+.header .navigation{position:relative}
+.header-popin{position:absolute;right:252px;bottom:-26px;width:84px;height:auto;pointer-events:none;user-select:none;line-height:0}
+.header-popin img{display:block;width:100%;height:auto;object-fit:contain}
+.header .nav-links{margin-right:80px}
+@media(min-width:768px) and (max-width:1100px){.header-popin{right:254px;width:76px;bottom:-24px}.header .nav-links{margin-right:64px}}
+@media(max-width:767px){.header-popin{display:none}.header .nav-links{margin-right:0}}
+@media(min-width:768px) and (max-width:900px){.header .nav-links{display:none}.header .navigation>.button{margin-left:auto}}
+/* Popin is a brief greeting in the hero, rather than a persistent sticky companion. */
+.header-popin{opacity:0;visibility:hidden;transform:translateY(3px) scale(.98);transform-origin:50% 65%;transition:opacity .7s cubic-bezier(.4,0,1,1),transform .7s ease,visibility 0s linear .7s}
+.header-popin.is-visible{opacity:1;visibility:visible;transform:none;transition:opacity .22s ease-out,transform .22s ease-out,visibility 0s}
+.purchase-popin-cta{position:relative;grid-column:1/-1;min-width:0}
+.purchase-popin-cta>.button{width:100%;position:relative;z-index:1}
+.purchase-popin{position:absolute;right:-80px;top:-40px;width:110px;height:auto;pointer-events:none;z-index:2}
+.cart-popin-celebration{position:absolute;right:48px;top:18px;width:100px;height:auto;pointer-events:none}
+@media(max-width:1100px){.purchase-popin-cta{margin-right:60px}.purchase-popin{right:-65px;width:96px;top:-33px}}
+@media(max-width:767px){.purchase-popin-cta{margin-right:56px}.purchase-popin{right:-58px;width:88px;top:-28px}.cart-popin-celebration{width:72px;right:38px;top:15px}}

@@ -4,6 +4,8 @@ PopoWash es un prototipo de identidad, landing page y ecommerce para un bidet me
 
 ## Estado vigente
 
+- Propuesta del 23 de octubre en `codex/propuesta-popin-y-contenidos`: integra el contenido de Gabo (`9f6942e`) y las animaciones de Popin revisadas por Alonso. Header pequeño y temporal solo durante el hero; salida rápida en «Lo quiero» y celebración al abrir el carrito. Camión aplazado. Publicación aprobada el 23 de octubre: GitHub Pages usa esta rama para revisión; `main` remoto conserva su estado anterior. [Resumen, pruebas y publicación](tareas/2026-10-23-propuesta-popin-y-contenidos.md).
+
 - Gabo autorizó publicar el trabajo del 21 de octubre en `rama-cambios-21.10.2026`, basada en `main` (`59924cf`): frase célebre debajo del título del CTA, FAQ de niños y servicio de instalación a $25.000 CLP por unidad. Incluye el paquete de marca con ajustes locales del 17 de octubre y los 20 recursos originales del personaje; conserva las mejoras web de Alonso. Alonso prepara nuevas animaciones de Popin en un trabajo separado, no incluidas aquí. Ver [cierre de la sesión](tareas/2026-10-21-cta-faq-precio-gabo.md) y [detalle de integración local](tareas/2026-10-21-integracion-principal-gabo.md). La integración de esta rama en el main compartido queda pendiente.
 
 - Gabo consolidó el mapa de marca el 15 de octubre: [guía breve para Gabo y Alonso](marketing/Popo-Wash-guia-equipo-v1.md), [memoria IA](../.agents/product-marketing.md) y [mapa completo de 83 puntos](marketing/Popo-Wash-mapa-de-marca-v1.md). Son acuerdos con Gabo, pendientes de revisión de Alonso y validación final de Fabián. La entrega se publica en `rama/mapa-de-marca`; su [cierre](tareas/2026-10-15-mapa-de-marca-gabo.md) distingue el paquete de marca de los cambios web ya publicados.

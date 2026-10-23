@@ -268,3 +268,98 @@ if (washDemo) {
   }));
   syncWashMode();
 }
+
+
+// A single brief header appearance, confined to the hero during this page visit.
+(() => {
+  const popin = document.querySelector('.header-popin');
+  const hero = document.querySelector('#hero');
+  if (!popin || !hero) return;
+  let dismissed = false;
+  let greetingTimer;
+  const dismiss = () => {
+    dismissed = true;
+    clearTimeout(greetingTimer);
+    popin.classList.remove('is-visible');
+    observer.disconnect();
+  };
+  const observer = new IntersectionObserver(([entry]) => {
+    if (dismissed) return;
+    if (!entry.isIntersecting) { dismiss(); return; }
+    popin.classList.add('is-visible');
+    // Start fading as the pointing arm returns to rest in the accelerated footage.
+    greetingTimer = setTimeout(dismiss, 4700);
+  }, {rootMargin: '-80px 0px 0px 0px', threshold: .15});
+  observer.observe(hero);
+})();
+
+// The supplied CTA footage is split into resting, hover and purchase feedback states.
+(() => {
+  const wrap = document.querySelector('.purchase-popin-cta');
+  if (!wrap) return;
+  const button = wrap.querySelector('button');
+  const popin = wrap.querySelector('.purchase-popin');
+  const celebration = document.querySelector('.cart-popin-celebration');
+  const assets = {peek: 'assets/popin-cta-peek.webp?v=clean2', point: 'assets/popin-cta-point.webp?v=clean2', enter: 'assets/popin-cta-enter-fast.webp?v=clean2', celebrate: 'assets/popin-cta-celebrate-hands.webp'};
+  let timer, cartTimer, active = false, returnMotion, cartMotion;
+  let cartRun = 0;
+  ['enter', 'celebrate', 'point'].forEach(state => { const image = new Image(); image.src = assets[state]; });
+  const stopReturn = () => { if (returnMotion) returnMotion.cancel(); returnMotion = null; };
+  const rest = () => {
+    if (!active) return;
+    active = false;
+    clearTimeout(timer);
+    stopReturn();
+    if (motionPreference.matches) { popin.src = assets.peek; return; }
+    const outgoing = popin.animate([{opacity: 1, transform: 'translateX(0)'}, {opacity: 0, transform: 'translateX(-9px)'}], {duration: 160, easing: 'ease-in', fill: 'forwards'});
+    returnMotion = outgoing;
+    outgoing.finished.then(() => {
+      if (active || returnMotion !== outgoing) return;
+      popin.src = assets.peek;
+      outgoing.cancel();
+      returnMotion = popin.animate([{opacity: 0, transform: 'translateX(-4px)'}, {opacity: 1, transform: 'translateX(0)'}], {duration: 200, easing: 'cubic-bezier(.23,1,.32,1)'});
+    }).catch(() => {});
+  };
+  const enter = () => {
+    if (active) return;
+    active = true;
+    clearTimeout(timer);
+    stopReturn();
+    if (motionPreference.matches) { popin.src = assets.point; return; }
+    popin.src = assets.enter;
+    timer = setTimeout(() => { if (active) popin.src = assets.point; }, 1440);
+  };
+  const hideCelebration = () => {
+    clearTimeout(cartTimer);
+    const run = cartRun;
+    if (cartMotion) cartMotion.cancel();
+    if (celebration.hidden) return;
+    cartMotion = celebration.animate([{opacity: 1, transform: 'translateY(0) scale(1)'}, {opacity: 0, transform: motionPreference.matches ? 'none' : 'translateY(-5px) scale(.98)'}], {duration: motionPreference.matches ? 0 : 260, easing: 'ease-in', fill: 'forwards'});
+    cartMotion.finished.then(() => { if (run === cartRun) celebration.hidden = true; }).catch(() => {});
+  };
+  button.addEventListener('pointerenter', enter);
+  button.addEventListener('pointerleave', rest);
+  button.addEventListener('focus', enter);
+  button.addEventListener('blur', rest);
+  button.addEventListener('click', async () => {
+    if (!bagDialog.open) return;
+    const run = ++cartRun;
+    clearTimeout(cartTimer);
+    if (cartMotion) cartMotion.cancel();
+    rest();
+    celebration.hidden = true;
+    celebration.src = assets[motionPreference.matches ? 'point' : 'celebrate'];
+    try { await celebration.decode(); } catch (_) {}
+    if (run !== cartRun || !bagDialog.open) return;
+    celebration.hidden = false;
+    cartMotion = celebration.animate([{opacity: 0, transform: motionPreference.matches ? 'none' : 'translateY(9px) scale(.96)'}, {opacity: 1, transform: 'translateY(0) scale(1)'}], {duration: motionPreference.matches ? 0 : 260, easing: 'cubic-bezier(.23,1,.32,1)', fill: 'forwards'});
+    cartTimer = setTimeout(hideCelebration, 3000);
+  });
+  bagDialog.addEventListener('close', () => {
+    ++cartRun;
+    clearTimeout(cartTimer);
+    if (cartMotion) cartMotion.cancel();
+    celebration.hidden = true;
+    rest();
+  });
+})();
