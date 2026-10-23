@@ -36,3 +36,7 @@ No se incorpora el camión (aplazado por el usuario), ni la frase «queremos cam
 - [Web 4](../../opcion-4/index.html), [comportamiento](../../opcion-4/app.js), [estilos](../../opcion-4/styles.css) y [comparador](../../propuestas.html).
 - Animaciones finales en `opcion-4/assets/popin-*.webp` (se publica únicamente la salida rápida del CTA).
 - [Mensaje de WhatsApp preparado, no enviado](../marketing/propuesta-web-2026-10-23-whatsapp.md).
+
+## Ajuste aprobado de calculadora
+
+El 23 de octubre se adelantan las frases de humor: la primera aparece desde 5 personas (antes 7) y la segunda desde 12 (antes 16). Los cálculos de gasto y ahorro no cambian. Verificados los límites 4, 5, 11, 12 y 20, además de entrada inválida; comparador regenerado. El usuario aprueba subir este ajuste a la misma rama de propuesta.

@@ -27,8 +27,8 @@ function updateSpend() {
   message.hidden = valid;
   message.textContent = valid ? '' : 'Ingresa un número entero de personas entre 1 y 20.';
   const joke = document.querySelector('#household-joke');
-  joke.hidden = !valid || people <= 6;
-  joke.textContent = joke.hidden ? '' : people > 15
+  joke.hidden = !valid || people < 5;
+  joke.textContent = joke.hidden ? '' : people >= 12
     ? '¿Esto es una casa o una pensión? Ese baño debería cobrar horas extra.'
     : 'Con tantos en casa, ojalá tengan dos baños. Y dos PopoWash.';
 }
